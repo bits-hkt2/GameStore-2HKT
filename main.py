@@ -26,6 +26,11 @@ def show_screen_create_account():
     return render_template('create_account.html')
 
 
+@app.route("/sign_in", methods=['GET', 'POST'])
+def show_screen_sign_in():
+    return render_template('sign_in.html')
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def show_screen_login():
     return render_template('login.html')
@@ -36,6 +41,11 @@ def show_screen_homepage():
     return render_template('homepage.html')
 
 
+@app.route("/cart", methods=['GET', 'POST'])
+def show_screen_cart():
+    return render_template('cart.html')
+
+
 # === Config the port ==============================
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host='localhost')
+    app.run(debug=True, host='localhost')

@@ -9,6 +9,6 @@ RUN  pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN export FLASK_APP=app.py
+RUN export FLASK_APP=main.py
 
-CMD ["flask", "run"]
+CMD ["python3", "main.py"]
