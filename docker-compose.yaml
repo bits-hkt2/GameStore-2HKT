@@ -7,14 +7,14 @@ volumes:
 services:
   app:
     build: .
-    image: "application-image"
+    image: "application-image:2HKT"
     container_name: "application-container"
     ports:
-      - "8081:5000"
+      - "5000:5000"
     networks:
       - web-app
   db:
-    image: mysql
+    image: "mysql:8.0.31"
     container_name: "mysql-container"
     volumes:
       - "db:/var/lib/mysql"
