@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template, jsonify, request
 
+import random
+
 # === use dotenv to config environment ============
 from dotenv import load_dotenv, find_dotenv
 
@@ -48,4 +50,8 @@ def show_screen_cart():
 
 # === Config the port ==============================
 if __name__ == "__main__":
-    app.run(debug=True, host='localhost')
+    port = 5000 + random.randint(0, 999)
+    print(port)
+    url = "http://127.0.0.1:{0}".format(port)
+    print(url)
+    app.run(use_reloader=False, debug=True, port=port)

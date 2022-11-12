@@ -9,8 +9,8 @@ services:
     build: .
     image: "application-image:2HKT"
     container_name: "application-container"
-    # ports:
-    #   - "5001:5000"
+    ports:
+      - "5001:5002"
     networks:
       - web-app
   db:
