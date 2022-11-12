@@ -1,0 +1,26 @@
+version: '3'
+networks:
+  web-app:
+volumes:
+  db:
+
+services:
+  app:
+    build: .
+    image: "application-image"
+    container_name: "application-container"
+    ports:
+      - "8081:5000"
+    networks:
+      - web-app
+  db:
+    image: mysql
+    container_name: "mysql-container"
+    volumes:
+      - "db:/var/lib/mysql"
+      - "./db:/docker-entrypoint-initdb.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=app
+    networks:
+      - web-app
