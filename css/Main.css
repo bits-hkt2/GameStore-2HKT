@@ -1,0 +1,763 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #D28EEA;
+}
+
+
+/*  HEADER SECTION   ---------------->  */
+
+.navigation {
+    width: 100vw;
+    height: 120px;
+    background-color:#2C2C2C ;
+    
+}
+
+.web_icon {
+    width:100px;
+    height: 90px;
+    border-radius: 10px;
+   padding-left:20px;
+
+}
+
+.list-items {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 20px;
+    background: #2C2C2C;
+    
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 44vw;
+    margin-right: 30%;
+    gap:11px;
+
+}
+
+.items {
+    font-size:30px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: uppercase;;
+    color: #B1AFAF;
+
+}
+
+
+.profile {
+    display: flex;
+
+}
+
+.profile_img {
+    width: 80px;
+    height: 80px;
+}
+
+.status-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    border: 2px solid white;
+    top:17px;
+    right:9.1%;
+    position: absolute;
+  }
+
+
+.name-user {
+    padding: 19px 22px;
+    margin-top: 10px;
+
+}
+
+
+.name-user h3 {
+    font-size:25px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #FFF;
+}
+
+/* SEARCHING SECTION =========> */
+
+.search input[type=text]{
+    width:1018px;
+    height:55px;
+    border-radius:50px;
+    border: none;
+    font-size: 20px;
+    font-weight:400;
+    line-height: 30px;
+    padding-left: 40px;
+    background:#D9D9D9;
+
+}
+     
+.search {
+
+   padding-top: 40px;
+    border: none;
+    padding-left: 40px;
+    margin-left: 10%;
+   
+}
+
+.return {
+
+    margin: 0 -11%;
+}
+     
+.search button{
+    width: 60px;
+    height: 60px;
+    color: #9e9999;  
+    padding: 5px 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.cart-items  {
+    width:14%;
+    margin-left: 12%;
+    color:#FFF;
+    
+}
+
+.cart-items a i {
+    color:#DADADA;
+}
+
+
+/* RECOMMNED SECTION */
+
+.game-intro-display {
+    margin-top: 40px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+}
+
+.intro-page {
+    padding-top:39px;
+    margin-left: 11.5%;
+
+}
+
+.recommned-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color:#FFFFFF;
+
+}
+
+.underline {
+    width: 89%;
+    border: 1px solid #FFF;
+    margin-top: 20px;    
+   
+}
+
+
+/* SLIDESHOW SECTION */
+
+.game-slideshow {
+    padding-top: 20px;
+    max-width: 1020px;
+    position: relative;
+    margin: auto;
+}
+
+.triangle-right {
+    width: 45px;
+    height: 500px;
+    border-top: 55px solid transparent;
+    border-left: 295px solid #aa099582;
+    border-bottom: 55px solid transparent;
+    position: absolute;
+    top: 47%;
+    left: 0px;
+ 
+}
+
+.triangle-left {
+    width: 45px;
+    height: 500px;
+    border-top: 60px solid transparent;
+    border-right: 280px solid #aa099593;
+    border-bottom: 60px solid transparent;
+    position: absolute;
+    top: 47%;
+    right: 0px;
+
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 50%;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: -7%;
+    padding: 10px 15px;
+    background:black;
+    align-items: center;
+    z-index: 1;
+
+  }
+
+  .prev {
+    left:-7%;
+    padding: 10px 15px;
+    background:black;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #191718;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    line-height: 20px;
+    font-style: italic;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+
+  .dot-section {
+    margin-top: 25px;
+
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+    margin: 0 2px;
+    background-color: rgb(232, 75, 101);
+    border-radius: 10%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active1, .dot:hover {
+    background-color: rgba(226, 52, 148, 0.96);
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  /* CATEGORY SECTION */
+
+.game-category {
+    margin-top: 10px;
+    width: 100vw;
+    height:1700px;
+    background: #c709b4f0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+.sale-offer-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.sale-offer-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #FFFFFF;
+    margin-top: 2%;
+    margin-left: 12%;
+}  
+
+.prev-next {
+    padding: 15px 23px;
+    margin-top: 27px;
+    font-size: 20px;
+    margin-right: 7%;
+}
+
+.prev-next i {
+    padding: 10px 12px;
+    background: rgb(161, 142, 142);
+    border-radius: 50%;
+    color:white;
+    
+}
+
+.box-sale-offer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85vw;
+    margin-left: 9%;
+   object-fit: contain;
+}
+
+.game-offer {
+    width: 220px;
+    height: 450px;
+    gap: 30px;
+    background:#B4ABB7;
+    margin-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 4px 5px 2px 2px rgba(0, 0, 0, 0.637);
+}
+
+.game-offer a img {
+    width: 220px;
+    height: 326px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+
+
+.game-infor {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #B4ABB7;
+
+}
+
+
+.game-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color:#000000;
+
+
+}
+
+.game-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1px;
+}
+
+.game-tags {
+    width: 75px;
+    height: 34px;
+    background: rgb(49, 251, 4);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+    color:#741693;
+    font-weight: 700;
+    font-size:20px;
+    padding: 8px 12px;
+}
+
+.game-discount {
+    margin-right: 18%;
+
+}
+
+.old-price {
+    font-size:15px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration:line-through;
+    color:#555555;
+
+}
+
+.new-price {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    color:#000000;
+
+}
+
+.game-configuration {
+    width: 30px;
+    height: 25px;
+    margin-top: 40px;
+    font-size: 25px;
+    color:#000000;
+}
+
+/* GAME CATEGORY ITEMS */
+
+.game-category-items {
+    margin-top: 78px;
+
+}
+
+.game-category-offer {
+    display: flex;  
+    align-items: center;
+    width: 86vw;
+    margin-left: 11%;
+    object-fit: contain;
+    margin-top: 20px;
+
+}
+
+.game-item {
+    width: 400px;
+    height: 250px;
+   
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+   
+
+}
+
+.game-item a img {
+    width: 295px;
+    height: 250px;
+}
+
+
+/* COMING SOON GAME SECTION */
+
+.game-coming-soon {
+    margin-top:79px;
+    
+}
+
+.coming-soon-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #FFFFFF;
+    margin-top: 2%;
+    margin-left: 12%;
+
+}
+
+.game-coming-soon-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.game-box-release {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85vw;
+    margin-left: 9%;
+   object-fit: contain;
+
+}
+
+.game-update {
+    width: 220px;
+    height: 460px;
+    gap: 30px;
+    background:#B4ABB7;
+   
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 4px 5px 2px 2px rgba(0, 0, 0, 0.637);
+
+}
+
+.game-update a img {
+    width: 220px;
+    height: 370px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+
+}
+
+.game-infor-release {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #B4ABB7;
+    height: 80px;
+   
+}
+
+.game-tags-release {
+    width: 75px;
+    height: 40px;
+    background: rgba(30, 103, 204, 0.927);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+    color:#FFFFFF;
+    font-weight: 700;
+    font-size:20px;
+    padding: 8px 8px;
+    margin-top: 14px;
+    
+}
+
+.new-price-release {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 25px;
+    color:#000000;
+    font-style: oblique ;
+    margin-top: 14px;
+    margin-left: 10px;
+
+}
+
+.game-name-release {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color:#000000;
+    margin-top: 10px;
+
+}   
+
+.game-discount-release {
+    text-align: center;
+    margin-right: 30%;
+
+}
+
+/* GAME-GALLERY-SECTION */
+
+.noteworthy {
+    width: 100vw;
+    height: 120vh;
+    position: relative;
+    background-color: #e31eeaba;
+
+}
+.triangle-right-gallery {
+    width: 0px;
+	height: 0px;
+	border-top: 27px solid transparent;
+	border-left: 85px solid  #c709b4c2; 
+	border-bottom: 80px solid transparent;
+    top:-26px;
+    left:0px;
+    position: absolute;
+   
+}
+
+.triangle-left-gallery {
+    width: 0;
+	height: 0;
+	border-top:25px solid transparent;
+	border-right: 115px solid #c709b4d4;
+	border-bottom: 108px solid transparent;
+    position: absolute;
+    right:0px;
+    top:-26px;
+}
+
+/* GAME-TAGS-SECTION */
+
+.game-tags-discount {
+    width: 75px;
+    height: 34px;
+    background: rgb(15 225 35);
+    color:#ad0ce3;
+    font-weight: bolder;
+    font-size:20px;
+    padding: 3px 12px;
+    margin-right: 10px;
+
+}
+
+.price-discount {
+    width: 25%;
+    display: flex;
+    margin-right: 10px;
+}
+
+.configuration-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.new-price-2 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color:#FFFFFF;
+
+}
+
+.type-game {
+    margin-bottom: 2%;
+    color:#B4ABB7;
+    margin: 8px 4px
+}
+
+
+/* SPECIAL OFFER SECTION */
+
+.special-offer {   
+    width: 100vw;
+    height:80vh;
+    background: #c709b4f0;
+
+}
+
+.special-offer-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: #FFFFFF;
+    margin-left: 10%;
+  
+}
+
+
+footer {
+    background-color: #2C2C2C;
+}
+
+
+.footer-section {
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    padding-left: 9%;
+    
+}
+
+.about {
+    width: 50%;
+    height: 100px;
+}
+
+.about-items {
+    display: flex;
+
+}
+
+.about-items a li {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    color:#B1AFAF;
+    margin-left: 10px;
+
+}
+
+.social-media {
+    width: 250px;
+    height: 100px;
+   
+}
+
+.social-platform {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+
+}
+
+.social-platform a li i {
+    font-size: 50px;
+   padding-left: 5%;
+   color:#FFF;
+}
+
+.footer-icon {
+    float: right;
+    margin-left: 10%;
+}
+
+.copy-right {
+    padding-left: 14%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color:#B1AFAF;
+
+}
