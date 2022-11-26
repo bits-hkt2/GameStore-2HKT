@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @mixin bsBanner($file) {
   /*!
    * Bootstrap #{$file} v5.2.2 (https://getbootstrap.com/)
@@ -6,3 +7,13 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
 }
+=======
+@mixin bsBanner($file) {
+  /*!
+   * Bootstrap #{$file} v5.2.2 (https://getbootstrap.com/)
+   * Copyright 2011-2022 The Bootstrap Authors
+   * Copyright 2011-2022 Twitter, Inc.
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+   */
+}
+>>>>>>> remotes/origin/master
