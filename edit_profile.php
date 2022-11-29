@@ -39,9 +39,10 @@
               rgba(53, 53, 53, 0.8),
               rgb(49, 49, 49, 0.8) 100%
             );
-            height: 50vh;
+            max-height: 550px
+            height: 50%;
           ">
-                <h1 class="fw-bold d-flex align-items-start" style="color: rgb(204, 204, 204)">
+                <h1 class="fw-bold d-flex align-items-start" style="color: rgb(204, 204, 204); margin-top: 50px;">
                     Edit Profile
                 </h1>
                 <div class="d-flex justent-center align-self-center align-content-center align-items-center w-75 h-75">
@@ -101,10 +102,12 @@
 
         #back-responsive {
             margin-left: 5px;
+            margin-bottom: 50px;
         }
 
         #update-responsive {
             margin-right: 5px;
+            margin-bottom: 50px;
         }
     }
 
@@ -116,7 +119,7 @@
         }
 
         #update-responsive {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             margin-top: -10px;
             display: flex;
             width: 100%;
@@ -124,7 +127,7 @@
         }
 
         #back-responsive {
-            margin-bottom: -10px;
+            margin-bottom: 30px;
             display: flex;
             width: 100%;
             justify-content: center;
