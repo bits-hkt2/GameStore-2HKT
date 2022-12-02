@@ -357,8 +357,53 @@ body {
 
     .triangle-left {
         display: none;
+    } 
+
+    
+    .game-update {
+        width: fit-content !important;
+        height: max-content !important;
+        margin: 0 10px;
+    }
+
+    .game-update a {
+        min-width: 400px;
+        width: fit-content !important;
+        height: fit-content !important;
+    }
+
+    .game-update a img {
+        width: calc(100%) !important;
+        height: calc(100% * 300/415) !important;
+    }
+
+    .game-name-release {
+        font-size: 12px !important;
+    }
+
+    .new-price-release {
+        font-size: 11px !important;
+        margin: 0 !important;
+    }
+
+    .text-decoration:underline {
+        font-size: 11px !important;
+    }
+
+    .game-discount {
+        margin: 0 !important;
+        margin-left: 5px !important;
+    }
+
+    .game-discount-release {
+        margin: 0 !important;
+    }
+
+    .game-tags-release {
+        margin: 0 !important;
     }
 }
+    
 
 .game-intro-display img {
     width: 1020px; 
@@ -491,8 +536,30 @@ body {
     
 }
 
+.box-sale-offer-container {
+    max-width: 1500px;
+    width: 100%;
+}
+
+@media (max-width: 1670px) {
+    .box-sale-offer-container {
+        display: flex;
+    }
+
+    .game-offer {
+        width: calc(100%* 220/1336);
+        display: inline-flex;
+    }
+
+    .game-offer a {
+        display: block;
+        width: 100%;
+        height: calc(100%* 335/444);
+    }
+}
+
 .box-sale-offer {
-    display: flex;
+    display: inline-flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -515,21 +582,23 @@ body {
 
 @media (max-width: 1670px) {
     .game-offer {
+        height: fit-content;
+        width: fit-content;
+        height: 100%;
         max-width: 220px;
         max-height: 450px;
         width: calc(100% * (220/1307));
-        height: 100%;
     }
 
-    .game-offer a img {
-        width: calc(100% * (220/439));
+    .game-offer a {
         height: 100%;
+        width: 100%;
     }
 }
 
 .game-offer a img {
-    width: 220px;
-    height: 326px;
+    width: 100%;
+    height: calc(100% * 360/450);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -553,8 +622,28 @@ body {
     line-height: 20px;
     text-align: center;
     color:#000000;
+}
 
+@media (max-width: 1670px) {
+    .game-name {
+        font-size: 12px;
+    }
 
+    .game-tags {
+        width: 50px !important;
+        height: 17px !important;
+        font-size:12px !important;
+    }
+
+    .old-price {
+        font-size: 12px !important;
+        line-height: 12px !important;
+    }
+
+    .new-price {
+        font-size: 12px !important;
+        line-height: 12px !important;
+    }
 }
 
 .game-price {
@@ -573,7 +662,6 @@ body {
     color:#741693;
     font-weight: 700;
     font-size:20px;
-    padding: 8px 12px;
 }
 
 .game-discount {
@@ -601,9 +689,14 @@ body {
 .game-configuration {
     width: 30px;
     height: 25px;
-    margin-top: 40px;
     font-size: 25px;
     color:#000000;
+}
+
+@media (max-width: 1700px) {
+    .game-configuration {
+        width: calc(100% *30/220);
+    }
 }
 
 /* GAME CATEGORY ITEMS */
@@ -641,6 +734,24 @@ body {
     height: 250px;
 }
 
+@media (max-width: 1670px) {
+    .game-category-offer {
+        display: flex;
+        margin: 0 200px;
+    }
+
+    .game-item {
+        width: calc(100%*9/10);
+        height: calc(100%*9/10);
+        margin: 0 10px;
+    }
+
+    .game-item a img {
+        width: calc(100%*9/10);
+        height: calc(100%*9/10);
+    }
+}
+
 
 /* COMING SOON GAME SECTION */
 
@@ -651,6 +762,13 @@ body {
     align-items: center;
     flex-direction: column;
 
+}
+
+@media (max-width: 2000px) {
+    .game-coming-soon {
+        margin: 0 200px;
+        margin-top: 50px;
+    }
 }
 
 .coming-soon-title {
@@ -685,6 +803,7 @@ body {
     max-width: 1500px;
     object-fit: contain;
 }
+
 
 @media (min-width: 2000px){
     .game-box-release {
