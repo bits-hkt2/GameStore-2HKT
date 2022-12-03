@@ -1,0 +1,168 @@
+/* import google font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Mulish:wght@300&family=Playfair+Display:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: rgb(242, 237, 237);
+  }
+
+  .update_profile {
+    min-height: 100vh;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+   
+  }
+
+  .update_profile form {
+    padding: 40px;
+    background-color: rgb(153, 164, 152);
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 800px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5% auto;
+    height: auto;
+
+  }
+
+  .update_profile form img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    object-fit: cover;
+  }
+
+  .update_profile form .flex {
+    display: flex;
+   
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+    
+  }
+
+  .update_profile form .flex .inputBox {
+    width: 49%;
+    margin-bottom: 20px;
+  }
+
+  .update_profile form .flex .inputBox span {
+    text-align: left;
+    display: block;
+    margin-top: 15px;
+    font-size: 17px;
+    color: rgb(10, 10, 242);
+    text-transform: capitalize;
+  }
+
+  .update_profile form .flex .inputBox .box {
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 212);
+    padding: 12px 14px;
+    font-size: 17px;
+    color:black;
+    margin-top: 10px;
+
+  }
+
+  .btn {
+    width: 50%;
+    padding: 12px 14px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+  }
+
+  .btn:hover {
+    background-color: rgb(92, 90, 197);;
+  }
+
+
+  .delete-btn {
+    
+    padding: 10px 139px;
+    height: 40px;
+    background-color: rgb(214, 18, 18);
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+
+  }
+
+  .delete-btn:hover {
+    text-decoration: underline;
+    background: rgb(197, 90, 90);
+  }
+
+
+  .text-success {
+    position: absolute;
+    top: 12.5%;
+    left: 23.8%;
+    color: blue;
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    background: yellowgreen;
+    text-align: center;
+    padding: 17px
+  }
+
+
+
+  .text-danger {
+    
+    color: red;
+    position: relative;
+    /* top: 51%; */
+    left: 17%;
+    /* padding: 10px; */
+    /* margin: 10px; */
+    display: block;
+    /* margin-top: -35px; */
+    bottom: -334px;
+  }
+
+  @media (max-width: 768px) {
+    .update_profile form .flex {
+        flex-wrap: wrap;
+        gap: 0;
+
+    }
+
+    .update_profile form .flex .inputBox {
+        width: 100%;
+    
+    }
+
+    .delete-btn {
+        padding: 10px 55px;
+        
+    }
+
+    .btn {
+        padding: 0px 20px;
+
+    }
+  }

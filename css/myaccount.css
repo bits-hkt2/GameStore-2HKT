@@ -1,0 +1,96 @@
+html {
+    background-color: #f1f1f1;
+}
+.myaccount-container{
+    margin: auto;
+    background-color: rgb(254,253,253);
+    width: 70%;
+    margin-top: 50px;
+    box-shadow: 5px 5px 5px rgba(192, 192, 192, 0.9);
+    border-radius: 10px;
+}
+.myaccountcontainer__imagecontainer{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.myaccount-container__image{
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 32px;
+
+}
+.myaccount-container__formcontainer{
+    padding: 16px;
+}
+.myaccount-container__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.upload_file{
+    font-size: 1.6rem;
+    border: 1px solid #000;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: sliver;
+    margin: 16px;
+    width: 100%;
+}
+.submit_btn{
+    font-size: 1.6rem;
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 50%;
+    background-color: rgba(255, 0, 0, 0.7);
+    color:#f1f1f1;
+    
+}
+.submit_btn:hover {
+    cursor: pointer;
+    opacity: 0.3;
+    color:#000;
+}
+.message{
+    background-color: rgb(26, 176, 26);
+    color: #f1f1f1;
+    font-size: 1.6rem;
+    padding: 12px;
+    text-align: center;
+
+}
+.username{
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 16px;
+    font-weight: 500;
+}
+.myaccount__heading{
+    padding: 28px;
+    margin-left: 28px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+}
+.return_btn{
+    font-size: 1.6rem;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    width: 40%;
+    background-color: rgba(45, 45, 221, 0.7);
+    color:#f1f1f1;
+}
+.return_btn:hover{
+    cursor: pointer;
+    opacity: 0.3;
+    color: #000;
+}
