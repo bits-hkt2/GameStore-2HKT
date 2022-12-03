@@ -62,6 +62,9 @@ body {
 
 }
 
+.nav-menu-items {
+    margin-right: 7%;
+}
 
 .profile {
     display: flex;
@@ -108,7 +111,7 @@ body {
     align-self: center;
     align-content: center;
     align-items: center;
-    background-color: #dc6aff;
+    background-color: #b680c9;
 }
 
 .search input[type=text]{
@@ -151,6 +154,8 @@ body {
 
 .cart-items  {
     color:#FFF;
+    margin-left: 13%;
+
 }
 
 .cart-items a i {
@@ -161,7 +166,7 @@ body {
 /* RECOMMNED SECTION */
 
 .game-intro-display {
-    background-color: #dc6aff;
+    background-color: #b680c9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -890,27 +895,30 @@ body {
     width: 100vw;
     height: 120vh;
     position: relative;
-    background-color: #e31eeaba;
+    background-color: #b680c9;
 
 }
 .triangle-right-gallery {
-    width: 0;
-	height: 0;
-	border-top: 100px solid transparent;
-	border-left: 85px solid  #c709b4c2; 
-	border-bottom: 80px solid transparent;
-    left:0px;
-   margin-top: -100px;
+    width: 0px;
+    height: 0px;
+    border-top: 0px solid transparent;
+    border-left: 115px solid rgba(199, 9, 180, 0.76);
+    border-bottom: 109px solid transparent;
+    left: 19px;
+    margin-top: -100px;
+    top: 22px;
 }
 
 .triangle-left-gallery {
-    width: 0;
-	height: 0;
-	border-top:25px solid transparent;
-	border-right: 115px solid #c709b4d4;
-	border-bottom: 108px solid transparent;
-    right:0px;
-    margin-top: -100px;
+      /* width: 0; */
+      height: 0;
+      border-top: 1px solid transparent;
+      border-right: 115px solid #c709b4d4;
+      border-bottom: 108px solid transparent;
+      right: 0px;
+      /* margin-top: -100px; */
+      top: -2px;
+      position: absolute;
 }
 
 /* GAME-TAGS-SECTION */
@@ -979,6 +987,9 @@ footer {
     background-color: #2C2C2C;
 }
 
+.icon {
+    display: none;
+}
 
 .footer-section {
    
@@ -1043,9 +1054,9 @@ footer {
 }
 
 .special-offer-header {
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .noteworthy {
-    height: 1300px;
+    height: 1100px;
 }

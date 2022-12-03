@@ -19,8 +19,7 @@
 
     <!-- MDB SECTION -->
 
-      <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
@@ -35,56 +34,134 @@
   <body>
     <!-- HEADER SECTION -->
     <header>
-      <nav class="navigation">
-        <div class="list-items">
-          <img class="web_icon" src="./images/Logo (1).png" alt="" />
+        <nav class="navigation">
+            
+            <div class="list-items">
+            <a href="/Main.html">
+                <img class="web_icon" src="./images/Logo (1).png" alt="">
 
-          <ul class="nav-items">
-            <a href="#">
-              <li class="items">
-                store
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
             </a>
+            
+                            <!-- Large button groups (default and split) -->
+         
+            
+            <div class="nav-menu-items d-flex justify-content-between w-50">
+                <a href="#home" class="active"></a>
+           
+            <div class="dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role="button"
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                STORE
+                </a>
 
-            <a href="#">
-              <li class="items">
-                about
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-
-            <a href="#">
-              <li class="items">
-                community
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-
-            <a href="#">
-              <li class="items">
-                support
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-          </ul>
-
-          <div class="profile">
-            <a href=" #"
-              ><img class="profile_img" src="./images/icon 1.png" alt="" />
-              <div class=""></div>
-
-              <div class="status-circle"></div>
-            </a>
-
-            <div class="name-user">
-              <h3 class="">2HKT</h3>
+                    <ul class="dropdown-menu  text-center" style="background:#D9D9D9 ;">
+                    <li><a class="dropdown-item text-black" href="./Main.html">Home</a></li>
+                    <li><hr class="dropdown-divider bg-black" /></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-1">New Release</a></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-2">Top sellers</a></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-3">Game Category </a></li>
+                    </ul>
+                
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
 
+            <div class="dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                ABOUT
+                </a>
+                <ul class="dropdown-menu text-center" style="background: #D9D9D9">
+                <li><a class="dropdown-item text-black" href="./about_us.html">2HKT.com</a></li>
+                <li><hr class="dropdown-divider bg-black" /></li>
+                <li><a class="dropdown-item text-black" href="https://discord.gg/D7eqPyD6Dk">Join the team</a></li>
+                </ul>
+            </div>
+
+            <div class=" dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                SUPPORT
+                </a>
+                <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
+                <li><a class="dropdown-item text-black" href="./order_payment.html">Orders and Payments</a></li>
+                <li><a class="dropdown-item text-black" href="./account_website.html">Account and Website</a></li>
+                <li><a class="dropdown-item text-black" href="./refund_policy.html"">Refund Policy</a></li>
+               
+                </ul>
+            </div>
+          
+            <div class=" dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                COMMUNITY
+                </a>
+                <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
+                
+                <li><a class="dropdown-item text-black" href="https://discord.gg/D7eqPyD6Dk">Dicussion Forums</a></li>
+                <li><hr class="dropdown-divider bg-black" /></li>
+                <li><a class="dropdown-item text-black" href="https://www.facebook.com/dejavu354321/">Facebook</a></li>
+                <li><a class="dropdown-item text-black" href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+                <li><a class="dropdown-item text-black" href="  ">Youtube</a></li>
+                </ul>
+            </div>
+      
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+  
+                
+                <div class="profile ">
+                    <a
+                    class=""
+                    href="#"
+                    role="button"                
+                    id="dropdownMenuLink"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="./images/icon 1.png" alt="">
+                  </a>
+                
+                  <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="./edit_profile.html">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="./loginForm.html">Log out</a></li>
+                  </ul>
+
+                 
+                  <div class="name-user ">
+                          <h3> 2HKT</h3>
+                  </div>
+                </div>
+
+               
+                    
+            </div>
+        </div>
+                
+         
+        </nav>
+    </header>
     <!-- MAIN SECTION -->
     <section>
         <div class="content">
@@ -103,7 +180,7 @@
                         placeholder=" Search"
                         name="search">
                             
-                   <span class="cart-items"><a href=""> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a> </span>
+                   <span class="cart-items"><a href="./Cart.html"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a> </span>
                 
                 </form>
             </div>
@@ -250,6 +327,7 @@
                                                 </div>
                                                 
                                             </div>
+
                                         </div>
         
                                     </a>
@@ -279,6 +357,7 @@
                                                 </div>
                                                 
                                             </div>
+
                                         </div>
         
                                     </a>
@@ -286,7 +365,9 @@
         
                                 <div class="game-offer">
                                      <a href="">
+
                                         <img src="./images/doom3_offer.png" alt="">
+
         
                                         <div class="game-infor">
                                             <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
@@ -304,18 +385,22 @@
                                                 </div>
         
                                                 <div class="game-configuration">
+
                                                     <i class="fa-brands fa-windows"></i>
+
                                                 </div>
                                                 
                                             </div>
                                         </div>
         
                                     </a>
+
                                 </div>  
         
                                 <div class="game-offer">
-                                     <a href="">
+                                     <a href="./Doom3.html">
                                         <img src="./images/giga_bash.png" alt="">
+
         
                                         <div class="game-infor">
                                             <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
@@ -333,13 +418,16 @@
                                                 </div>
         
                                                 <div class="game-configuration">
+
                                                     <i class="fa-brands fa-playstation"></i>
+
                                                 </div>
                                                 
                                             </div>
                                         </div>
         
                                     </a>
+
                                 </div>
         
                             </div>
@@ -357,14 +445,18 @@
     
                             <div class="game-category-offer">
                                 <div class="game-item">
-                                    <a href="">
+
+                                    <a href="#ex1-tab-3">
+
                                         <img src="./images/Adventure.png" alt="">
         
                                     </a>
                                 </div>
     
                                 <div class="game-item">
-                                    <a href="">
+
+                                    <a href="#ex1-tab-3">
+
                                         <img src="./images/Rouge-like.png" alt="">
         
                                       
@@ -373,7 +465,9 @@
                                     </a>
                                     
                                     <div class="game-item">
-                                        <a href="">
+
+                                        <a href="#ex1-tab-3">
+
                                             <img src="./images/Casual.png" alt="">
                                             
                                             
@@ -382,7 +476,9 @@
                                 </div>
     
                                 <div class="game-item">
-                                    <a href="">
+
+                                    <a href="#ex1-tab-3">
+
                                         <img src="./images/Role-playing.png" alt="">
         
                                         
@@ -587,7 +683,7 @@
                         role="tab"
                         aria-controls="ex1-tabs-3"
                         aria-selected="false"
-                        >Coming Soon </a
+                        >Game Category </a
                     >
                     </li>
                 </ul>
@@ -1048,16 +1144,17 @@
 
 </section>
 
-<!-- FOOTER SECTION -->
+ <!-- FOOTER SECTION -->
 
-<footer>
+    
+ <footer>
     <div class="footer-section">
         <div class="about">
                 <ul class="about-items">
-                    <a href=""><li> Policy |</li></a>
-                    <a href=""><li> Terms of Service |</li></a>
-                    <a href=""><li> Contact Us | </li></a>
-                    <a href=""><li> Jobs Opportunities</li></a>
+                    <a href="./term.html"><li> Policy |</li></a>
+                    <a href="./term.html"><li> Terms of Service |</li></a>
+                    <a href="./contact-us.html"><li> Contact Us | </li></a>
+                    <a href="./help.html"><li>Help</li></a>
                 </ul>
         </div>
 
@@ -1065,9 +1162,9 @@
         <div class="social-media">
             <ul class="social-platform">
 
-                <a href="#"><li><i class="fa-brands fa-square-facebook"></i> </li></a>
-                <a href="#"><li><i class="fa-brands fa-twitter"></i> </li></a>
-                <a href="#"><li><i class="fa-brands fa-youtube"></i> </li></a>
+                <a href="https://www.facebook.com/dejavu354321/"><li><i class="fa-brands fa-square-facebook"></i> </li></a>
+                <a href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><li><i class="fa-brands fa-twitter"></i> </li></a>
+                <a href="https://www.youtube.com/@HuyPhamChannel"><li><i class="fa-brands fa-youtube"></i> </li></a>
 
             </ul>
 
@@ -1081,9 +1178,8 @@
         </p>
     </div>
     
-
+    
 </footer>
-
         <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
