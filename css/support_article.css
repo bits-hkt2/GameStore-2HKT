@@ -1,0 +1,184 @@
+* {
+    font-family: sans-serif;
+}
+
+hr {
+    margin: 10px 100px;
+}
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li:first-child {
+    padding-left: 70px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: ">\00a0";
+}
+  
+
+ul.breadcrumb li a {
+    color: #0275d8;
+}
+  
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+h2 {
+    font-weight: 500;
+    padding-left: 100px;
+    padding-top: 40px;
+    font-size: 32px;
+}
+
+#box {
+    margin: 10px 100px;
+    border: 1px solid #eee;
+}
+p {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 17px;
+    line-height: 30px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 10px;
+}
+
+
+#more h2 {
+    font-weight: 400;
+    padding-left: 100px;
+    padding-top: 20px;
+    font-size: 26px;
+}
+
+#bottom {
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#bottom .child {
+    flex: 1;
+    border: 1px solid #ddd;
+}
+
+.child h3 {
+    font-weight: 600;
+    text-align: center;
+}
+.child p {
+    padding: 10px 40px 10px 40px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1400px) { 
+    #bottom {
+        display: block;
+    }
+    #box {
+        margin: 10px 50px;
+        border: 1px solid #eee;
+    }
+    h2 {
+        padding-left: 50px;
+        font-size: 30px;
+    }
+    img {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    hr {
+        margin: 10px 50px;
+    }
+
+    ul.breadcrumb {
+        padding: 8px 14px;
+    }
+      
+    ul.breadcrumb li {
+        font-size: 16px;
+    }
+    
+    ul.breadcrumb li:first-child {
+        padding-left: 50px;
+    }
+    
+    #title h2 {
+        padding-left: 50px;
+        padding-top: 30px;
+        font-size: 24px;
+    }
+    #title p {
+        padding-left: 50px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    #box {
+        margin: 10px 50px;
+        border: 1px solid #eee;
+    }
+    h2 {
+        padding-left: 50px;
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+    img {
+        width: 90%;
+    }
+    
+    
+    #more h2 {
+        padding-left: 50px;
+        padding-top: 15px;
+        font-size: 24px;
+    }
+    
+    #bottom {
+        display: block;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    .child h3 {
+        padding: 10px 30px 10px 30px;
+        font-size: 20px;
+    }
+
+    .child p {
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+    }
+}
+
+
+

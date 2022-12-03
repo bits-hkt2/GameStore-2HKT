@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/Logo.svg">
-    <link rel="stylesheet" href="./css/Main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <!-- FONTAWESOME ICONS  -->
     <link rel="stylesheet" href="./icons/fontawesome-free-6.2.1-web/css/all.min.css" />
 
@@ -19,8 +19,7 @@
 
     <!-- MDB SECTION -->
 
-      <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
@@ -35,56 +34,134 @@
   <body>
     <!-- HEADER SECTION -->
     <header>
-      <nav class="navigation">
-        <div class="list-items">
-          <img class="web_icon" src="./images/Logo (1).png" alt="" />
+        <nav class="navigation">
+            
+            <div class="list-items">
+            <a href="/Main.html">
+                <img class="web_icon" src="./images/Logo (1).png" alt="">
 
-          <ul class="nav-items">
-            <a href="#">
-              <li class="items">
-                store
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
             </a>
+            
+                            <!-- Large button groups (default and split) -->
+         
+            
+            <div class="nav-menu-items d-flex justify-content-between w-50">
+                <a href="#home" class="active"></a>
+           
+            <div class="dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role="button"
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                STORE
+                </a>
 
-            <a href="#">
-              <li class="items">
-                about
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-
-            <a href="#">
-              <li class="items">
-                community
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-
-            <a href="#">
-              <li class="items">
-                support
-                <span><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-              </li>
-            </a>
-          </ul>
-
-          <div class="profile">
-            <a href=" #"
-              ><img class="profile_img" src="./images/icon 1.png" alt="" />
-              <div class=""></div>
-
-              <div class="status-circle"></div>
-            </a>
-
-            <div class="name-user">
-              <h3 class="">2HKT</h3>
+                    <ul class="dropdown-menu  text-center" style="background:#D9D9D9 ;">
+                    <li><a class="dropdown-item text-black" href="./Main.html">Home</a></li>
+                    <li><hr class="dropdown-divider bg-black" /></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-1">New Release</a></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-2">Top sellers</a></li>
+                    <li><a class="dropdown-item text-black" href="#ex1-tab-3">Game Category </a></li>
+                    </ul>
+                
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
 
+            <div class="dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                ABOUT
+                </a>
+                <ul class="dropdown-menu text-center" style="background: #D9D9D9">
+                <li><a class="dropdown-item text-black" href="./about_us.html">2HKT.com</a></li>
+                <li><hr class="dropdown-divider bg-black" /></li>
+                <li><a class="dropdown-item text-black" href="https://discord.gg/D7eqPyD6Dk">Join the team</a></li>
+                </ul>
+            </div>
+
+            <div class=" dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                SUPPORT
+                </a>
+                <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
+                <li><a class="dropdown-item text-black" href="./order_payment.html">Orders and Payments</a></li>
+                <li><a class="dropdown-item text-black" href="./account_website.html">Account and Website</a></li>
+                <li><a class="dropdown-item text-black" href="./refund_policy.html"">Refund Policy</a></li>
+               
+                </ul>
+            </div>
+          
+            <div class=" dropdown btn-group">
+                <a
+                class="dropdown-toggle text-white rounded "
+                role='button'
+               style="background-color:#2C2C2C "
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+                >
+                COMMUNITY
+                </a>
+                <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
+                
+                <li><a class="dropdown-item text-black" href="https://discord.gg/D7eqPyD6Dk">Dicussion Forums</a></li>
+                <li><hr class="dropdown-divider bg-black" /></li>
+                <li><a class="dropdown-item text-black" href="https://www.facebook.com/dejavu354321/">Facebook</a></li>
+                <li><a class="dropdown-item text-black" href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></li>
+                <li><a class="dropdown-item text-black" href="  ">Youtube</a></li>
+                </ul>
+            </div>
+      
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+    </div>
+  
+                
+                <div class="profile ">
+                    <a
+                    class=""
+                    href="#"
+                    role="button"                
+                    id="dropdownMenuLink"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="./images/icon 1.png" alt="">
+                  </a>
+                
+                  <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="./edit_profile.html">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="./loginForm.html">Log out</a></li>
+                  </ul>
+
+                 
+                  <div class="name-user ">
+                          <h3> 2HKT</h3>
+                  </div>
+                </div>
+
+               
+                    
+            </div>
+        </div>
+                
+         
+        </nav>
+    </header>
     <!-- MAIN SECTION -->
     <section>
         <div class="content">
@@ -103,7 +180,7 @@
                         placeholder=" Search"
                         name="search">
                             
-                   <span class="cart-items"><a href=""> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a> </span>
+                   <span class="cart-items"><a href="./Cart.html"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a> </span>
                 
                 </form>
             </div>
@@ -121,44 +198,47 @@
                 <div class="triangle-right">
                 
                 </div>
-                <div class="game-slideshow">
-                <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                <!-- <div class="numbertext">1 / 3</div> -->
-                <img  src="./images/the-entropy.jpg" style="width:100%; height:500px">
-                <div class="text"> The Entropy Centre</div>
+
+                <div class="game-slideshow-container">
+                    <div class="game-slideshow">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                    <!-- <div class="numbertext">1 / 3</div> -->
+                    <img src="./images/the-entropy.jpg">
+                    <div class="text"> The Entropy Centre</div>
+                    
+                    </div>
                 
-                </div>
-            
-                <div class="mySlides fade">
-                <!-- <div class="numbertext">2 / 3</div> -->
-                <img src="./images/ResidentEvil.jpg" style="width:100%; height:500px">
-                <div class="text"> Resident Evil 7</div>
-                </div>
-  
-                <div class="mySlides fade">
-                <!-- <div class="numbertext">3 / 5</div> -->
-                <img src="./images/god_of_war.png" style="width:100%; height:500px">
-                <div class="text"> God Of War </div>
-                </div>
-
-                <div class="mySlides fade">
-                <!-- <div class="numbertext">4 / 5</div> -->
-                <img src="./images/day_light2.jpg" style="width:100%; height:500px">
-                <div class="text"> Day Light 2</div>
-                </div>
-
-                <div class="mySlides fade">
-                <!-- <div class="numbertext">5 / 5</div> -->
-                <img src="./images/doom3.jpg" style="width:100%; height:500px">
-                <div class="text"> Doom 3</div>
+                    <div class="mySlides fade">
+                    <!-- <div class="numbertext">2 / 3</div> -->
+                    <img src="./images/ResidentEvil.jpg">
+                    <div class="text"> Resident Evil 7</div>
+                    </div>
+      
+                    <div class="mySlides fade">
+                    <!-- <div class="numbertext">3 / 5</div> -->
+                    <img src="./images/god_of_war.png">
+                    <div class="text"> God Of War </div>
+                    </div>
+    
+                    <div class="mySlides fade">
+                    <!-- <div class="numbertext">4 / 5</div> -->
+                    <img src="./images/day_light2.jpg">
+                    <div class="text"> Day Light 2</div>
+                    </div>
+    
+                    <div class="mySlides fade">
+                    <!-- <div class="numbertext">5 / 5</div> -->
+                    <img src="./images/doom3.jpg">
+                    <div class="text"> Doom 3</div>
+                    </div>
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
 
               
                 
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 <br>
                 
 
@@ -180,372 +260,361 @@
                 </div>
 
             <!-- CATEGORY SECTION -->
-            <div class="game-category">
-                    <!-- SALE-OFFER SECTION -->
-                <div class="sale-offer">
-                    <div class="sale-offer-header">
-                        <h1 class="sale-offer-title "> SALES OFFER</h1>
-                        <div class="prev-next">
-                           <a href=" #">
-                               <i class="fa-solid fa-arrow-left"></i>
-                           </a> 
-
-                           <a href="#">
-                               <i class="fa-solid fa-arrow-right"></i>
-                           </a>
-
-                        </div>
-
-                    </div>
-
-                    <div class="box-sale-offer">
-                        <div class="game-offer">
-                            <a href="">
-                                <img src="./images/shadow-tactics.jpg" alt="">
-
-                                <div class="game-infor">
-                                    <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags">
-                                               -60% 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="old-price"> đ 159,998</p>
-                                            <p class="new-price">đ 63,998</p>
-
-                                        </div>
-
-                                        <div class="game-configuration">
-                                            <i class="fa-brands fa-apple"></i>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-
-                        <div class="game-offer">
-                             <a href="">
-                                <img src="./images/Splinter-cell.png" alt="">
-
-                                <div class="game-infor">
-                                    <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags">
-                                               -60% 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="old-price"> đ 159,998</p>
-                                            <p class="new-price">đ 63,998</p>
-
-                                        </div>
-
-                                        <div class="game-configuration">
-                                            <i class="fa-brands fa-windows"></i>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-offer">
-                             <a href="">
-                                <img src="./images/Wildcat_gun.png" alt="">
-
-                                <div class="game-infor">
-                                    <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags">
-                                               -60% 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="old-price"> đ 159,998</p>
-                                            <p class="new-price">đ 63,998</p>
-
-                                        </div>
-
-                                        <div class="game-configuration">
-                                            <i class="fa-brands fa-playstation"></i>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-offer">
-                             <a href="">
-                                <img src="./images/doom3_offer.png" alt="">
-
-                                <div class="game-infor">
-                                    <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags">
-                                               -60% 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="old-price"> đ 159,998</p>
-                                            <p class="new-price">đ 63,998</p>
-
-                                        </div>
-
-                                        <div class="game-configuration">
-                                            <i class="fa-brands fa-windows"></i>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>  
-
-                        <div class="game-offer">
-                             <a href="">
-                                <img src="./images/giga_bash.png" alt="">
-
-                                <div class="game-infor">
-                                    <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags">
-                                               -60% 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="old-price"> đ 159,998</p>
-                                            <p class="new-price">đ 63,998</p>
-
-                                        </div>
-
-                                        <div class="game-configuration">
-                                            <i class="fa-brands fa-playstation"></i>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- GAME CATEGORY SECTION -->
-                <div class="game-category-items">
+            <div class="game-catagory-container">
+                <div class="game-category">
+                        <!-- SALE-OFFER SECTION -->
                     <div class="sale-offer">
                         <div class="sale-offer-header">
-                            <h1 class="sale-offer-title "> GAME CATEGORY</h1>
+                            <h1 class="sale-offer-title "> SALES OFFER</h1>
+                            <div class="prev-next">
+    
+                            </div>
+    
+                        </div>
                         
-                        </div>
-
-                        <div class="game-category-offer">
-                            <div class="game-item">
-                                <a href="">
-                                    <img src="./images/Adventure.png" alt="">
-    
-                                </a>
-                            </div>
-
-                            <div class="game-item">
-                                <a href="">
-                                    <img src="./images/Rouge-like.png" alt="">
-    
-                                  
-                                    </div>
-    
-                                </a>
-                                
-                                <div class="game-item">
+                        <div class="box-sale-offer-container">
+                            <div class="box-sale-offer">
+                                <div class="game-offer">
                                     <a href="">
-                                        <img src="./images/Casual.png" alt="">
-                                        
-                                        
-    
-                                </a>
+                                        <img src="./images/shadow-tactics.jpg" alt="">
+        
+                                        <div class="game-infor">
+                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+        
+                                            <div class="game-price">
+                                                <div class="game-tags">
+                                                    <p>-60%</p></div>
+        
+                                                <div class="game-discount">
+        
+                                                    <p class="old-price"> đ 159,998</p>
+                                                    <p class="new-price">đ 63,998</p>
+        
+                                                </div>
+        
+                                                <div class="game-configuration">
+                                                    <i class="fa-brands fa-apple"></i>
+                                                </div>
+        
+                                            </div>
+                                        </div>
+        
+                                    </a>
+                                </div>
+        
+        
+                                <div class="game-offer">
+                                     <a href="">
+                                        <img src="./images/Splinter-cell.png" alt="">
+        
+                                        <div class="game-infor">
+                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+        
+                                            <div class="game-price">
+                                                <div class="game-tags">
+                                                       -60% 
+                                                </div>
+        
+                                                <div class="game-discount">
+        
+                                                    <p class="old-price"> đ 159,998</p>
+                                                    <p class="new-price">đ 63,998</p>
+        
+                                                </div>
+        
+                                                <div class="game-configuration">
+                                                    <i class="fa-brands fa-windows"></i>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+        
+                                    </a>
+                                </div>
+        
+                                <div class="game-offer">
+                                     <a href="">
+                                        <img src="./images/Wildcat_gun.png" alt="">
+        
+                                        <div class="game-infor">
+                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+        
+                                            <div class="game-price">
+                                                <div class="game-tags">
+                                                       -60% 
+                                                </div>
+        
+                                                <div class="game-discount">
+        
+                                                    <p class="old-price"> đ 159,998</p>
+                                                    <p class="new-price">đ 63,998</p>
+        
+                                                </div>
+        
+                                                <div class="game-configuration">
+                                                    <i class="fa-brands fa-playstation"></i>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+        
+                                    </a>
+                                </div>
+        
+                                <div class="game-offer">
+                                     <a href="">
+                                        <img src="./images/doom3_offer.png" alt="">
+        
+                                        <div class="game-infor">
+                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+        
+                                            <div class="game-price">
+                                                <div class="game-tags">
+                                                       -60% 
+                                                </div>
+        
+                                                <div class="game-discount">
+        
+                                                    <p class="old-price"> đ 159,998</p>
+                                                    <p class="new-price">đ 63,998</p>
+        
+                                                </div>
+        
+                                                <div class="game-configuration">
+                                                    <i class="fa-brands fa-windows"></i>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+        
+                                    </a>
+                                </div>  
+        
+                                <div class="game-offer">
+                                     <a href="./Doom3.html">
+                                        <img src="./images/giga_bash.png" alt="">
+        
+                                        <div class="game-infor">
+                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+        
+                                            <div class="game-price">
+                                                <div class="game-tags">
+                                                       -60% 
+                                                </div>
+        
+                                                <div class="game-discount">
+        
+                                                    <p class="old-price"> đ 159,998</p>
+                                                    <p class="new-price">đ 63,998</p>
+        
+                                                </div>
+        
+                                                <div class="game-configuration">
+                                                    <i class="fa-brands fa-playstation"></i>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+        
+                                    </a>
+                                </div>
+        
                             </div>
-
-                            <div class="game-item">
+                        </div>
+    
+                    </div>
+    
+                    <!-- GAME CATEGORY SECTION -->
+                    <div class="game-category-items">
+                        <div class="sale-offer">
+                            <div class="sale-offer-header">
+                                <h1 class="sale-offer-title "> GAME CATEGORY</h1>
+                            
+                            </div>
+    
+                            <div class="game-category-offer">
+                                <div class="game-item">
+                                    <a href="#ex1-tab-3">
+                                        <img src="./images/Adventure.png" alt="">
+        
+                                    </a>
+                                </div>
+    
+                                <div class="game-item">
+                                    <a href="#ex1-tab-3">
+                                        <img src="./images/Rouge-like.png" alt="">
+        
+                                      
+                                        </div>
+        
+                                    </a>
+                                    
+                                    <div class="game-item">
+                                        <a href="#ex1-tab-3">
+                                            <img src="./images/Casual.png" alt="">
+                                            
+                                            
+        
+                                    </a>
+                                </div>
+    
+                                <div class="game-item">
+                                    <a href="#ex1-tab-3">
+                                        <img src="./images/Role-playing.png" alt="">
+        
+                                        
+                                        
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                                
+                        </div>
+    
+                    </div>
+                        
+                        
+                    <!-- COMING SOON SECTION -->
+                    <div class="game-coming-soon">
+                        <div class="game-coming-soon-header">
+                            <h1 class="coming-soon-title"> COMING SOON</h1>
+                            <div class="prev-next">
+     
+                             </div>
+                        </div>
+    
+    
+                        <div class="game-box-release">
+                            <div class="game-update">
                                 <a href="">
-                                    <img src="./images/Role-playing.png" alt="">
+                                    <img src="./images/Speed.png" alt="">
     
-                                    
-                                    
+                                    <div class="game-infor-release">
+                                        <h3 class="game-name-release">Need for Speed™ Unbound </h3>
+    
+                                        <div class="game-price">
+                                            <div class="game-tags-release">
+                                                   SOON 
+                                            </div>
+    
+                                            <div class="game-discount">
+    
+                                                <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  1,090,000</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
                                 </a>
                             </div>
-                            
-                            
+    
+                            <div class="game-update">
+                                <a href="">
+                                    <img src="./images/Callisto.png" alt="">
+    
+                                    <div class="game-infor-release">
+                                        <h3 class="game-name-release">The Callistro Protocol </h3>
+    
+                                        <div class="game-price">
+                                            <div class="game-tags-release">
+                                                   SOON 
+                                            </div>
+    
+                                            <div class="game-discount">
+    
+                                                <p class="new-price-release"> ... Update </p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </a>
+                            </div>
+    
+                            <div class="game-update">
+                                <a href="">
+                                    <img src="./images/High_on_life.png" alt="">
+    
+                                    <div class="game-infor-release">
+                                        <h3 class="game-name-release">High On Life </h3>
+    
+                                        <div class="game-price">
+                                            <div class="game-tags-release">
+                                                   SOON 
+                                            </div>
+    
+                                            <div class="game-discount">
+    
+                                                <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  559,000</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </a>
+                            </div>
+    
+                            <div class="game-update">
+                                <a href="">
+                                    <img src="./images/football.png" alt="">
+    
+                                    <div class="game-infor-release">
+                                        <h3 class="game-name-release">Football Manager 2023 </h3>
+    
+                                        <div class="game-price">
+                                            <div class="game-tags-release">
+                                                   SOON 
+                                            </div>
+    
+                                            <div class="game-discount-release">
+               
+                                                <p class="new-price-release">đ 63,998</p>
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </a>
+                            </div>
+    
+                            <div class="game-update">
+                                <a href="">
+                                    <img src="./images/Goat.png" alt="">
+    
+                                    <div class="game-infor-release">
+                                        <h3 class="game-name-release">Goat Simulator 3 </h3>
+    
+                                        <div class="game-price">
+                                            <div class="game-tags-release">
+                                                   SOON 
+                                            </div>
+    
+                                            <div class="game-discount">
+    
+                                                <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  499,916</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+    
+                                </a>
+                            </div>
+    
                         </div>
-                            
+    
+    
+                        
+    
+                        
                     </div>
-
+    
+    
                 </div>
-                    
-                    
-                <!-- COMING SOON SECTION -->
-                <div class="game-coming-soon">
-                    <div class="game-coming-soon-header">
-                        <h1 class="coming-soon-title"> COMING SOON</h1>
-                        <div class="prev-next">
-                            <a href=" #">
-                                <i class="fa-solid fa-arrow-left"></i>
-                            </a> 
- 
-                            <a href="#">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
- 
-                         </div>
-                    </div>
-
-
-                    <div class="game-box-release">
-                        <div class="game-update">
-                            <a href="">
-                                <img src="./images/Speed.png" alt="">
-
-                                <div class="game-infor-release">
-                                    <h3 class="game-name-release">Need for Speed™ Unbound </h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags-release">
-                                               SOON 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  1,090,000</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-update">
-                            <a href="">
-                                <img src="./images/Callisto.png" alt="">
-
-                                <div class="game-infor-release">
-                                    <h3 class="game-name-release">The Callistro Protocol </h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags-release">
-                                               SOON 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="new-price-release"> ... Update </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-update">
-                            <a href="">
-                                <img src="./images/High_on_life.png" alt="">
-
-                                <div class="game-infor-release">
-                                    <h3 class="game-name-release">High On Life </h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags-release">
-                                               SOON 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  559,000</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-update">
-                            <a href="">
-                                <img src="./images/football.png" alt="">
-
-                                <div class="game-infor-release">
-                                    <h3 class="game-name-release">Football Manager 2023 </h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags-release">
-                                               SOON 
-                                        </div>
-
-                                        <div class="game-discount-release">
-           
-                                            <p class="new-price-release">đ 63,998</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                        <div class="game-update">
-                            <a href="">
-                                <img src="./images/Goat.png" alt="">
-
-                                <div class="game-infor-release">
-                                    <h3 class="game-name-release">Goat Simulator 3 </h3>
-
-                                    <div class="game-price">
-                                        <div class="game-tags-release">
-                                               SOON 
-                                        </div>
-
-                                        <div class="game-discount">
-
-                                            <p class="new-price-release"> <span style="text-decoration:underline"> đ</span>  499,916</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-
-                    </div>
-
-
-                    
-
-                    
-                </div>
-
-
             </div>
 
             <!-- GAME-GALLERY-SECTION -->
@@ -595,7 +664,7 @@
                         role="tab"
                         aria-controls="ex1-tabs-3"
                         aria-selected="false"
-                        >Coming Soon </a
+                        >Game Category </a
                     >
                     </li>
                 </ul>
@@ -1056,16 +1125,17 @@
 
 </section>
 
-<!-- FOOTER SECTION -->
+ <!-- FOOTER SECTION -->
 
-<footer>
+    
+ <footer>
     <div class="footer-section">
         <div class="about">
                 <ul class="about-items">
-                    <a href=""><li> Policy |</li></a>
-                    <a href=""><li> Terms of Service |</li></a>
-                    <a href=""><li> Contact Us | </li></a>
-                    <a href=""><li> Jobs Opportunities</li></a>
+                    <a href="./term.html"><li> Policy |</li></a>
+                    <a href="./term.html"><li> Terms of Service |</li></a>
+                    <a href="./contact-us.html"><li> Contact Us | </li></a>
+                    <a href="./help.html"><li>Help</li></a>
                 </ul>
         </div>
 
@@ -1073,9 +1143,9 @@
         <div class="social-media">
             <ul class="social-platform">
 
-                <a href="#"><li><i class="fa-brands fa-square-facebook"></i> </li></a>
-                <a href="#"><li><i class="fa-brands fa-twitter"></i> </li></a>
-                <a href="#"><li><i class="fa-brands fa-youtube"></i> </li></a>
+                <a href="https://www.facebook.com/dejavu354321/"><li><i class="fa-brands fa-square-facebook"></i> </li></a>
+                <a href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><li><i class="fa-brands fa-twitter"></i> </li></a>
+                <a href="https://www.youtube.com/@HuyPhamChannel"><li><i class="fa-brands fa-youtube"></i> </li></a>
 
             </ul>
 
@@ -1089,9 +1159,8 @@
         </p>
     </div>
     
-
+    
 </footer>
-
         <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->

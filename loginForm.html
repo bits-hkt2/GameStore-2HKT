@@ -1,194 +1,216 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
-  <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
-  <link rel="stylesheet" href="./css/loginForm.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>2HKT | GAME STORES ONLINE </title>
+<!-- MDB icon -->
+<link rel="icon" href="./images/Logo (1).png" type="image/x-icon" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<!-- Google Fonts Roboto -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+<!-- MDB -->
+<link rel="stylesheet" href="css/mdb.min.css" />
+<link rel="stylesheet" href="./css/loginForm.css">
 </head>
-  <body style="background:#c709b4f0;  background-image:url('./images/login.png')">
-      <!-- Pills navs -->
-<div style="display:block; margin: 200px 400px; background:#af46a4c5"  class="border border-2 p-5 rounded-3">
-    
-<ul class="nav nav-pills nav-justified mb-3 w-100" id="ex1" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link active"
-      id="tab-login"
-      data-mdb-toggle="pill"
-      href="#pills-login"
-      role="tab"
-      aria-controls="pills-login"
-      aria-selected="true"
-      >Login</a
-    >
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      id="tab-register"
-      data-mdb-toggle="pill"
-      href="#pills-register"
-      role="tab"
-      aria-controls="pills-register"
-      aria-selected="false"
-      >Register</a
-    >
-  </li>
-</ul>
-<!-- Pills navs -->
 
-<!-- Pills content -->
-<div class="tab-content w-100">
-  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-    <form>
-      <div class="text-center mb-3 text-white">
-        <p>Sign in with:</p>
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-facebook-f"></i>
-        </button>
+<body style="background:#c709b4f0;  background-image:url('./images/login.png')">
+    <!-- Pills navs -->
+    <div style="display:block; margin:90px 400px; background:#af46a4c5" class="pill-nav border border-2 p-5 rounded-3">
 
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-google"></i>
-        </button>
+        <ul class="nav nav-pills nav-justified mb-3 w-100" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="log-in nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+                    aria-controls="pills-login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+                    aria-controls="pills-register" aria-selected="false">Register</a>
+            </li>
 
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-twitter"></i>
-        </button>
+            <li class="nav-item " role="presentation">
+                <a class="nav-link" style="color:red" id="tab-admin" data-mdb-toggle="pill" href="#pills-admin"
+                    role="tab" aria-controls="pills-admin" aria-selected="false">Admin</a>
+            </li>
+        </ul>
 
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-github"></i>
-        </button>
-      </div>
+        <!-- Pills navs -->
 
-      <p class="text-center text-white">or:</p>
+        <!-- Pills content -->
+        <div class="tab-content w-100">
+            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
 
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="loginName" class="form-control text-white" />
-        <label class="form-label text-white" for="loginName">Email or username</label>
-      </div>
+                <form action="" role="form">
+                    <div class="text-center mb-3 text-white">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
 
-      <!-- Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" id="loginPassword" class="form-control text-white" />
-        <label class="form-label text-white" for="loginPassword">Password</label>
-      </div>
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-google"></i>
+                        </button>
 
-      <!-- 2 column grid layout -->
-      <div class="row mb-4">
-        <div class="col-md-6 d-flex justify-content-center">
-          <!-- Checkbox -->
-          <div class="form-check mb-3 mb-md-0">
-            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-            <label class="form-check-label text-white" for="loginCheck"> Remember me </label>
-          </div>
+                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+
+                        <button type="button" class="btn-github btn btn-primary btn-floating mx-1">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+
+                    <p class="text-center text-white">or:</p>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="username" id="loginName" class="form-control text-white" name="username"
+                            required />
+                        <label class="form-label text-white" for="loginName">Email or username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="loginPassword" class="form-control text-white" name="password"
+                            required />
+                        <label class="form-label text-white" for="loginPassword">Password</label>
+                    </div>
+
+                    <!-- 2 column grid layout -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                <label class="form-check-label text-white" for="loginCheck"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <a class="text-white text-decoration-underline fs-5" href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4" name="submit"><a class="text-white" href="./Main.html">Log in</a>  </button>
+                    <!-- <button type="submit" class="btn btn-primary btn-block mb-4"> <a href="./Main.html" class="text-white px-5"> Sign in</a></button> -->
+
+                    <!-- REGISTER BUTTONS -->
+                    <div class="text-center text-white">
+                        <p>Not a member? <a class="text-decoration-underline text-black" href="#">Register </a>
+                            <span>
+                                <i class="fas fa-long-arrow-alt-right ms-1 text-black"></i></span>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+                <form>
+
+
+                    <p class="text-center text-white fs-3">Register Form </p>
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="registerName" class="form-control" />
+                        <label class="form-label text-white" for="registerName">Name</label>
+                    </div>
+
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="registerUsername" class="form-control" />
+                        <label class="form-label text-white" for="registerUsername">Username</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="registerEmail" class="form-control" />
+                        <label class="form-label text-white" for="registerEmail">Email</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="registerPassword" class="form-control" />
+                        <label class="form-label text-white" for="registerPassword">Password</label>
+                    </div>
+
+                    <!-- Repeat Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="registerRepeatPassword" class="form-control" />
+                        <label class="form-label text-white" for="registerRepeatPassword">Repeat password</label>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                            aria-describedby="registerCheckHelpText" />
+                        <label class="form-check-label text-white" for="registerCheck">
+                            I have read and agree to the terms
+                        </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-3">Create Account</button>
+                </form>
+            </div>
+
+            <div class="tab-pane fade " id="pills-admin" role="tabpanel" aria-labelledby="tab-admin">
+                <form>
+
+
+                    <p class="text-center text-bg-danger w-75" style="margin-left:11%"> FOR ADMIN ONLY</p>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="loginName" class="form-control text-white" />
+                        <label class="form-label text-white" for="loginName">Email or username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="loginPassword" class="form-control text-white" />
+                        <label class="form-label text-white" for="loginPassword">Password</label>
+                    </div>
+
+                    <!-- 2 column grid layout -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                <label class="form-check-label text-white" for="loginCheck"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <a class="text-white text-decoration-underline fs-5" href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4"><a href="./admin/VendorPage.html"
+                            class="text-white px-5"> Sign in</a></button>
+
+                    <?php require 'xuly.php'; ?>
+                </form>
+            </div>
+
+
         </div>
+    </div>
 
-        <div class="col-md-6 d-flex justify-content-center">
-          <!-- Simple link -->
-          <a class="text-white text-decoration-underline fs-5"  href="#!">Forgot password?</a>
-        </div>
-      </div>
-
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-      <!-- Register buttons -->
-      <div class="text-center text-white">
-        <p>Not a member? <a  class="text-decoration-underline" href="#!">Register</a></p>
-      </div>
-    </form>
-  </div>
-  <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-    <form>
-      <div class="text-center mb-3 text-white">
-        <p>Sign up with:</p>
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-facebook-f"></i>
-        </button>
-
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-google"></i>
-        </button>
-
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-twitter"></i>
-        </button>
-
-        <button type="button" class="btn btn-primary btn-floating mx-1">
-          <i class="fab fa-github"></i>
-        </button>
-      </div>
-
-      <p class="text-center text-white">or:</p>
-
-      <!-- Name input -->
-      <div class="form-outline mb-4">
-        <input type="text" id="registerName" class="form-control" />
-        <label class="form-label text-white" for="registerName">Name</label>
-      </div>
-
-      <!-- Username input -->
-      <div class="form-outline mb-4">
-        <input type="text" id="registerUsername" class="form-control" />
-        <label class="form-label text-white" for="registerUsername">Username</label>
-      </div>
-
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="registerEmail" class="form-control" />
-        <label class="form-label text-white" for="registerEmail">Email</label>
-      </div>
-
-      <!-- Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" id="registerPassword" class="form-control" />
-        <label class="form-label text-white" for="registerPassword">Password</label>
-      </div>
-
-      <!-- Repeat Password input -->
-      <div class="form-outline mb-4">
-        <input type="password" id="registerRepeatPassword" class="form-control" />
-        <label class="form-label text-white" for="registerRepeatPassword">Repeat password</label>
-      </div>
-
-      <!-- Checkbox -->
-      <div class="form-check d-flex justify-content-center mb-4">
-        <input
-          class="form-check-input me-2"
-          type="checkbox"
-          value=""
-          id="registerCheck"
-          checked
-          aria-describedby="registerCheckHelpText"
-        />
-        <label class="form-check-label text-white" for="registerCheck">
-          I have read and agree to the terms
-        </label>
-      </div>
-
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-    </form>
-  </div>
-</div>
-</div>
-<!-- Pills content -->
+    <!-- Pills content -->
 
 
 
-   <!-- MDB -->
-   <script type="text/javascript" src="js/mdb.min.js"></script>
-   <!-- Custom scripts -->
-   <script type="text/javascript"></script>
-  </body>
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+</body>
+
 </html>
