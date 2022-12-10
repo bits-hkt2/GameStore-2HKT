@@ -1,10 +1,14 @@
 <?php
-// session_start();
-// if($_SESSION['vendor-login'] !== true){
-//     header("Location: ./unqualified.php");
-
-// }
+session_start();
+// include ("./auth/admin_session.php");
+    //AUTHENTICATION VERIFYCATION 
+    
+// if (!defined('_INCODE'))
+//     die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+    
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -46,7 +50,7 @@
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/loginForm.html">
+                    <li class="logout"><a href="admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>
@@ -229,12 +233,12 @@
                             </div>
                             <span>$105</span>
                         </li>
-                        <li class="product-items">
-                            <div class="info">
-                                <img src="/images/football.png" alt="">
-                                <p> Football</p>
-                            </div>
-                            <span>$15</span>
+                        <li class=" product-items">
+                                <div class="info">
+                                    <img src="/images/football.png" alt="">
+                                    <p> Football</p>
+                                </div>
+                                <span>$15</span>
                         </li>
                         <li class="product-items">
                             <div class="info">

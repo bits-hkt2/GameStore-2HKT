@@ -1,3 +1,11 @@
+<?php
+    // AUTHENTICATION VERIFYCATION
+if (!defined('_INCODE'))
+    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,8 +64,9 @@
     <div class="support-section">
         <div class="support-header">
             <h3 class="support-title">Still require assistance ?</h3>
-            <p class="support-guide">Wondering unsure how to get help ?. Please <u>click</u> on the boxes below. <span
-                    class="handpoint-image"><i class="fa-solid fa-hand-point-down"></i> </span> </p>
+            <p class="support-guide">Wondering unsure how to get help ?. Please <u>click</u> on the boxes below.
+                <span class="handpoint-image"><i class="fa-solid fa-hand-point-down"></i> </span>
+            </p>
         </div>
 
         <div class="support-box">
@@ -72,7 +81,8 @@
                 <div class="boxes-details">
 
                     <div class="icon-boxes"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                    <p class="boxes-content">To resolve the issue of accurate and suitable, look up the location, order,
+                    <p class="boxes-content">To resolve the issue of accurate and suitable, look up the location,
+                        order,
                         and error system <u>Here</u>.</p>
                 </div>
             </div>
@@ -87,7 +97,8 @@
         </div>
 
         <div class="support-social">
-            <p class="support-guide">We always here to support our beloved sellers. Working time from 6.00 am to 18.00
+            <p class="support-guide">We always here to support our beloved sellers. Working time from 6.00 am to
+                18.00
                 pm. Following us at.</p>
 
             <ul class="social-media">

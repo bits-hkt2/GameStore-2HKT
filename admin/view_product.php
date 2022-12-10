@@ -1,5 +1,10 @@
+<?php 
+    // AUTHENTICATION VERIFYCATION
+if (!defined('_INCODE'))
+    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
 
-
+    
+?>
 
 
 <!DOCTYPE html>
@@ -9,18 +14,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/addProduct.css">
+    <link rel="stylesheet" href="/css/productVendor.css">
     <link rel="icon" href="/images/Logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <title>2HKT| SEND EMAIL PAGE ️🛒️📦📱</title>
+    <title>2HKT| VIEW PRODUCT 🛒️📦📱</title>
 </head>
 
-<style>
-
-</style>
-
 <body>
-
     <!-- NAVBAR SECTION -->
     <div class="container">
         <nav>
@@ -29,7 +29,7 @@
                     <li class="logo">
                         <a class="logo__a" href="#">
                             <img src="/images/Logo (1).png" alt="">
-                            <span class="nav-item">2HKT</span>
+                            <span class="nav-item1">2HKT</span>
                         </a>
                     </li>
                     <li><a href="./VendorPage.html">
@@ -62,42 +62,31 @@
         <!-- MAIN SECTION -->
         <section class="main">
 
-            <!-- FORM SECTION -->
-            <div class="form-container">
-
-                <div class="admin-add-product">
-
-
-                    <form method="POST" enctype="multipart/form-data" action="./insert_product.php">
-                        <h3>Send Email </h3>
-
-
-                        <label for="" class=" label">Name: </label>
-                        <input type="text" placeholder="Enter product name" name="name" class="box" />
-
-                        <label for="" class=" label">Email </label>
-                        <input type="number" placeholder="Enter product price" name="price" class="box"
-                            id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"> <br>
-
-                        <label for="" class="label">Image: </label>
-                        <input type="file" accept="image/png, image/jpeg, image/gif, image/jfif, .csv" id="name"
-                            name=" image" class="box">
-                        <br>
-
-                        <label for="" class=" label label_des">Description: </label> <br>
-                        <textarea name="message" rows="10" cols="84" placeholder="Type here..."></textarea>
-                        <br>
-                        <button type=" submit" value="Submit" name="submit" class="btn">Send</button>
-
-                    </form>
-                
-
-                </div>
-            </div>
         </section>
 
     </div>
+    <!-- VIEW-PRODUCT SECTION  -->
+    <div class="product-display">
+        <table class="product-display-table">
+            <thead>
+                <tr>
+                    <th>Product Image </td>
+                    <th>Product Name </th>
+                    <th>Product Price </th>
+                    <th>Description </th>
+                    <!-- <th colspan="2">Action </th> -->
 
+                </tr>
+            </thead>
+            <tbody>
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
 </body>
 
 </html>

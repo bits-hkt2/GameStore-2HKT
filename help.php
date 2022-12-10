@@ -1,3 +1,11 @@
+<?php
+    // AUTHENTICATION VERIFYCATION
+if (!defined('_INCODE'))
+    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+
+    
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +26,7 @@
 
 <body style="background:#b680c9;">
     <header>
-        <a class="goBack" href="./Main.html">BACK</a>   
+        <a class="goBack" href="./Main.html">BACK</a>
     </header>
     <!-- SUPPORT SECTION -->
     <div class="support-section" id="support-container">
