@@ -59,26 +59,28 @@
 
                         if (!$conn) {
                             echo "Connection failed!";
-                        };
+                        }
+                        ;
 
                         session_start();
-                        
-                        if(isset($_POST['submit'])) {
+
+                        if (isset($_POST['submit'])) {
                             if (isset($_POST['cur_username']) && isset($_POST['new_username']) && isset($_POST['cur_pass']) && isset($_POST['new_pass'])) {
-                                function validate($data){
+                                function validate($data)
+                                {
                                     $data = trim($data);
                                     $data = stripslashes($data);
                                     $data = htmlspecialchars($data);
                                     return $data;
                                 }
-                                
+
                                 $cur_username = validate($_POST['cur_username']);
                                 $new_username = validate($_POST['new_username']);
                                 $cur_pass = validate($_POST['cur_pass']);
                                 $new_pass = validate($_POST['new_pass']);
-    
+
                                 $sql = "SELECT username, password FROM acc_user WHERE username='$cur_username' AND password='$cur_pass'";
-    
+
                                 $result = mysqli_query($conn, $sql);
 
                                 if (mysqli_num_rows($result) === 1) {
@@ -88,30 +90,24 @@
                                                        SET username='$new_username', password='$new_pass'
                                                        WHERE username='$cur_username' AND password='$cur_pass'";
                                         $con = mysqli_query($conn, $update_sql);
-                                    }else{
+                                    } else {
                                         header("Location: index.php?error=Incorect User name or password");
                                         exit();
                                     }
-                                }else{
+                                } else {
                                     header("Location: index.php?error=Incorect User name or password");
                                     exit();
                                 }
-                            
+
                             }
 
-                            // $update_sql = "UPDATE acc_user
-                            //                SET username='$new_username', password='$new_pass'
-                            //                WHERE username='$cur_username' AND password='$cur_pass'";
-                                
-                            // $con = mysqli_query($conn, $update_sql);
-
-                                
                         }
-                        
-                        
+
+
                         ?>
                         <h4 style="color: red;">
-                            <!-- <?php if(isset($_GET['error'])) echo $_GET['error'] ?> -->
+                            <!-- <?php if (isset($_GET['error']))
+                                echo $_GET['error'] ?> -->
                         </h4>
                         <div class="form-outline form-white" style="margin: 16px 0">
                             <input type="text" id="formWhite" class="form-control" maxlength="255" name="cur_username"
