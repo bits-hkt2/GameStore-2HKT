@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  height: 100vh;
+}
+
+.overall_background {
+  width: 100%;
+  height: 1024px;
+  /* background: rgba(181, 128, 200, 1); */
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.name {
+  color: #fff;
+}
+.background_image {
+  width: 100%;
+  height: 934px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  overflow: hidden;
+}
+.content {
+  width: 100%;
+  height: 934px;
+  background: rgba(156, 76, 183, 1);
+  opacity: 0.6000000238418579;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  overflow: hidden;
+}
+.form_create {
+  width: 620px;
+  height: 557px;
+  background: rgba(132, 58, 158, 1);
+  opacity: 1;
+  position: absolute;
+  top: 298px;
+  left: 410px;
+  
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.account_title {
+  width: 158px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 432px;
+  left: 450px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.password_title {
+  width: 158px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 523px;
+  left: 450px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.account_name {
+  width: 540px;
+  height: 42px;
+  background: rgba(85, 85, 85, 1);
+  opacity: 1;
+  position: absolute;
+  top: 460px;
+  left: 450px;
+  overflow: hidden;
+  font-size: 20px;
+  color: #fff;
+}
+
+.email_title {
+  width: 158px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 341px;
+  left: 450px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+
+.email {
+  width: 540px;
+  height: 42px;
+  background: rgba(85, 85, 85, 1);
+  opacity: 1;
+  position: absolute;
+  top: 369px;
+  left: 450px;
+  overflow: hidden;
+  font-size: 20px;
+  color: #fff;
+}
+
+.password {
+  width: 540px;
+  height: 42px;
+  background: rgba(85, 85, 85, 1);
+  opacity: 1;
+  position: absolute;
+  top: 551px;
+  left: 450px;
+  overflow: hidden;
+  font-size: 20px;
+}
+.confirm_password-title {
+  width: 167px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 614px;
+  left: 450px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+
+.repeat_password {
+  width: 540px;
+  height: 42px;
+  background: rgba(85, 85, 85, 1);
+  opacity: 1;
+  position: absolute;
+  top: 642px;
+  left: 450px;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.submit_button {
+  width: 232px;
+  height: 54px;
+  background: rgba(33, 162, 217, 1);
+  opacity: 1;
+  position: absolute;
+  top: 769px;
+  left: 738px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  border: none;
+  font-size: 20px;
+  font-family: Inter;
+  font-weight: bold;
+  color: #fff;
+}
+
+.submit_button:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.cancel_button {
+  width: 232px;
+  height: 54px;
+  position: absolute;
+  top: 769px;
+  left: 475px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 20px;
+  background: #d24444;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  color:#fff;
+}
+
+.cancel_button:hover {
+  background: #c11b1b;
+  cursor: pointer;
+}
+
+.navbar {
+  width: 100%;
+  height: 89px;
+  background: rgba(44, 44, 44, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.icon_navbar {
+    width: 150px;
+    height: 120px;
+    border-radius: 100rem;
+   transform: translateX(40rem);
+   margin-top: -21px;
+}
+
+
+.form_box {
+    width: 460px;
+    height:57px;
+    background: #843A96;
+
+}
+
+.form_box {
+  width: 409px;
+  height:56px;
+  background-color: #843A96;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 250px;
+  left: 418px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 30px;
+  opacity: 1;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px ;
+  border-bottom-left-radius:0px ;
+}
+
+.form_title {
+    font-size: 25px;
+   padding:10px 10px;
+   text-align: center;
+   display: block;
+   top: 15px;
+   left: 50px;
+   text-decoration: underline;
+    
+}
+
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  background: rgba(85, 85, 85, 1);
+  opacity: 1;
+  position: absolute;
+  top: 705px;
+  left: 450px;
+  overflow: hidden;
+}
+.term {
+  width: 479px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 705px;
+  left: 491px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 22px;
+  opacity: 1;
+  text-align: left;
+}

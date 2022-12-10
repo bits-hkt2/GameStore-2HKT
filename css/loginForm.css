@@ -1,0 +1,67 @@
+
+
+@media (max-width: 800px) {
+    .pill-nav{
+        position: absolute;
+        top:0px;
+        left: -170px;
+        height: 100vh;
+        width: 60vw;
+
+    }
+
+}
+
+@media (min-width: 800px) {
+    .pill-nav {
+        width: 50vw;
+        position: absolute;
+        left:-20%;
+    }
+}
+
+
+@media (min-width:580px) and (max-width:694px) {
+    .btn-github {
+        margin-top: 15px;
+    
+    }
+
+    .pill-nav {
+        height: 110vh;
+        position: absolute;
+        left: -40%;
+        width: 50vw;
+    }
+
+}
+
+
+@media (max-width: 580px)  and (min-width:450px){
+    .pill-nav {
+        height: 110vh;
+        position: absolute;
+        left: -55%;
+        width: 50vw;
+    }
+
+
+ }
+
+
+ @media (max-width:450px) and (min-width:355px) {
+        .pill-nav {
+            height: 120vh;
+            position: absolute;
+        left: -85%;
+        width: 60vw;
+        }
+    
+        .btn-github {
+            margin-top: 15px;
+        
+        }
+        .nav-item a {
+            padding:0px 20px;
+        }
+    }      

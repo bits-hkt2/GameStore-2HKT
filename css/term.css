@@ -1,0 +1,25 @@
+.term {
+    margin-bottom: 60px;
+}
+
+.heading {
+    font-size: 50px;
+    font-weight: 600;
+
+}
+
+.date_update {
+    font-size: 25px;
+    font-style: italic;
+}
+
+.title {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.content {
+    color: blue;
+
+
+}
