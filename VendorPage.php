@@ -38,7 +38,7 @@ session_start();
                             <i class="fa-solid fa-house-chimney"></i>
                             <span class="nav-item">Home</span>
                         </a></li>
-                    <li><a href="./insert_product.html">
+                    <li><a href="./admin/insert_product.php">
                             <i class="fa-solid fa-envelope"></i>
                             <span class="nav-item">Send Email</span>
                         </a></li>
