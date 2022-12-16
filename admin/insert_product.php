@@ -1,7 +1,7 @@
 <?php
-    // AUTHENTICATION VERIFYCATION
+// AUTHENTICATION VERIFYCATION
 if (!defined('_INCODE'))
-    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+    die('You are not allowed to access this page, Please comback to Login Page !'); // Kiểm tra xem hằng số có tồn tại hay không 
 
 
 
@@ -76,6 +76,37 @@ if (!defined('_INCODE'))
 
 
                     <form method="POST" enctype="multipart/form-data" action="./insert_product.php">
+                        <?php 
+                        
+                        $name = $_POST["name"];
+                        $email = $_POST["email"];
+                        $message = $_POST["message"];
+                        
+                        use PHPMailer\PHPMailer\PHPMailer;
+                        use PHPMailer\PHPMailer\SMTP;
+                        
+                        $mail = new PHPMAILER(true);
+                        
+                        $mail->isSMTP();
+                        $mail->SMTPAuth = true;
+                        
+                        $mail->Host = "smtp.example.com";
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                        
+                        $mail->Port = 587;
+                        
+                        $mail->Username = "";
+                        $mail->Password = "";
+                        
+                        $mail->setFrom($email, $name);
+                        $mail->addAddress();
+                        
+                        $mail->Subject = "";
+                        $mail->Body = $message;
+                        $mail->send();
+                        echo "Mail sent"; 
+                        
+                        ?>
                         <h3>Send Email </h3>
 
 
@@ -83,13 +114,12 @@ if (!defined('_INCODE'))
                         <input type="text" placeholder="Enter product name" name="name" class="box" />
 
                         <label for="" class=" label">Email </label>
-                        <input type="number" placeholder="Enter product price" name="price" class="box"
-                            id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"> <br>
+                        <input type="number" placeholder="Enter email" name="email" class="box"> <br>
 
-                        <label for="" class="label">Image: </label>
+                        <!-- <label for="" class="label">Image: </label>
                         <input type="file" accept="image/png, image/jpeg, image/gif, image/jfif, .csv" id="name"
                             name=" image" class="box">
-                        <br>
+                        <br> -->
 
                         <label for="" class=" label label_des">Description: </label> <br>
                         <textarea name="message" rows="10" cols="84" placeholder="Type here..."></textarea>
