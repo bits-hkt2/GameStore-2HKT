@@ -78,16 +78,16 @@
                     <form method="POST" enctype="multipart/form-data" action="./insert_product.php">
                         <?php 
                         
-                        $name = $_POST["name"];
-                        $email = $_POST["email"];
-                        $message = $_POST["message"];
+                        // $name = $_POST["name"];
+                        // $email = $_POST["email"];
+                        // $message = $_POST["message"];
                         
                         use PHPMailer\PHPMailer\PHPMailer;
                         use PHPMailer\PHPMailer\Exception;
 
-                        require 'phpmailer/src/Exception.php';
-                        require 'phpmailer/src/PHPMailer.php';
-                        require 'phpmailer/src/SMTP.php';
+                        require '../phpmailer/src/Exception.php';
+                        require '../phpmailer/src/PHPMailer.php';
+                        require '../phpmailer/src/SMTP.php';
 
                         if(isset($_POST["submit"])){
                             $mail = new PHPMailer(true);
@@ -102,12 +102,12 @@
                             
                             $mail->setFrom('khangtgr@gmail.com');
 
-                            $mail->addAddress($email);
+                            $mail->addAddress($_POST["email"]);
                             
                             $mail->isHTML = true;
 
-                            $mail->Subject = '';
-                            $mail->Body = $message;
+                            $mail->Subject = $_POST["name"];
+                            $mail->Body = $_POST["message"];
 
                             $mail->send();
 
@@ -121,11 +121,11 @@
                         <h3>Send Email </h3>
 
 
-                        <label for="" class=" label">Name: </label>
-                        <input type="text" placeholder="Enter name" name="name" class="box" />
+                        <label for="" class=" label">Subject: </label>
+                        <input type="text" placeholder="Enter subject" name="name" class="box" required />
 
                         <label for="" class=" label">Email </label>
-                        <input type="number" placeholder="Enter email" name="email" class="box"> <br>
+                        <input type="email" placeholder="Enter email" name="email" class="box" required> <br>
 
                         <!-- <label for="" class="label">Image: </label>
                         <input type="file" accept="image/png, image/jpeg, image/gif, image/jfif, .csv" id="name"
@@ -133,7 +133,7 @@
                         <br> -->
 
                         <label for="" class=" label label_des">Description: </label> <br>
-                        <textarea name="message" rows="10" cols="84" placeholder="Type here..."></textarea>
+                        <textarea name="message" rows="10" cols="84" placeholder="Type here..." required></textarea>
                         <br>
                         <button type=" submit" value="Submit" name="submit" class="btn">Send</button>
 
