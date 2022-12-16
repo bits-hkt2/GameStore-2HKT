@@ -1,8 +1,9 @@
 <?php
-// AUTHENTICATION VERIFYCATION
-// if (!defined('_INCODE'))
-//     die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
-
+session_start();
+if (!isset($_SESSION['username'])) {
+  
+    header('Location: unqualified.php');
+}
     
 ?>
 
@@ -97,7 +98,7 @@
 
                 <div class="text-center text-md-left">
                     <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-                    <a href="./Main.html" class="btn btn-primary mx-4"
+                    <a href="./Main.php" class="btn btn-primary mx-4"
                         onclick="document.getElementById('contact-form').submit();">BACK</a>
                 </div>
                 <div class="status"></div>

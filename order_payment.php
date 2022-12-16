@@ -1,7 +1,10 @@
 <?php
+session_start();
   // AUTHENTICATION VERIFYCATION\
-if (!defined('_INCODE'))
-  die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không  
+  if (!isset($_SESSION['username'])) {
+  
+    header('Location: unqualified.php');
+}
 
 
 ?>
@@ -32,7 +35,7 @@ if (!defined('_INCODE'))
         <nav class="navigation">
 
             <div class="list-items">
-                <a href="/Main.html">
+                <a href="/Main.php">
                     <img class="web_icon" src="./images/Logo (1).png" alt="">
 
                 </a>
@@ -82,11 +85,11 @@ if (!defined('_INCODE'))
                             SUPPORT
                         </a>
                         <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
-                            <li><a class="dropdown-item text-black" href="./order_payment.html">Orders and Payments</a>
+                            <li><a class="dropdown-item text-black" href="./order_payment.php">Orders and Payments</a>
                             </li>
-                            <li><a class="dropdown-item text-black" href="./account_website.html">Account and
+                            <li><a class="dropdown-item text-black" href="./account_website.php">Account and
                                     Website</a></li>
-                            <li><a class="dropdown-item text-black" href="./refund_policy.html">Refund Policy</a></li>
+                            <li><a class="dropdown-item text-black" href="./refund_policy.php">Refund Policy</a></li>
 
                         </ul>
                     </div>
@@ -108,7 +111,8 @@ if (!defined('_INCODE'))
                             <li><a class="dropdown-item text-black"
                                     href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a>
                             </li>
-                            <li><a class="dropdown-item text-black" href="  ">Youtube</a></li>
+                            <li><a class="dropdown-item text-black"
+                                    href="https://www.youtube.com/@HuyPhamChannel  ">Youtube</a></li>
                         </ul>
                     </div>
 
@@ -126,13 +130,13 @@ if (!defined('_INCODE'))
                     </a>
 
                     <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="./edit_profile.html">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="./loginForm.html">Log out</a></li>
+                        <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="./loginForm.php">Log out</a></li>
                     </ul>
 
 
                     <div class="name-user ">
-                        <h3> 2HKT</h3>
+                        <h3> <?php echo $_SESSION['username']; ?></h3>
                     </div>
                 </div>
 

@@ -1,0 +1,38 @@
+@import "./base.css";
+
+.success-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.success-container i{
+    display: block;
+    color: #e84118;
+    font-size: 230px;
+    margin-bottom: 24px;
+}
+.success-container h1{
+    font-size: 50px;
+    padding: 16px;
+    text-align: center;
+}
+
+.success-container a:hover{
+    color: #e84118;
+
+}
+
+@media screen and (min-width:390px) and (max-width:768px){ 
+    .success-container h1{
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1024px){
+    .success-container h1{
+        font-size: 40px;
+    }
+}

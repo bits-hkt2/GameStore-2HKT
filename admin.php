@@ -29,19 +29,21 @@
         <!-- Pills navs -->
 
         <!-- Pills content -->
+
         <div class="tab-content w-100">
             <div class="tab-pane fade show active" id="pills-admin" role="tabpanel" aria-labelledby="tab-admin">
-                <form action="admin_login.php" method="post">
+                <form action="admin_login.php" role="form" method="POST">
                     <p class="text-center text-bg-danger w-75" style="margin-left:11%"> FOR ADMIN ONLY</p>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="loginName" name="username" class="form-control text-white" />
+                        <input type="text" id="loginName" name="username" class="form-control text-white" required />
                         <label class="form-label text-white" for="loginName"> username</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" name="password" class="form-control text-white" />
+                        <input type="password" id="loginPassword" name="password" class="form-control text-white"
+                            required />
                         <label class="form-label text-white" for="loginPassword">Password</label>
                     </div>
 
@@ -63,7 +65,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-4"> Sign in</button>
+                    <input type="submit" name="submit" class="btn btn-primary btn-block mb-4" value="SIGN IN"> </input>
 
 
                 </form>
@@ -79,7 +81,7 @@
 
 
     <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type=" text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
 </body>

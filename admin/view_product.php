@@ -1,7 +1,7 @@
 <?php 
     // AUTHENTICATION VERIFYCATION
-// if (!defined('_INCODE'))
-//     die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+if (!defined('_INCODE'))
+    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
 
     
 ?>
@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/productVendor.css">
+    <link rel="stylesheet" href="/css/productVendor.css">
     <link rel="icon" href="/images/Logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT| VIEW PRODUCT 🛒️📦📱</title>

@@ -155,7 +155,6 @@ body {
 .cart-items  {
     color:#FFF;
     margin-left: 13%;
-
 }
 
 .cart-items a i {
@@ -967,7 +966,7 @@ body {
 
 .special-offer {   
     width: 100vw;
-    height:80vh;
+    height:95vh;
     background: #c709b4f0;
 
 }
@@ -998,6 +997,7 @@ footer {
     align-items:center;
     padding-left: 9%;
     
+    
 }
 
 .about {
@@ -1019,6 +1019,8 @@ footer {
     margin-left: 10px;
 
 }
+
+
 
 .social-media {
     width: 250px;

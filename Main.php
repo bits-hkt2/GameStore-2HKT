@@ -1,8 +1,14 @@
 <?php
+require_once 'db/db.php';
 include ("./auth/auth_session.php");
-// NOT ALLOWED USERS TO ACCESS DICRECTLY TO THE PAGE
-// if (!defined('_INCODE'))    
-// die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+}
+    
+
+$sql = "SELECT * FROM products WHERE id in(1,2,3,7,8)";
+$result = mysqli_query($con, $sql);
 
 ?>
 
@@ -67,7 +73,7 @@ include ("./auth/auth_session.php");
                         </a>
 
                         <ul class="dropdown-menu  text-center" style="background:#D9D9D9 ;">
-                            <li><a class="dropdown-item text-black" href="./Main.html">Home</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Home</a></li>
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
@@ -84,7 +90,7 @@ include ("./auth/auth_session.php");
                             ABOUT
                         </a>
                         <ul class="dropdown-menu text-center" style="background: #D9D9D9">
-                            <li><a class="dropdown-item text-black" href="./about_us.html">2HKT.com</a></li>
+                            <li><a class="dropdown-item text-black" href="./about_us.php">2HKT.com</a></li>
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
@@ -99,11 +105,11 @@ include ("./auth/auth_session.php");
                             SUPPORT
                         </a>
                         <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
-                            <li><a class="dropdown-item text-black" href="./order_payment.html">Orders and Payments</a>
+                            <li><a class="dropdown-item text-black" href="./order_payment.php">Orders and Payments</a>
                             </li>
-                            <li><a class="dropdown-item text-black" href="./account_website.html">Account and
+                            <li><a class="dropdown-item text-black" href="./account_website.php">Account and
                                     Website</a></li>
-                            <li><a class="dropdown-item text-black" href="./refund_policy.html"">Refund Policy</a></li>
+                            <li><a class="dropdown-item text-black" href="./refund_policy.php"">Refund Policy</a></li>
                
                 </ul>
             </div>
@@ -151,8 +157,8 @@ include ("./auth/auth_session.php");
                     </ul>
 
 
-                    <div class="name-user ">
-                        <h3> 2HKT</h3>
+                    <div class="name-user">
+                        <h3> <?php echo $_SESSION['username']; ?> </h3>
                     </div>
                 </div>
 
@@ -171,15 +177,15 @@ include ("./auth/auth_session.php");
             <!-- SEARCHING SECTON -->
 
             <div class="search">
-                <form action="#">
-                    <button>
+                <form action="search.php" method="post">
+                    <button type="submit" name="submit-search">
                         <i class="fa fa-search" style="font-size: 18px;">
                         </i>
                     </button>
 
-                    <input type="text" placeholder=" Search" name="search">
+                    <input type="text" placeholder=" Search" name="search_name">
 
-                    <span class="cart-items"><a href="./Cart.html"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
+                    <span class="cart-items"><a href="./Cart.php"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
                     </span>
 
                 </form>
@@ -263,6 +269,7 @@ include ("./auth/auth_session.php");
             <div class="game-catagory-container">
                 <div class="game-category">
                     <!-- SALE-OFFER SECTION -->
+
                     <div class="sale-offer">
                         <div class="sale-offer-header">
                             <h1 class="sale-offer-title "> SALES OFFER</h1>
@@ -271,55 +278,28 @@ include ("./auth/auth_session.php");
                             </div>
 
                         </div>
-
                         <div class="box-sale-offer-container">
                             <div class="box-sale-offer">
+                                <?php
+                        foreach ($result as $value) {?>
                                 <div class="game-offer">
-                                    <a href="">
-                                        <img src="./images/shadow-tactics.jpg" alt="">
+                                    <a href="Detail.php?id=<?php echo $value["id"];   ?>">
+                                        <img src="<?php echo $value['image'];?>" alt="">
 
                                         <div class="game-infor">
-                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
+                                            <h3 class="game-name"> <?php echo $value['name_product']; ?></h3>
 
                                             <div class="game-price">
                                                 <div class="game-tags">
-                                                    <p>-60%</p>
+                                                    <p><span> - </span> <?php echo $value['discount'];?> <span> %</span>
+                                                    </p>
                                                 </div>
 
                                                 <div class="game-discount">
 
-                                                    <p class="old-price"> đ 159,998</p>
-                                                    <p class="new-price">đ 63,998</p>
-
-                                                </div>
-
-                                                <div class="game-configuration">
-                                                    <i class="fa-brands fa-apple"></i>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                </div>
-
-
-                                <div class="game-offer">
-                                    <a href="">
-                                        <img src="./images/Splinter-cell.png" alt="">
-
-                                        <div class="game-infor">
-                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                            <div class="game-price">
-                                                <div class="game-tags">
-                                                    -60%
-                                                </div>
-
-                                                <div class="game-discount">
-
-                                                    <p class="old-price"> đ 159,998</p>
-                                                    <p class="new-price">đ 63,998</p>
+                                                    <p class="old-price"> đ <?php echo $value['old price']; ?> </p>
+                                                    <p class="new-price"><?php echo number_format($value['price']); ?>
+                                                    </p>
 
                                                 </div>
 
@@ -332,98 +312,16 @@ include ("./auth/auth_session.php");
 
                                     </a>
                                 </div>
-
-                                <div class="game-offer">
-                                    <a href="">
-                                        <img src="./images/Wildcat_gun.png" alt="">
-
-                                        <div class="game-infor">
-                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                            <div class="game-price">
-                                                <div class="game-tags">
-                                                    -60%
-                                                </div>
-
-                                                <div class="game-discount">
-
-                                                    <p class="old-price"> đ 159,998</p>
-                                                    <p class="new-price">đ 63,998</p>
-
-                                                </div>
-
-                                                <div class="game-configuration">
-                                                    <i class="fa-brands fa-playstation"></i>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                </div>
-
-                                <div class="game-offer">
-                                    <a href="">
-                                        <img src="./images/doom3_offer.png" alt="">
-
-                                        <div class="game-infor">
-                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                            <div class="game-price">
-                                                <div class="game-tags">
-                                                    -60%
-                                                </div>
-
-                                                <div class="game-discount">
-
-                                                    <p class="old-price"> đ 159,998</p>
-                                                    <p class="new-price">đ 63,998</p>
-
-                                                </div>
-
-                                                <div class="game-configuration">
-                                                    <i class="fa-brands fa-windows"></i>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                </div>
-
-                                <div class="game-offer">
-                                    <a href="./Doom3.html">
-                                        <img src="./images/giga_bash.png" alt="">
-
-                                        <div class="game-infor">
-                                            <h3 class="game-name"> Shadow Tactics - Aiko's Choice</h3>
-
-                                            <div class="game-price">
-                                                <div class="game-tags">
-                                                    -60%
-                                                </div>
-
-                                                <div class="game-discount">
-
-                                                    <p class="old-price"> đ 159,998</p>
-                                                    <p class="new-price">đ 63,998</p>
-
-                                                </div>
-
-                                                <div class="game-configuration">
-                                                    <i class="fa-brands fa-playstation"></i>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                </div>
+                                <?php
+                                }
+                         
+                        ?>
 
                             </div>
                         </div>
 
                     </div>
+
 
                     <!-- GAME CATEGORY SECTION -->
                     <div class="game-category-items">
@@ -477,7 +375,7 @@ include ("./auth/auth_session.php");
 
 
                     <!-- COMING SOON SECTION -->
-                    <div class="game-coming-soon">
+                    <div class="game-coming-soon" id="coming-soon">
                         <div class="game-coming-soon-header">
                             <h1 class="coming-soon-title"> COMING SOON</h1>
                             <div class="prev-next">
@@ -488,7 +386,7 @@ include ("./auth/auth_session.php");
 
                         <div class="game-box-release">
                             <div class="game-update">
-                                <a href="">
+                                <a href="#coming-soon">
                                     <img src="./images/Speed.png" alt="">
 
                                     <div class="game-infor-release">
@@ -513,7 +411,7 @@ include ("./auth/auth_session.php");
                             </div>
 
                             <div class="game-update">
-                                <a href="">
+                                <a href="#coming-soon">
                                     <img src="./images/Callisto.png" alt="">
 
                                     <div class="game-infor-release">
@@ -537,7 +435,7 @@ include ("./auth/auth_session.php");
                             </div>
 
                             <div class="game-update">
-                                <a href="">
+                                <a href="#coming-soon">
                                     <img src="./images/High_on_life.png" alt="">
 
                                     <div class="game-infor-release">
@@ -562,7 +460,7 @@ include ("./auth/auth_session.php");
                             </div>
 
                             <div class="game-update">
-                                <a href="">
+                                <a href="#coming-soon">
                                     <img src="./images/football.png" alt="">
 
                                     <div class="game-infor-release">
@@ -585,7 +483,7 @@ include ("./auth/auth_session.php");
                             </div>
 
                             <div class="game-update">
-                                <a href="">
+                                <a href="#coming-soon">
                                     <img src="./images/Goat.png" alt="">
 
                                     <div class="game-infor-release">
@@ -633,7 +531,7 @@ include ("./auth/auth_session.php");
                     <li class="nav-item" role="presentation">
                         <a class="nav-link text-white  fst-italic active" style="background:#e31eeaba; border-bottom-right-radius:10px;
                         border-bottom-left-radius:10px" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1"
-                            role="tab" aria-controls="ex1-tabs-1" aria-selected="true">New Release</a>
+                            role="tab" aria-controls="ex1-tabs-1" aria-selected="true">Comming Soon</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link text-white fst-italic " style="background:#e31eeaba; border-bottom-right-radius:10px;
@@ -653,19 +551,17 @@ include ("./auth/auth_session.php");
                     <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
                         <div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
                             <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
+                                <a class="ripple d-flex w-75" href="#ex1-tabs-1">
+                                    <img alt="example" class="img-fluid rounded-start"
+                                        style="width:260px; height:150px;" src="./images/doors.png" />
                                     <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
                                         <h3>Doors: Paradox</h3>
                                         <div class="configuration-price p-2">
                                             <i class="fab fa-windows fs-3"></i>
 
                                             <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
+
+                                                <div class="new-price-2" style="color:red"> UPDATING...</div>
                                             </div>
 
 
@@ -679,7 +575,7 @@ include ("./auth/auth_session.php");
                             </div>
 
                             <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
+                                <a class="ripple d-flex w-75" href="#ex1-tabs-1">
                                     <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
                                         src="./images/tycoon.png" />
                                     <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
@@ -688,7 +584,8 @@ include ("./auth/auth_session.php");
                                             <i class="fab fa-playstation fs-2"></i>
 
                                             <div class="price-discount">
-                                                <div class="new-price-2 fs-3 " style="letter-spacing:1px ;"> Free </div>
+                                                <div class="new-price-2" style="letter-spacing:1px;color:red ;">
+                                                    UPDATING...</div>
 
                                             </div>
                                         </div>
@@ -708,10 +605,9 @@ include ("./auth/auth_session.php");
                                         <h3>The Chant</h3>
                                         <div class="configuration-price p-2">
                                             <i class="fab fa-windows fs-2"></i>
-
                                             <div class="price-discount">
-                                                <div class="new-price-2 fs-3 " style="letter-spacing:1px ;"> <span
-                                                        style="text-decoration:underline">đ</span> 790,000</div>
+                                                <div class="new-price-2" style="letter-spacing:1px;color:red ;">
+                                                    UPDATING...</div>
 
                                             </div>
                                         </div>
@@ -739,8 +635,8 @@ include ("./auth/auth_session.php");
                                             </div>
 
                                             <div class="price-discount">
-                                                <div class="new-price-2 fs-3 " style="letter-spacing:1px ;"> <span
-                                                        style="text-decoration:underline">đ</span> 420,000</div>
+                                                <div class="new-price-2" style="letter-spacing:1px;color:red ;">
+                                                    UPDATING...</div>
 
                                             </div>
                                         </div>
@@ -760,316 +656,169 @@ include ("./auth/auth_session.php");
                     <!-- TAB-TOP-SELLERS SECTION -->
                     <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                         <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
-
+                            <?php
+                            $sql = "SELECT * FROM products WHERE id in(13,14,15,16)";
+                            $result = mysqli_query($con, $sql);
+                            
+                           foreach ($result as $value) {?>
                             <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
+                                <a class="ripple d-flex w-75" href="Detail.php?id=<?php echo $value["id"];   ?>">
                                     <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
+                                        src="<?php echo $value['image'];?>" />
                                     <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
+                                        <h3><?php echo $value['name_product'];?></h3>
                                         <div class="configuration-price p-2">
                                             <i class="fab fa-windows fs-3"></i>
 
                                             <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
+                                                <div class="game-tags-discount"> <span>-<span> <?php echo
+                                                $value['discount'].'%' ;?>
                                                 </div>
                                                 <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
+                                                        style="text-decoration:underline">đ</span>
+                                                    <?php echo number_format($value['price']); ?></div>
                                             </div>
 
 
                                         </div>
                                         <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
+                                            <p class="type-game"> <?php echo $value['platform'];    ?></p>
                                         </div>
                                     </div>
 
                                 </a>
                             </div>
 
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
+                            <?php 
+                        }
+                        ?>
 
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
-
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
-
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
-
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
-
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
 
                         </div>
+
+
+
                     </div>
+                </div>
 
-                    <!-- TAB-COMING-SOON SECTION -->
-                    <div class="tab-pane fade fs-" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                        <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
+                <!-- TAB-GAME CATEGORY-SECTION -->
+                <div class="tab-pane fade fs-" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                    <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
+                        <?php
+                            $sql = "SELECT * FROM products WHERE id in(9,10,11,12)";
+                            $result = mysqli_query($con, $sql);
+                            
+                           foreach ($result as $value) {?>
+                        <div class="p-4">
+                            <a class="ripple d-flex w-75" href="Detail.php?id=<?php echo $value["id"]; ?>">
+                                <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
+                                    src="<?php echo $value['image']; ?>" />
+                                <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
+                                    <h3><?php echo $value['name_product'];?></h3>
+                                    <div class="configuration-price p-2">
+                                        <i class="fab fa-windows fs-3"></i>
 
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
+                                        <div class="price-discount">
+                                            <div class="game-tags-discount"> <span>-<span> <?php echo
+                                                $value['discount'].'%' ;?>
                                             </div>
+                                            <div class="new-price-2"> <span style="text-decoration:underline;"> đ
+                                                    <?php echo number_format($value['price']); ?></span></div>
+                                        </div>
 
 
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
                                     </div>
-
-                                </a>
-                            </div>
-
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
-
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
+                                    <div>
+                                        <p class="type-game"><?php echo $value['platform'];?></p>
                                     </div>
+                                </div>
 
-                                </a>
-                            </div>
-
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
-
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
-
-                            <div class="p-4">
-                                <a class="ripple d-flex w-75" href="#!">
-                                    <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="./images/doors.png" />
-                                    <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3>Doors: Paradox</h3>
-                                        <div class="configuration-price p-2">
-                                            <i class="fab fa-windows fs-3"></i>
-
-                                            <div class="price-discount">
-                                                <div class="game-tags-discount"> -10%
-                                                </div>
-                                                <div class="new-price-2"> <span
-                                                        style="text-decoration:underline">đ</span> 148,500</div>
-                                            </div>
-
-
-                                        </div>
-                                        <div>
-                                            <p class="type-game"> Puzzle, Multiple Endings, Adventure, Mystery</p>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </div>
-
+                            </a>
                         </div>
+                        <?php 
+                        }
+                        ?>
 
                     </div>
 
                 </div>
 
             </div>
-            <!-- SPECIAL OFFER SECTION -->
-            <div class="special-offer p-4">
-                <div class="special-offer-header  ">
-                    <h1 class="special-offer-title"> SPECIAL OFFER</h1>
-                    <div class=" d-flex justify-content-evenly align-items-center pt-lg-4"
-                        style="width:85vw; padding-left:8%">
-                        <!-- CARD GAME 1 -->
-                        <div class="card px-5" style="width: 60rem; height:450px;
+
+        </div>
+        <!-- SPECIAL OFFER SECTION -->
+        <div class="special-offer p-4" id="spcial_offer>
+            <div class=" special-offer-header ">
+                <h1 class=" special-offer-title"> SPECIAL OFFER</h1>
+            <div class=" d-flex justify-content-evenly align-items-center pt-lg-4" style="width:85vw; padding-left:8%">
+                <!-- CARD GAME 1 -->
+                <div class="card px-5" style="width: 60rem; height:450px;
                         background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
-                            <img src="./images/god-of-war.png" class="card-img-top ms-lg-5 mt-lg-3 h-75 w-75 rounded-1 "
-                                alt="Sunset Over the Sea" />
+                    <img src="./images/god-of-war.png" class="card-img-top ms-lg-5 mt-lg-3 h-75 w-75 rounded-1 "
+                        alt="Sunset Over the Sea" />
 
-                            <div class="card-body px-3 text-center pb-2">
-                                <p class="card-text text-white fs-5 fw-bold pb-1">God of War Ragnarok Collector's
-                                    Edition</p>
-                                <p class="fs-4 text-black fw-bold"> <span class="text-decoration-underline">đ</span>
-                                    6,000,000 </p>
-                            </div>
-
-                        </div>
-
-                        <!-- CARD GAME 2 -->
-                        <div class="card ms-lg-4 " style="width:60rem; height:450px;
-                        background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
-                            <img src="./images/Bayonetta3.png" class="card-img-top ms-lg-5 mt-lg-3 w-75 h-75 rounded"
-                                alt="Sunset Over the Sea" />
-
-                            <div class="card-body px-5 text-center">
-                                <p class="card-text text-white fs-5 fw-bold">Bayonetta 3 Trinity Masquerade Edition></p>
-                                <p class="fs-5 text-black fw-bold"> <span class="text-decoration-underline">đ</span>
-                                    2,550,000 </p>
-                            </div>
-                        </div>
-
-                        <!-- CARD GAME 3 -->
-                        <div class="ms-lg-4">
-                            <div class="card" style="width: 25rem; height:220px;
-                            background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
-                                <div class="px-3">
-                                    <img src="./images/Verminide.png" class="card-img-top pt-3 h-50"
-                                        alt="Sunset Over the Sea" />
-
-                                    <div
-                                        class="card-body h-25 px-3 pb-lg-1  text-center d-flex justify-content-evenly ">
-                                        <p class=" text-white text-center">
-                                            Offer ends 8 Nov at 12:00 am
-                                        </p>
-                                        <div class="w-25 h-75 fw-bold text-center ms-lg-3"
-                                            style="background:rgb(15 225 35);">
-                                            -100%
-                                        </div>
-                                        <p class="card-text text-white fs-6 ms-lg-5 ">
-                                            Free
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pt-3">
-                                <div class="card"
-                                    style="width: 25rem; height:220px;  background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
-                                    <div class="pb-2 px-3">
-                                        <img src="./images/risingstorm2.png" class="card-img-top pt-3 h-50"
-                                            alt="Sunset Over the Sea" />
-                                        <div
-                                            class="card-body h-25 px-3 pb-lg-1  text-center d-flex justify-content-evenly">
-                                            <p class=" text-white text-center">
-                                                Offer ends 8 Nov at 12:00 am
-                                            </p>
-                                            <div class="w-25 h-75 fw-bold text-center ms-lg-3"
-                                                style="background:rgb(15 225 35);">
-                                                -100%
-                                            </div>
-                                            <p class="card-text text-white fs-6 ms-lg-5 ">
-                                                Free
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="card-body px-3 text-center pb-2">
+                        <p class="card-text text-white fs-5 fw-bold pb-1">God of War Ragnarok Collector's
+                            Edition</p>
+                        <p class="fs-5 text-black fw-bold"> <span class="text-decoration-underline text-info">
+                                Release on 15th January 2023</p>
                     </div>
 
                 </div>
 
+                <!-- CARD GAME 2 -->
+                <div class="card ms-lg-4 " style="width:60rem; height:450px;
+                        background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
+                    <img src="./images/Bayonetta3.png" class="card-img-top ms-lg-5 mt-lg-3 w-75 h-75 rounded"
+                        alt="Sunset Over the Sea" />
+
+                    <div class="card-body px-5 text-center">
+                        <p class="card-text text-white fs-5 fw-bold">Bayonetta 3 Trinity Masquerade Edition></p>
+                        <p class="fs-5 text-black fw-bold"> <span class="text-decoration-underline text-info">
+                                Release on 15th January 2023</p>
+                    </div>
+                </div>
+
+                <!-- CARD GAME 3 -->
+                <div class="ms-lg-4">
+                    <?php
+                            $sql = "SELECT * FROM products WHERE id in(18,19)";
+                            $result = mysqli_query($con, $sql);
+                            
+                           foreach ($result as $value) {?>
+
+                    <div class="pt-3">
+                        <div class="card"
+                            style="width: 25rem; height:220px;  background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
+                            <a href="Detail.php?id=<?php echo $value["id"];  ?>" class="pb-2 px-3">
+                                <img src="<?php echo $value['image']; ?>" class="card-img-top pt-3 h-50"
+                                    alt="Sunset Over the Sea" />
+                                <div class="card-body h-25 px-3 pb-lg-1  text-center d-flex justify-content-evenly">
+                                    <p class=" text-white text-center">
+                                        Offer ends 8 Nov at 12:00 am
+                                    </p>
+                                    <div class="w-25 h-75 fw-bold text-center ms-lg-3"
+                                        style="background:rgb(15 225 35);">
+                                        -100%
+                                    </div>
+                                    <p class="card-text text-white fs-6 ms-lg-5 ">
+                                        Free
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <?php 
+                        };
+                        ?>
+                </div>
+
             </div>
+
+        </div>
+
+        </div>
         </div>
 
     </section>
@@ -1081,16 +830,17 @@ include ("./auth/auth_session.php");
         <div class="footer-section">
             <div class="about">
                 <ul class="about-items">
-                    <a href="./term.html">
-                        <li> Policy |</li>
+                    <a href="/term.php">
+                        <li>
+                            Policy |</li>
                     </a>
-                    <a href="./term.html">
+                    <a href="./term.php">
                         <li> Terms of Service |</li>
                     </a>
-                    <a href="./contact-us.html">
+                    <a href="./contact-us.php">
                         <li> Contact Us | </li>
                     </a>
-                    <a href="./help.html">
+                    <a href="./help.php">
                         <li>Help</li>
                     </a>
                 </ul>
@@ -1132,5 +882,7 @@ include ("./auth/auth_session.php");
 
     <script src="./javascript/main.js"></script>
 </body>
+
+</html>
 
 </html>

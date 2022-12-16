@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import 'mixins/banner';
 @include bsBanner(Utilities);
 
@@ -14,20 +13,3 @@
 
 // Utilities
 @import 'utilities/api';
-=======
-@import 'mixins/banner';
-@include bsBanner(Utilities);
-
-// Configuration
-@import 'functions';
-@import 'variables';
-@import 'maps';
-@import 'mixins';
-@import 'utilities';
-
-// Helpers
-@import 'helpers';
-
-// Utilities
-@import 'utilities/api';
->>>>>>> remotes/origin/master

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //
 // Modal styles
 //
@@ -11,17 +10,3 @@
   border: 0;
   box-shadow: var(--#{$prefix}modal-box-shadow);
 }
-=======
-//
-// Modal styles
-//
-
-.modal-content {
-  // scss-docs-start modal-css-vars
-  --#{$prefix}modal-box-shadow: #{$modal-box-shadow};
-  // scss-docs-end modal-css-vars
-
-  border: 0;
-  box-shadow: var(--#{$prefix}modal-box-shadow);
-}
->>>>>>> remotes/origin/master

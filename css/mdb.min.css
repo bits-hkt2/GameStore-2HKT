@@ -188,11 +188,7 @@ h6 {
 }
 p {
   margin-top: 0;
-<<<<<<< HEAD
-  margin-bottom: 1rem;
-=======
 
->>>>>>> remotes/origin/master
 }
 abbr[title] {
   -webkit-text-decoration: underline dotted;
@@ -3306,10 +3302,6 @@ fieldset:disabled .btn {
   --mdb-nav-tabs-link-hover-border-color: #eee #eee #e0e0e0;
   --mdb-nav-tabs-link-active-color: #3b71ca;
   --mdb-nav-tabs-link-active-bg: #fff;
-<<<<<<< HEAD
-  --mdb-nav-tabs-link-active-border-color: #3b71ca;
-=======
->>>>>>> remotes/origin/master
   border-bottom: var(--mdb-nav-tabs-border-width) solid
     var(--mdb-nav-tabs-border-color);
 }

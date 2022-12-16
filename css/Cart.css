@@ -186,7 +186,7 @@ img{
   width: 45vw;
   height: 165px;
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 
 
 }
@@ -310,7 +310,7 @@ height: 163px;
     opacity: .8;
     margin-left: 10px;
     width: 400px;
-    height: 370px;
+    height: 590px;
     border-radius: 10px;
 }
 
@@ -326,6 +326,7 @@ height: 163px;
 }
 .split{
     display: flex;
+    align-items: center;
 }
 .estimated_total{
     color: #f6f0f0;
@@ -394,7 +395,7 @@ height: 163px;
 
 footer {
     background-color: #2C2C2C;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 
 

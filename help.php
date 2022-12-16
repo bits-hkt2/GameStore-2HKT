@@ -1,7 +1,10 @@
 <?php
+session_start();
     // AUTHENTICATION VERIFYCATION
-if (!defined('_INCODE'))
-    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+    if (!isset($_SESSION['username'])) {
+  
+        header('Location: unqualified.php');
+    }
 
     
 ?>
@@ -26,7 +29,7 @@ if (!defined('_INCODE'))
 
 <body style="background:#b680c9;">
     <header>
-        <a class="goBack" href="./Main.html">BACK</a>
+        <a class="goBack" href="./Main.php">BACK</a>
     </header>
     <!-- SUPPORT SECTION -->
     <div class="support-section" id="support-container">

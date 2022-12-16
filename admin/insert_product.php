@@ -1,9 +1,7 @@
 <?php
-// AUTHENTICATION VERIFYCATION
+    // AUTHENTICATION VERIFYCATION
 // if (!defined('_INCODE'))
-//     die('You are not allowed to access this page, Please comback to Login Page !'); // Kiểm tra xem hằng số có tồn tại hay không 
-
-
+//     die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
 
 ?>
 
@@ -16,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/addProduct.css">
+    <link rel="stylesheet" href="/css/addProduct.css">
     <link rel="icon" href="/images/Logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT| SEND EMAIL PAGE ️🛒️📦📱</title>
@@ -76,64 +74,23 @@
 
 
                     <form method="POST" enctype="multipart/form-data" action="./insert_product.php">
-                        <?php 
-                        
-                        // $name = $_POST["name"];
-                        // $email = $_POST["email"];
-                        // $message = $_POST["message"];
-                        
-                        use PHPMailer\PHPMailer\PHPMailer;
-                        use PHPMailer\PHPMailer\Exception;
-
-                        require '../phpmailer/src/Exception.php';
-                        require '../phpmailer/src/PHPMailer.php';
-                        require '../phpmailer/src/SMTP.php';
-
-                        if(isset($_POST["submit"])){
-                            $mail = new PHPMailer(true);
-                            
-                            $mail->isSMTP();
-                            $mail->Host = 'smtp.gmail.com';
-                            $mail->SMTPAuth = true;
-                            $mail->Username = 'khangtgr@gmail.com';
-                            $mail->Password = 'tlfyuusdqikibxxc';
-                            $mail->SMTPSecure = 'ssl';
-                            $mail->Port = 465;
-                            
-                            $mail->setFrom('khangtgr@gmail.com');
-
-                            $mail->addAddress($_POST["email"]);
-                            
-                            $mail->isHTML = true;
-
-                            $mail->Subject = $_POST["name"];
-                            $mail->Body = $_POST["message"];
-
-                            $mail->send();
-
-                            echo "<script>
-                                alert('Sent Successfully');
-                            </script>";
-                            
-                        }
-                        
-                        ?>
                         <h3>Send Email </h3>
 
 
-                        <label for="" class=" label">Subject: </label>
-                        <input type="text" placeholder="Enter subject" name="name" class="box" required />
+                        <label for="" class=" label">Name: </label>
+                        <input type="text" placeholder="Enter product name" name="name" class="box" />
 
                         <label for="" class=" label">Email </label>
-                        <input type="email" placeholder="Enter email" name="email" class="box" required> <br>
+                        <input type="number" placeholder="Enter product price" name="price" class="box"
+                            id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"> <br>
 
-                        <!-- <label for="" class="label">Image: </label>
+                        <label for="" class="label">Image: </label>
                         <input type="file" accept="image/png, image/jpeg, image/gif, image/jfif, .csv" id="name"
                             name=" image" class="box">
-                        <br> -->
+                        <br>
 
                         <label for="" class=" label label_des">Description: </label> <br>
-                        <textarea name="message" rows="10" cols="84" placeholder="Type here..." required></textarea>
+                        <textarea name="message" rows="10" cols="84" placeholder="Type here..."></textarea>
                         <br>
                         <button type=" submit" value="Submit" name="submit" class="btn">Send</button>
 

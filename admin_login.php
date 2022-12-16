@@ -1,6 +1,9 @@
 <?php
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+
+
+
+    $username = $_GET["username"];
+    $password = $_GET["password"];
 
 $con = new mysqli("localhost", "root", "", "2hkt");
 if ($con->connect_error) {
@@ -12,8 +15,8 @@ if ($con->connect_error) {
     $stmt_result = $stmt->get_result();
     if($stmt_result->num_rows > 0) {
         $data  = $stmt_result->fetch_assoc();
-        if($data['password'] == $password) {
-            header('Location: VendorPage.php');
+        if($data["password"] == $password) {
+            header("Location: VendorPage.php");
         } else {
             echo "<h2> Invadlid username or password</h2>";
         }

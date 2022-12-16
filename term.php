@@ -1,8 +1,10 @@
-?<?php 
+<?php
+session_start();
     // AUTHENTICATION VERIFYCATION
-if (!defined('_INCODE'))
-    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
-
+    if (!isset($_SESSION['username'])) {
+  
+        header('Location: unqualified.php');
+    }
 
 ?>
 
@@ -66,7 +68,7 @@ if (!defined('_INCODE'))
 
     <div>
         <button style="background:rgb(222, 81, 198); border:none">
-            <a style="border:none; background:rgb(222, 81, 198); padding: 5px 10px" href="./Main.html">Back</a>
+            <a style="border:none; background:rgb(222, 81, 198); padding: 5px 10px" href="./Main.php">Back</a>
         </button>
     </div>
 

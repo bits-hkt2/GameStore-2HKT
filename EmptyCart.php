@@ -1,7 +1,9 @@
 <?php 
     // AUTHENTICATION VERIFICATION
-if (!defined('_INCODE'))
-    die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+    if (!isset($_SESSION['username'])) {
+  
+        header('Location: unqualified.php');
+    }
 ?>
 
 
