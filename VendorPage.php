@@ -42,7 +42,7 @@ session_start();
                             <i class="fa-solid fa-envelope"></i>
                             <span class="nav-item">Send Email</span>
                         </a></li>
-                    <li><a href="./view_product.html">
+                    <li><a href="./admin/view_product.php">
                             <i class="fa-solid fa-box-open"></i>
                             <span class="nav-item">View Product</span>
                         </a></li>
