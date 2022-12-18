@@ -1,7 +1,10 @@
 <?php
+session_start();
     // AUTHENTICATION VERIFYCATION
-// if (!defined('_INCODE'))
-//     die('You are not allowed to access this page, Please comback to Login Page !');     // Kiểm tra xem hằng số có tồn tại hay không 
+    if (!isset($_SESSION['username'])) {
+  
+        header('Location: unqualified.php');
+    }
 
 
 ?>
@@ -26,28 +29,28 @@
             <div class="nav">
                 <ul>
                     <li class="logo">
-                        <a class="logo__a" href="#">
+                        <a class="logo__a" href="./VendorPage.php">
                             <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
-                    <li><a href="./VendorPage.html">
+                    <li><a href="./VendorPage.php">
                             <i class="fa-solid fa-house-chimney"></i>
                             <span class="nav-item">Home</span>
                         </a></li>
-                    <li><a href="./insert_product.html">
+                    <li><a href="./insert_product.php">
                             <i class="fa-solid fa-envelope"></i>
                             <span class="nav-item">Send Email</span>
                         </a></li>
-                    <li><a href="./view_product.html">
+                    <li><a href="./view_product.php">
                             <i class="fa-solid fa-box-open"></i>
                             <span class="nav-item">View Product</span>
                         </a></li>
-                    <li><a href="./vendorHelp.html">
+                    <li><a href="./vendorHelp.php">
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/loginForm.html">
+                    <li class="logout"><a href="/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>
@@ -102,11 +105,16 @@
                 pm. Following us at.</p>
 
             <ul class="social-media">
-                <li class="social-media-items"><i class="fa-brands fa-facebook"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-linkedin"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-tiktok"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-google"></i></li>
-                <li class="social-media-items"><i class="fa-solid fa-phone"></i></li>
+                <li class="social-media-items"><a href="https://www.facebook.com/dejavu354321/"><i
+                            class="fa-brands fa-facebook"></i></a></li>
+                <li class="social-media-items"><a href="https://www.youtube.com/channel/UCnDCn1E4DZBZxl6vASyg4aw"><i
+                            class="fa-brands fa-youtube"></i></a></li>
+                <li class="social-media-items"><a href="https://www.linkedin.com/in/robert-pahm/"><i
+                            class="fa-brands fa-linkedin"></i></a></li>
+                <li class="social-media-items"><a
+                        href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                            class="fa-brands fa-twitter"></i></a></li>
+
 
             </ul>
         </div>

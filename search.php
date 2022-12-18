@@ -1,5 +1,11 @@
 <?php
-    require_once './db/db.php';
+session_start();
+require_once './db/db.php';
+
+if (!isset($_SESSION['username'])) {
+  
+    header('Location: unqualified.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +70,9 @@
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
-                            <li><a class="dropdown-item text-black" href="#ex1-tab-1">New Release</a></li>
-                            <li><a class="dropdown-item text-black" href="#ex1-tab-2">Top sellers</a></li>
-                            <li><a class="dropdown-item text-black" href="#ex1-tab-3">Game Category </a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">New Release</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Top sellers</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Game Category </a></li>
                         </ul>
 
                     </div>
@@ -77,7 +83,7 @@
                             ABOUT
                         </a>
                         <ul class="dropdown-menu text-center" style="background: #D9D9D9">
-                            <li><a class="dropdown-item text-black" href="./about_us.html">2HKT.com</a></li>
+                            <li><a class="dropdown-item text-black" href="./about_us.php">2HKT.com</a></li>
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
@@ -92,11 +98,11 @@
                             SUPPORT
                         </a>
                         <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
-                            <li><a class="dropdown-item text-black" href="./order_payment.html">Orders and Payments</a>
+                            <li><a class="dropdown-item text-black" href="./order_payment.php">Orders and Payments</a>
                             </li>
-                            <li><a class="dropdown-item text-black" href="./account_website.html">Account and
+                            <li><a class="dropdown-item text-black" href="./account_website.php">Account and
                                     Website</a></li>
-                            <li><a class="dropdown-item text-black" href="./refund_policy.html">Refund Policy</a></li>
+                            <li><a class="dropdown-item text-black" href="./refund_policy.php">Refund Policy</a></li>
 
                         </ul>
                     </div>
@@ -137,13 +143,14 @@
                     </a>
 
                     <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="./edit_profile.html">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="./loginForm.html">Log out</a></li>
+                        <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
                     </ul>
 
 
                     <div class="name-user ">
-                        <h3> 2HKT</h3>
+                        <h3>
+                            <?php echo $_SESSION["username"];   ?></h3>
                     </div>
                 </div>
 
@@ -170,7 +177,7 @@
 
                     <input type="text" name="search" placeholder="Search">
                     <!-- tới đây-->
-                    <span class="cart-items"><a href="./Cart.html"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
+                    <span class="cart-items"><a href="./Cart.php"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
                     </span>
 
                 </form>
@@ -183,28 +190,59 @@
 
             <div class="gamelist-container">
                 <?php
-    if (isset($_POST["submit-search"])) {
-        $search = mysqli_real_escape_string($con, $_POST['search']);
-        $sql = "SELECT * FROM products WHERE name_product LIKE '%$search%' OR name_search LIKE '%$search%' OR 
+                if (isset($_POST["submit-search"])) {
+                    $search = mysqli_real_escape_string($con, $_POST["search"]);
+                    $sql = "SELECT * FROM products WHERE id in(1,2,3,7,8,9,10,11,12,13,14,15,16,18,19) AND name_product LIKE '%$search%' OR name_search LIKE '%$search%' OR 
         price LIKE '%$search%' OR platform LIKE '%$search%'";
-        $result = mysqli_query($con, $sql);
-        $queryResults = mysqli_num_rows($result);
+                    $result = mysqli_query($con, $sql);
+                    $queryResults = mysqli_num_rows($result);
 
-        if ($queryResults > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<a href=\"./Cart.php\">
-                <div class='gamelist-box'>
-                    <img src='{$row['image']}' width:'40%' height:'40%'>
-                    <h3>".$row['name_product']."</h3>
-                    <p>".$row['platform']."</p>
-                    <p>đ ".$row['price']."</p>
-                </div></a>";
-            }
-        } else {
-            echo "There are no results matching your search";
-        }
-    }
-?>
+                    if ($queryResults > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="game-offer">
+                    <a href="Detail.php?id=<?php echo $row["id"]; ?>">
+                        <img src="<?php echo $row['image']; ?>" alt="">
+
+                        <div class="game-infor">
+                            <h3 class="game-name">
+                                <?php echo $row['name_product']; ?>
+                            </h3>
+
+                            <div class="game-price">
+                                <div class="game-tags">
+                                    <p><span> - </span>
+                                        <?php echo $row['discount']; ?> <span> %</span>
+                                    </p>
+                                </div>
+
+                                <div class="game-discount">
+
+                                    <p class="old-price"> đ
+                                        <?php echo $row['old price']; ?>
+                                    </p>
+                                    <p class="new-price">
+                                        <?php echo number_format($row['price']); ?>
+                                    </p>
+
+                                </div>
+
+                                <div class="game-configuration">
+                                    <i class="fa-brands fa-windows"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                <?php
+                        }
+
+                    }
+                } else {
+                    echo "There are no results matching your search";
+                }
+                ?>
             </div>
             <!-- FOOTER SECTION -->
 
@@ -213,16 +251,16 @@
                 <div class="footer-section">
                     <div class="about">
                         <ul class="about-items">
-                            <a href="./term.html">
+                            <a href="./term.php">
                                 <li> Policy |</li>
                             </a>
-                            <a href="./term.html">
+                            <a href="./term.php">
                                 <li> Terms of Service |</li>
                             </a>
-                            <a href="./contact-us.html">
+                            <a href="./contact-us.php">
                                 <li> Contact Us | </li>
                             </a>
-                            <a href="./help.html">
+                            <a href="./help.php">
                                 <li>Help</li>
                             </a>
                         </ul>

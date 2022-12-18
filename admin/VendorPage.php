@@ -1,6 +1,6 @@
 <?php
 session_start();
-// include ("./auth/admin_session.php");
+
     //AUTHENTICATION VERIFYCATION 
     
 // if (!defined('_INCODE'))
@@ -29,24 +29,24 @@ session_start();
             <div class="nav">
                 <ul>
                     <li class="logo">
-                        <a class="logo__a" href="#">
+                        <a class="logo__a" href="./VendorPage.php">
                             <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
-                    <li><a href="./VendorPage.html">
+                    <li><a href="./VendorPage.php">
                             <i class="fa-solid fa-house-chimney"></i>
                             <span class="nav-item">Home</span>
                         </a></li>
-                    <li><a href="./admin/insert_product.php">
+                    <li><a href="./insert_product.php">
                             <i class="fa-solid fa-envelope"></i>
                             <span class="nav-item">Send Email</span>
                         </a></li>
-                    <li><a href="./admin/view_product.php">
+                    <li><a href="./view_product.php">
                             <i class="fa-solid fa-box-open"></i>
                             <span class="nav-item">View Product</span>
                         </a></li>
-                    <li><a href="./vendorHelp.html">
+                    <li><a href="./vendorHelp.php">
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
@@ -69,11 +69,9 @@ session_start();
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
 
-                <h4> Hi, Welcome <span class='user_namephp'></span> to admin page !
+                <h4> Hi, Welcome <span class='user_namephp'><?php echo $_SESSION["username"]; ?></span> to Admin page !
                 </h4>
-                <div class="user__2">
-                    <img onclick="myFunction()" src="/images/Jerry.png" alt="">
-                </div>
+
 
 
                 <div class="dropdown-content" id="dropdown-content">
@@ -310,9 +308,9 @@ session_start();
                             <div class="footer-widget information-widget">
                                 <h2 class="widget-title information-title">Information</h2>
                                 <ul>
-                                    <li><a href="/about_us.html">About Us</a></li>
-                                    <li><a href="/refund_policy.html">Private Policy</a></li>
-                                    <li><a href="/term.html">Term Of Use</a></li>
+                                    <li><a href="/about_us.php">About Us</a></li>
+                                    <li><a href="/refund_policy.php">Private Policy</a></li>
+                                    <li><a href="/term.php">Term Of Use</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -331,7 +329,7 @@ session_start();
                                 </div>
 
                                 <div class="contact-email">
-                                    <i class="fa-solid fa-envelope"></i> Email : contact@anonymous.com
+                                    <i class="fa-solid fa-envelope"></i> Email : khangtgr@gmail.com
                                 </div>
 
                             </div>

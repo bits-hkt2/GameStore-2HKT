@@ -86,7 +86,7 @@
                     <div class="form-outline mb-4">
                         <input type="username" id="loginName" class="form-control text-white" name="username"
                             required />
-                        <label class="form-label text-white" for="loginName">username</label>
+                        <label class="form-label text-white" for="loginName">Username</label>
                     </div>
 
                     <!-- Password input -->

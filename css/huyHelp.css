@@ -401,8 +401,8 @@ padding: 50px 20px;
 }
 
 .social-media-items {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background-color: white;
     font-size: 30px;
     color: blue;
@@ -411,13 +411,20 @@ padding: 50px 20px;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.social-media-items:hover {
+.social-media-items li a i :hover {
     box-shadow: inset 100px 0 0 0 #54b3d6;
     color: white;
 
 }
 .social-media-items i {
     padding: 20px 20px;
+    font-size:35px; 
+    color: blue;
+}
+
+.social-media-items li a {
+    padding: 20px 20px;
+    font-size:35px;
 }
 
 

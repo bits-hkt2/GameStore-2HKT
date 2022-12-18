@@ -346,7 +346,9 @@ if (!isset($_SESSION['username'])) {
 
 
                     <div class="name-user ">
-                        <h3> 2HKT</h3>
+                        <h3>
+                            <?php
+                            echo $_SESSION["username"];     ?> </h3>
                     </div>
                 </div>
 

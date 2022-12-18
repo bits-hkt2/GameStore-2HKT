@@ -11,7 +11,18 @@ if (!isset($_SESSION['username'])) {
 // CHECK OUT FUNCTION 
 if (isset($_POST["order"])) {
     if (empty($_POST["customer"]) || empty($_POST["address"]) || empty($_POST["phone"]) || empty($_POST["email"]) || empty($_POST["total"])) {
-        echo 0;
+        echo "<div class='container' style='position: absolute;
+        top: 62%;
+        left: 55%;  
+        padding: 8px 26px;
+        width: 22%;
+        height: 50px;
+        background:red;
+        color:white;
+        border-radius: 20px;'>
+                    <h3> Nothing items to order !!!</h3>
+        
+        </div>";
     } else {
         $cart = !empty($_SESSION["Cart1"]) ? $_SESSION["Cart1"] : [];
         $customer = $_POST["customer"];

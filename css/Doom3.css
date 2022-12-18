@@ -141,7 +141,7 @@ form {
 
 .return {
 
-    margin: 0 -11%;
+    margin: 0 -6%;
 }
      
 .search button{
@@ -158,9 +158,12 @@ form {
 }
 
 .cart-items  {
-    width:17%;
-    margin-left: 15%;
-    color:#FFF;
+    width: 17%;
+    /* margin-left: 23%; */
+    color: #FFF;
+    position: relative;
+    /* right: 20%; */
+    left: 84%;
     
 }
 
@@ -184,7 +187,7 @@ form {
     display:flex; 
     justify-content: space-between;
     align-items: center;
-    margin: 0 16%;
+    margin: 16px 16%;
 
 }
 

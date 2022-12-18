@@ -15,6 +15,34 @@ body {
     height: 100vh;
     background-color: #D28EEA;
 }
+
+b {
+    display: none;
+}
+
+.box-sale-offer-container {
+    max-width: 1500px;
+    width: 100%;
+}
+.game-offer {
+    width: 220px;
+    height: 450px;
+    gap: 30px;
+    background:#B4ABB7;
+    margin-left: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 4px 5px 2px 2px rgba(0, 0, 0, 0.637);
+}
+
+.game-infor {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #B4ABB7;
+
+}
 .search-results-header{
     padding-bottom: 20px;
     background-color: #b680c9;
@@ -191,22 +219,25 @@ body {
     border: 1px solid #75059C;
 }
 .gamelist-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+     
     background-color: #b680c9;
-    height:450px;
+    /* height:550px; */
 }
 .gamelist-box{
-    background-color: #b680c9;
+    background-color: #a933caab;
     border: 5px solid #e5c0c6;
+    display: inline-block;
+   margin: 20px 40px;
 }
 footer {
+   
     background-color: #2C2C2C;
+    margin-top: 30%;
 }
 
 .icon {
     display: none;
+    color:rgb(10, 226, 10);
 }
 
 .footer-section {
@@ -290,4 +321,87 @@ footer {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 4px 5px 2px 2px rgba(0, 0, 0, 0.637);
+    display: inline-block;
+    margin-left: 9%;
+    margin-bottom:40px;
+}
+
+.game-infor {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #B4ABB7;
+
+}
+
+.game-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color:#000000;
+}
+
+.game-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1px;
+}
+
+.game-tags {
+    width: 75px;
+    height: 34px;
+    background: rgb(49, 251, 4);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
+    color:#741693;
+    font-weight: 700;
+    font-size:20px;
+}
+
+.game-discount {
+    margin-right: 18%;
+
+}
+
+.old-price {
+    font-size:15px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration:line-through;
+    color:#555555;
+
+}
+
+.new-price {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    color:#000000;
+
+}
+
+.game-configuration {
+    width: 30px;
+    height: 25px;
+    font-size: 25px;
+    color:#000000;
+}
+
+.box-sale-offer {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    object-fit: contain;
+}
+
+.game-offer a img {
+    width: 100%;
+    height: calc(100% * 360/450);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }

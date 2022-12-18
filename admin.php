@@ -1,3 +1,31 @@
+<?php
+    require('./db/db.php');
+    session_start();
+   
+    // When form submitted, check and create user session.
+    if (isset($_POST['username'])) {
+        $username = stripslashes($_REQUEST['username']);    // removes backslashes
+        $username = mysqli_real_escape_string($con, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `admin` WHERE username='$username'
+                     AND password='$password'";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect to user dashboard page
+            header("Location: ./admin/VendorPage.php");
+        } else {
+                echo "<div class='form'>
+                    <h3>Incorrect Username/password.</h3><br/>
+                    <p class='link'>Click here to <a href='admin.php'>Login</a> again.</p>
+                    </div>";
+        }
+    } else {
+?>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8" />
@@ -32,12 +60,12 @@
 
         <div class="tab-content w-100">
             <div class="tab-pane fade show active" id="pills-admin" role="tabpanel" aria-labelledby="tab-admin">
-                <form action="admin_login.php" role="form" method="POST">
+                <form action="" role="form" method="POST">
                     <p class="text-center text-bg-danger w-75" style="margin-left:11%"> FOR ADMIN ONLY</p>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="loginName" name="username" class="form-control text-white" required />
-                        <label class="form-label text-white" for="loginName"> username</label>
+                        <label class="form-label text-white" for="loginName"> Username</label>
                     </div>
 
                     <!-- Password input -->
@@ -74,7 +102,9 @@
 
     </div>
 
+    <?php   }
 
+?>
 
     <!-- Pills content -->
 

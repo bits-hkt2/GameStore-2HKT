@@ -15,6 +15,16 @@ body {
   background: rgb(242, 237, 237);
 }
 
+td {
+
+  padding: 60px;
+}
+
+.underline-2 {
+  width: 90%;
+  border: 1px solid #843A9E;
+  margin-top: 5px;
+}
 table {
 
   width: 79%;

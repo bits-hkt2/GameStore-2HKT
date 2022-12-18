@@ -1,11 +1,11 @@
 <?php
 require_once 'db/db.php';
-include ("./auth/auth_session.php");
+include("./auth/auth_session.php");
 
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
 }
-    
+
 
 $sql = "SELECT * FROM products WHERE id in(1,2,3,7,8)";
 $result = mysqli_query($con, $sql);
@@ -158,7 +158,9 @@ $result = mysqli_query($con, $sql);
 
 
                     <div class="name-user">
-                        <h3> <?php echo $_SESSION['username']; ?> </h3>
+                        <h3>
+                            <?php echo $_SESSION['username']; ?>
+                        </h3>
                     </div>
                 </div>
 
@@ -177,14 +179,15 @@ $result = mysqli_query($con, $sql);
             <!-- SEARCHING SECTON -->
 
             <div class="search">
-                <form action="search.php" method="post">
+                <form action="search.php" method="POST">
                     <button type="submit" name="submit-search">
-                        <i class="fa fa-search" style="font-size: 18px;">
+                        <i class="fa fa-search" style="font-size: 18px; ">
                         </i>
                     </button>
 
-                    <input type="text" placeholder=" Search" name="search_name">
-
+                    <input type="text" placeholder="Click search icon to looking more detail ..." name="search">
+                    <!-- <h6 style="color: white">
+                        <---LOOKING FOR MORE GAME ? </h6> -->
                     <span class="cart-items"><a href="./Cart.php"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
                     </span>
 
@@ -281,24 +284,30 @@ $result = mysqli_query($con, $sql);
                         <div class="box-sale-offer-container">
                             <div class="box-sale-offer">
                                 <?php
-                        foreach ($result as $value) {?>
+                                foreach ($result as $value) { ?>
                                 <div class="game-offer">
-                                    <a href="Detail.php?id=<?php echo $value["id"];   ?>">
-                                        <img src="<?php echo $value['image'];?>" alt="">
+                                    <a href="Detail.php?id=<?php echo $value["id"]; ?>">
+                                        <img src="<?php echo $value['image']; ?>" alt="">
 
                                         <div class="game-infor">
-                                            <h3 class="game-name"> <?php echo $value['name_product']; ?></h3>
+                                            <h3 class="game-name">
+                                                <?php echo $value['name_product']; ?>
+                                            </h3>
 
                                             <div class="game-price">
                                                 <div class="game-tags">
-                                                    <p><span> - </span> <?php echo $value['discount'];?> <span> %</span>
+                                                    <p><span> - </span>
+                                                        <?php echo $value['discount']; ?> <span> %</span>
                                                     </p>
                                                 </div>
 
                                                 <div class="game-discount">
 
-                                                    <p class="old-price"> đ <?php echo $value['old price']; ?> </p>
-                                                    <p class="new-price"><?php echo number_format($value['price']); ?>
+                                                    <p class="old-price"> đ
+                                                        <?php echo $value['old price']; ?>
+                                                    </p>
+                                                    <p class="new-price">
+                                                        <?php echo number_format($value['price']); ?>
                                                     </p>
 
                                                 </div>
@@ -314,8 +323,8 @@ $result = mysqli_query($con, $sql);
                                 </div>
                                 <?php
                                 }
-                         
-                        ?>
+
+                                ?>
 
                             </div>
                         </div>
@@ -659,39 +668,45 @@ $result = mysqli_query($con, $sql);
                             <?php
                             $sql = "SELECT * FROM products WHERE id in(13,14,15,16)";
                             $result = mysqli_query($con, $sql);
-                            
-                           foreach ($result as $value) {?>
+
+                            foreach ($result as $value) { ?>
                             <div class="p-4">
-                                <a class="ripple d-flex w-75" href="Detail.php?id=<?php echo $value["id"];   ?>">
+                                <a class="ripple d-flex w-75" href="Detail.php?id=<?php echo $value["id"]; ?>">
                                     <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
-                                        src="<?php echo $value['image'];?>" />
+                                        src="<?php echo $value['image']; ?>" />
                                     <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                        <h3><?php echo $value['name_product'];?></h3>
+                                        <h3>
+                                            <?php echo $value['name_product']; ?>
+                                        </h3>
                                         <div class="configuration-price p-2">
                                             <i class="fab fa-windows fs-3"></i>
 
                                             <div class="price-discount">
-                                                <div class="game-tags-discount"> <span>-<span> <?php echo
-                                                $value['discount'].'%' ;?>
+                                                <div class="game-tags-discount"> <span>-<span>
+                                                            <?php echo
+                                    $value['discount'] . '%'; ?>
                                                 </div>
                                                 <div class="new-price-2"> <span
                                                         style="text-decoration:underline">đ</span>
-                                                    <?php echo number_format($value['price']); ?></div>
+                                                    <?php echo number_format($value['price']); ?>
+                                                </div>
                                             </div>
 
 
                                         </div>
                                         <div>
-                                            <p class="type-game"> <?php echo $value['platform'];    ?></p>
+                                            <p class="type-game">
+                                                <?php echo $value['platform']; ?>
+                                            </p>
                                         </div>
                                     </div>
 
                                 </a>
                             </div>
 
-                            <?php 
-                        }
-                        ?>
+                            <?php
+                            }
+                            ?>
 
 
                         </div>
@@ -705,37 +720,43 @@ $result = mysqli_query($con, $sql);
                 <div class="tab-pane fade fs-" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
                     <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
                         <?php
-                            $sql = "SELECT * FROM products WHERE id in(9,10,11,12)";
-                            $result = mysqli_query($con, $sql);
-                            
-                           foreach ($result as $value) {?>
+                        $sql = "SELECT * FROM products WHERE id in(9,10,11,12)";
+                        $result = mysqli_query($con, $sql);
+
+                        foreach ($result as $value) { ?>
                         <div class="p-4">
                             <a class="ripple d-flex w-75" href="Detail.php?id=<?php echo $value["id"]; ?>">
                                 <img alt="example" class="img-fluid rounded-start" style="width:260px; height:150px"
                                     src="<?php echo $value['image']; ?>" />
                                 <div class="w-75 p-2 text-white rounded-end" style="background-color: #9639d4da">
-                                    <h3><?php echo $value['name_product'];?></h3>
+                                    <h3>
+                                        <?php echo $value['name_product']; ?>
+                                    </h3>
                                     <div class="configuration-price p-2">
                                         <i class="fab fa-windows fs-3"></i>
 
                                         <div class="price-discount">
-                                            <div class="game-tags-discount"> <span>-<span> <?php echo
-                                                $value['discount'].'%' ;?>
+                                            <div class="game-tags-discount"> <span>-<span>
+                                                        <?php echo
+                                $value['discount'] . '%'; ?>
                                             </div>
                                             <div class="new-price-2"> <span style="text-decoration:underline;"> đ
-                                                    <?php echo number_format($value['price']); ?></span></div>
+                                                    <?php echo number_format($value['price']); ?>
+                                                </span></div>
                                         </div>
 
 
                                     </div>
                                     <div>
-                                        <p class="type-game"><?php echo $value['platform'];?></p>
+                                        <p class="type-game">
+                                            <?php echo $value['platform']; ?>
+                                        </p>
                                     </div>
                                 </div>
 
                             </a>
                         </div>
-                        <?php 
+                        <?php
                         }
                         ?>
 
@@ -782,15 +803,15 @@ $result = mysqli_query($con, $sql);
                 <!-- CARD GAME 3 -->
                 <div class="ms-lg-4">
                     <?php
-                            $sql = "SELECT * FROM products WHERE id in(18,19)";
-                            $result = mysqli_query($con, $sql);
-                            
-                           foreach ($result as $value) {?>
+                    $sql = "SELECT * FROM products WHERE id in(18,19)";
+                    $result = mysqli_query($con, $sql);
+
+                    foreach ($result as $value) { ?>
 
                     <div class="pt-3">
                         <div class="card"
                             style="width: 25rem; height:220px;  background: linear-gradient(to right, rgba(106,17,203,0.5), rgba(37,117,252,0.5))">
-                            <a href="Detail.php?id=<?php echo $value["id"];  ?>" class="pb-2 px-3">
+                            <a href="Detail.php?id=<?php echo $value["id"]; ?>" class="pb-2 px-3">
                                 <img src="<?php echo $value['image']; ?>" class="card-img-top pt-3 h-50"
                                     alt="Sunset Over the Sea" />
                                 <div class="card-body h-25 px-3 pb-lg-1  text-center d-flex justify-content-evenly">
@@ -809,9 +830,10 @@ $result = mysqli_query($con, $sql);
                         </div>
                     </div>
 
-                    <?php 
-                        };
-                        ?>
+                    <?php
+                    }
+                    ;
+                    ?>
                 </div>
 
             </div>

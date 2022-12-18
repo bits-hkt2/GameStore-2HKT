@@ -177,15 +177,20 @@ if (!isset($_SESSION['username'])) {
             <div class="game">
                 <?php 
                 foreach ($result as $value)  {?>
-
+                <span class="cart-items" style="font-size:15px;"> <a href="./Cart.php"> <i
+                            class="fa-solid fa-cart-shopping fa-3x"></i> </a>
+                </span>
                 <div class="game-title">
                     <h2><?php echo $value['name_product']; ?></h2>
 
                     <div class="return">
 
+
+
                         <a href="./Main.php" class="button-back">
                             Back
                         </a>
+
                     </div>
 
 
