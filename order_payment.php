@@ -53,13 +53,13 @@ session_start();
                         </a>
 
                         <ul class="dropdown-menu  text-center" style="background:#D9D9D9 ;">
-                            <li><a class="dropdown-item text-black" href="./Main.html">Home</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Home</a></li>
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
-                            <li><a class="dropdown-item text-black" href="./Main.html">New Release</a></li>
-                            <li><a class="dropdown-item text-black" href="./Main.html">Top sellers</a></li>
-                            <li><a class="dropdown-item text-black" href="./Main.html">Game Category </a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">New Release</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Top sellers</a></li>
+                            <li><a class="dropdown-item text-black" href="./Main.php">Game Category </a></li>
                         </ul>
 
                     </div>
@@ -151,8 +151,8 @@ session_start();
     <nav>
         <ul class="breadcrumb">
             <li><a href="#">Support Center</a></li>
-            <li><a href="orders_payments.html">Orders & Payments</a></li>
-            <li><a href="article_list.html">Order's support</a></li>
+            <li><a href="orders_payment.php">Orders & Payments</a></li>
+
 
         </ul>
     </nav>

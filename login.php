@@ -1,6 +1,12 @@
 <?php
     require('./db/db.php');
     session_start();
+    function function_alert($message) {
+      
+        // Display the alert box 
+        echo "<script>alert('$message');</script>";
+        
+    }
    
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {
@@ -15,15 +21,17 @@
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
             $_SESSION['username'] = $username;
-            // Redirect to user dashboard page
+            // Redirect to user dashboard page        
             header("Location: Main.php");
+            
         } else {
-                echo "<div class='form'>
-                    <h3>Incorrect Username/password.</h3><br/>
-                    <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
-                    </div>";
-        }
+            echo '<script language="javascript">';
+            echo 'alert("LOGIN UNSUCCESSFULL, PLEASE CHECK EMAIL OR PASSWORD");';
+            echo 'window.location = "login.php"';
+            echo '</script>';
+        } 
     } else {
+        
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +50,59 @@
 <link rel="stylesheet" href="css/mdb.min.css" />
 <link rel="stylesheet" href="./css/loginForm.css">
 </head>
+<style>
+.div {
+    width: 400px;
+    height: 300px;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22%;
+    right: 14%;
+}
 
-<body style="background:#c709b4f0;  background-image:url('./images/login.png')">
+.div::before {
+    content: "";
+    background-image: conic-gradient(#ef00ff 20deg, transparent 120deg);
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+}
+
+.div::after {
+
+    width: 300px;
+    height: 190px;
+
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0052;
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+</style>
+
+<body style="background:#c709b4f0;  background-image:url('./images/login.png'); width:1400px;">
     <!-- Pills navs -->
     <div style="display:block; margin:90px 400px; background:#af46a4c5" class="pill-nav border border-2 p-5 rounded-3">
 
@@ -101,7 +160,8 @@
                         <div class="col-md-6 d-flex justify-content-center">
                             <!-- Checkbox -->
                             <div class="form-check mb-3 mb-md-0">
-                                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                <input class="form-check-input" name="remember" type="checkbox" value=""
+                                    id="loginCheck" />
                                 <label class="form-check-label text-white" for="loginCheck"> Remember me
                                 </label>
                             </div>
@@ -134,15 +194,26 @@
     <?php
     }
     ?>
-
     <!-- Pills content -->
 
 
+    <div class="div">
+        <img style="width:300px; height:150px" src="./images/Logo.svg" alt="">
+        <h4 style="line-height: 40px;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    letter-spacing: 1px;">Welcome to 2HKT !</h4>
+
+    </div>
 
     <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type=" text/javascript" src="js/mdb.min.js">
+    </script>
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+
+    </script>
 </body>
 
 </html>

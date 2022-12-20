@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once 'db/db.php';
+$user_name = $_SESSION['user_name'];
 
 if (!isset($_SESSION['username'])) {
   
@@ -8,7 +9,8 @@ if (!isset($_SESSION['username'])) {
 }
     
 $id = $_GET["id"];
-$sql = "SELECT * FROM products WHERE id = $id";
+
+$sql = "SELECT * FROM products WHERE id = $id ";
 $result = mysqli_query($con, $sql);
  
 $product_cart = array();

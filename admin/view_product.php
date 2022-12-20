@@ -1,11 +1,22 @@
 <?php 
 session_start();
+
     // AUTHENTICATION VERIFYCATION
     if (!isset($_SESSION['username'])) {
   
         header('Location: unqualified.php');
     }
     
+$con = mysqli_connect('localhost','root','','2hkt');
+
+
+// Check connection
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL :". mysqli_connect_error();
+}
+   
+    $sql = "SELECT `id`, `id_product`, `quantity`, `name_product`, `customer_name`, `price_product`, `customer_email`, `customer_address`, `id_invoice`, COUNT(*) FROM `invoice_detail` GROUP BY `id_invoice`";
+    $result = mysqli_query($con, $sql);   
 ?>
 
 
@@ -57,7 +68,7 @@ session_start();
                         </a></li>
 
                 </ul>
-                <p class="copyright">&copy; Copyright 2022 - Huyzada.com</p>
+                <p class="copyright">&copy; Copyright 2022 - 2HKT.com</p>
             </div>
 
         </nav>
@@ -74,38 +85,50 @@ session_start();
             <thead>
                 <tr>
 
+                    <th>Product ID </th>
                     <th>Product Name </th>
-                    <th>Product Image</th>
                     <th>Customer Name </th>
-                    <th>Product Price </th>
+                    <th>Total Order</th>
                     <th>Email </th>
                     <th>Address</th>
+                    <th>Action</th>
 
                 </tr>
+                <?php 
+                foreach ($result as $value)  {?>
 
-                <tr>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                </tr>
-                <tr>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                    <td>sdfsdsdfgsd</td>
-                </tr>
+                <tr">
+                    <td
+                        style="border-bottom: 2px solid black; border-left:1px solid black;border-right:1px solid black">
+                        <?php echo $value["id_invoice"];?></td>
+                    <td style="border-bottom: 2px solid black; border-right:1px solid black">
+                        <?php echo $value["name_product"];?> </td>
+                    <td style="border-bottom: 2px solid black; border-right:1px solid black">
+                        <?php echo $value["customer_name"];?> </td>
+                    <td style="border-bottom: 2px solid black; border-right:1px solid black">
+                        <?php echo $value["price_product"].' <span style="text-decoration:underline">đ</span>';  ?>
+                    </td>
+                    <td style="border-bottom: 2px solid black;border-right:1px solid black">
+                        <?php echo $value["customer_email"];   ?> </td>
+                    <td style="border-bottom: 2px solid black;border-right:1px solid black">
+                        <?php echo $value["customer_address"];  ?> </td>
+                    <td style="border-bottom: 2px solid black; border-right:1px solid black;">
+
+                        <a href="remove_order.php?remove=<?php echo $value["id"]; ?>" class="btn-delete"> Remove </a>
+
+                    </td>
+                    </tr>
 
 
+                    <?php 
+                }
+                ?>
             </thead>
 
         </table>
 
     </div>
+
 </body>
 
 </html>

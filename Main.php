@@ -2,6 +2,7 @@
 require_once 'db/db.php';
 include("./auth/auth_session.php");
 
+
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
 }
@@ -55,7 +56,7 @@ $result = mysqli_query($con, $sql);
         <nav class="navigation">
 
             <div class="list-items">
-                <a href="/Main.html">
+                <a href="/Main.php">
                     <img class="web_icon" src="./images/Logo (1).png" alt="">
 
                 </a>
@@ -157,7 +158,7 @@ $result = mysqli_query($con, $sql);
                     </ul>
 
 
-                    <div class="name-user">
+                    <div class=" name-user">
                         <h3>
                             <?php echo $_SESSION['username']; ?>
                         </h3>
@@ -741,8 +742,8 @@ $result = mysqli_query($con, $sql);
                                 $value['discount'] . '%'; ?>
                                             </div>
                                             <div class="new-price-2"> <span style="text-decoration:underline;"> đ
-                                                    <?php echo number_format($value['price']); ?>
-                                                </span></div>
+
+                                                </span> <?php echo number_format($value['price']); ?></div>
                                         </div>
 
 

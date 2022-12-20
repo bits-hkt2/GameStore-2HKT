@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 
 // CHECK OUT FUNCTION 
 if (isset($_POST["order"])) {
-    if (empty($_POST["customer"]) || empty($_POST["address"]) || empty($_POST["phone"]) || empty($_POST["email"]) || empty($_POST["total"])) {
+    if (empty($_POST["customer"]) || empty($_POST["address"]) || empty($_POST["phone"]) || empty($_POST["email"]) || empty($_POST["total"]) || empty($_POST["name_product"])) {
         echo "<div class='container' style='position: absolute;
         top: 62%;
         left: 55%;  
@@ -30,7 +30,8 @@ if (isset($_POST["order"])) {
         $phone = $_POST["phone"];
         $email = $_POST["email"];
         $total = $_POST["total"];
-        $sql = "INSERT INTO `invoice` (`customer`,`address`,`phone`,`email`,`total`,`status`) VALUES ('$customer','$address','$phone','$email','$total', 2)";
+        $name_product = $_POST["name_product"];
+        $sql = "INSERT INTO `invoice` (`customer`,`address`,`phone`,`email`,`total`,`status`,`product_name`) VALUES ('$customer','$address','$phone','$email','$total', 2,'$name_product')";
 
   
         $result_order = mysqli_query($con, $sql);
@@ -45,9 +46,13 @@ if (isset($_POST["order"])) {
         foreach ($cart as $value) {
             $id = $value["id"];
             $sl = $value["Quantity"];
+            $name_product = $_POST["name_product"];
+            $customer_name = $_POST["customer"];
+            $customer_price = $_POST["total"];
+            $customer_email = $_POST["email"];
+            $customer_address = $_POST["address"];
             
-            $order_detail = "INSERT INTO `invoice_detail`(`id_product`,`quantity`,`id_invoice`) VALUES ('$id','$sl','$id_order')";
-
+            $order_detail = "INSERT INTO `invoice_detail`(`id_product`, `quantity`, `name_product`, `customer_name`, `price_product`, `customer_email`, `customer_address`, `id_invoice`) VALUES ('$id', '$sl', '$name_product', '$customer_name', '$customer_price', '$customer_email', '$customer_address', '$id_order')";
     
             $result_detail = mysqli_query($con, $order_detail);
         }
@@ -78,7 +83,7 @@ if (isset($_POST["order"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/Logo.svg">
+    <link rel="icon" href="./images/Logo (1).png">
     <!-- FONTAWESOME ICONS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- INTER FONT -->
@@ -261,7 +266,8 @@ if (isset($_POST["order"])) {
                                 <div class="game-details">
                                     <div class="game-detail">
 
-                                        <h3 class="game-title"><?php echo $value['name_product']; ?></h3>
+                                        <h3 name="name_product" class=" game-title">
+                                            <?php echo $value['name_product']; ?></h3>
                                         <i class="fa-brands fa-windows"
                                             style="font-size:20px;color:white;margin-top:10px;"></i>
                                         <p class="game-price"><span style="text-decoration:underline">đ</span>
@@ -344,6 +350,13 @@ if (isset($_POST["order"])) {
                                 <label for="" class="subtotal"> Email </label>
                                 <input type="email" style="height:30px;border-radius:10px" name="email"
                                     placeholder="Enter your email...">
+
+                            </div>
+
+                            <div class="split">
+                                <label for="" class="subtotal"> Game Name</label>
+                                <input type="text" style="height:30px;border-radius:10px" name="name_product"
+                                    placeholder="Enter your game...">
 
                             </div>
 

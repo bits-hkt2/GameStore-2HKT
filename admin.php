@@ -18,10 +18,10 @@
             // Redirect to user dashboard page
             header("Location: ./admin/VendorPage.php");
         } else {
-                echo "<div class='form'>
-                    <h3>Incorrect Username/password.</h3><br/>
-                    <p class='link'>Click here to <a href='admin.php'>Login</a> again.</p>
-                    </div>";
+            echo '<script language="javascript">';
+            echo 'alert("CHECK EMAIL OR PASSWORD");';
+            echo 'window.location = "admin.php"';
+            echo '</script>';
         }
     } else {
 ?>
@@ -42,6 +42,57 @@
 <link rel="stylesheet" href="css/mdb.min.css" />
 <link rel="stylesheet" href="./css/loginForm.css">
 </head>
+<style>
+.div {
+    width: 400px;
+    height: 300px;
+    box-shadow: 16px 14px 20px #0000008c;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22%;
+    right: 14%;
+}
+
+.div::before {
+    content: "";
+    background-image: conic-gradient(#ef00ff 20deg, transparent 120deg);
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    animation: rotate 2s linear infinite;
+}
+
+.div::after {
+
+    width: 300px;
+    height: 190px;
+
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff0052;
+    font-size: larger;
+    letter-spacing: 5px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+</style>
 
 <body style="background:#c709b4f0;  background-image:url('./images/login.png')">
     <!-- Pills navs -->
@@ -108,7 +159,14 @@
 
     <!-- Pills content -->
 
-
+    <div class="div">
+        <img style="width:300px; height:150px" src="./images/Logo.svg" alt="">
+        <h4 style="line-height: 40px;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    letter-spacing: 1px;">Welcome to 2HKT !</h4>
+    </div>
 
     <!-- MDB -->
     <script type=" text/javascript" src="js/mdb.min.js"></script>

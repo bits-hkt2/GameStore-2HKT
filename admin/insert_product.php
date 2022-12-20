@@ -63,7 +63,7 @@ if (!isset($_SESSION['username'])) {
                         </a></li>
 
                 </ul>
-                <p class="copyright">&copy; Copyright 2022 - Huyzada.com</p>
+                <p class="copyright">&copy; Copyright 2022 - 2HKT.com</p>
             </div>
 
         </nav>

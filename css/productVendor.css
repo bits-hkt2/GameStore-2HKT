@@ -163,6 +163,20 @@ a:hover {
   align-content: center;
 }
 
+.btn-delete {
+  width: 140px;
+  height:60px;
+  background: rgb(207, 56, 56);
+  font-size:20px;
+  border-radius:10px;
+  text-align: center;
+  color:white;
+margin-top: 20px;
+margin-left: 40px;
+padding:13px 0;
+
+}
+
 .logo {
   margin-bottom: 100px;
 }
@@ -339,7 +353,7 @@ a:hover {
   }
 
   .product-display .product-display-table thead tr th  {
-    padding: 1rem 3.4rem;
+    padding: 1rem 4.4rem;
     font-size: 1.1rem;
     background-color: rgb(43, 24, 206);
     height: 10%;
