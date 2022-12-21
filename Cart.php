@@ -105,7 +105,7 @@ if (isset($_POST["order"])) {
         <nav class="navigation">
 
             <div class="list-items">
-                <a href="/Main.php">
+                <a href="./Main.php">
                     <img class="web_icon" src="./images/Logo (1).png" alt="">
 
                 </a>
@@ -365,12 +365,11 @@ if (isset($_POST["order"])) {
                             </input>
 
                         </div>
+
                     </div>
                 </div>
 
-
             </div>
-
 
         </form>
 

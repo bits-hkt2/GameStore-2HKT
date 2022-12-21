@@ -15,9 +15,9 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/vendorPage.css">
-    <link rel=" icon" href="/images/Logo.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/gamestore-hkt2//css/vendorPage.css">
+    <link rel="icon" href="/gamestore-hkt2/images/Logo.svg">
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT | ADMIN PAGE ️🛒️📦📱</title>
 </head>
 
@@ -30,7 +30,7 @@ session_start();
                 <ul>
                     <li class="logo">
                         <a class="logo__a" href="./VendorPage.php">
-                            <img src="/images/Logo (1).png" alt="">
+                            <img src="/gamestore-hkt2/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
@@ -50,7 +50,7 @@ session_start();
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="admin.php">
+                    <li class="logout"><a href="/gamestore-hkt2/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>
@@ -219,35 +219,35 @@ session_start();
                     <ul>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/images/Bayonetta3.png" alt="">
+                                <img src="/gamestore-hkt2/images/Bayonetta3.png" alt="">
                                 <p>Bayonetta</p>
                             </div>
                             <span>$75</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/images/Casual.png"" alt="">
+                                <img src="/gamestore-hkt2/images/Casual.png"" alt="">
                                 <p>Casual </p>
                             </div>
                             <span>$105</span>
                         </li>
                         <li class=" product-items">
                                 <div class="info">
-                                    <img src="/images/football.png" alt="">
+                                    <img src="/gamestore-hkt2/images/football.png" alt="">
                                     <p> Football</p>
                                 </div>
                                 <span>$15</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/images/doom3.jpg" alt="">
+                                <img src="/gamestore-hkt2/images/doom3.jpg" alt="">
                                 <p>Chant</p>
                             </div>
                             <span>$67</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/images/god-of-war.png" alt="">
+                                <img src="/gamestore-hkt2/images/god-of-war.png" alt="">
                                 <p>God of War</p>
                             </div>
                             <span>$88</span>

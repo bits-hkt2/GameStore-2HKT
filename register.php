@@ -96,14 +96,19 @@
             
             if(!empty($row)){
                 if($row['email']==$email){
-                    echo "That email already exists. Please try again";
+                    echo " <p style='font-size: 25px;
+                    font-weight: 500;
+                    color: #003680;'>That email already exists. Please try again ! </p>";
                 }
                 else if($row['username']==$username){
-                    echo "That username already exists. Please try again";
+                    echo " <p style='font-size: 25px;
+                    font-weight: 500;
+                    color: #003680;'>That username already exists. Please try again ! </p>";
                 }
                 echo "
-                    <h3>Register not successfully.</h3><br/>
-                    <p class='link'>Click here to <a href='register.php'>Register</a> again</p>
+                    <h3 style='color:#d62f15; font-size:30px;font-weight:900'>Register not successfully !!!.</h3><br/>
+                    <p style='color:pink' class='link'>Click here to <a style='font-size:20px;
+                    text-decoration:underline;font-weight:900;color:blue;'href='register.php'>Register</a> again.</p>
              ";
             } else { 
                 
@@ -116,8 +121,12 @@
                 }
                 else if ($result) {
                     echo "
-                      <h3>You are registered successfully.</h3><br/>
-                      <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                      <h3 style='color:#0ecf0ef0;
+                      font-weight: 700;'> You are registered successfully !!! </h3><br/>
+                      <p style='font-size:18px' class='link'>Click here to <a style='    font-size: 24px;
+                      text-decoration: underline;
+                      font-weight: 900;
+                      color: #2e2edcd6;' href='login.php'>Login.</a></p>
                    ";
                 } else {
                     echo "
@@ -222,7 +231,7 @@
         var a = document.getElementById("password").value;
         var b = document.getElementById("confirm_password").value;
         if (a != b) {
-            alert("Passwords do no match");
+            alert("Passwords do not match !!");
             return false;
         }
     }
