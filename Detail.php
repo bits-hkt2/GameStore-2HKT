@@ -166,7 +166,7 @@ if (!isset($_SESSION['username'])) {
     <!-- MAIN SECTION -->
 
     <section>
-        <div class="content">
+        <div class="content" style="height: fit-content;">
 
             <!-- SEARCHING SECTON -->
             <div class="search">
@@ -350,19 +350,66 @@ if (!isset($_SESSION['username'])) {
                 <div class="feedback">
                     <div class="user-feedback">
 
-                        <div class="user-comments">
+                        <?php
+
+                            $conn = new mysqli("localhost", "root", "", "2hkt");
+
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
+                        
+                            $username = $_SESSION['username'];
+                            
+                            $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
+                            $get_name_result = mysqli_query($conn, $get_name_sql);
+
+                            if (mysqli_num_rows($get_name_result) == 1) {
+                                $get_name_row = mysqli_fetch_assoc($get_name_result);
+                                $user_id = $get_name_row['id'];
+                                
+                                if (isset($_POST['review_post'])) {
+
+                                    $username = $_SESSION['username'];
+                                    $product_id = $value['id'];
+                                    $post_date = date("d/m/Y");
+                                    $post_content = $_POST['review'];
+                                    
+                                    $sql = "INSERT INTO `product_review`(`user_id`, `username`, `product_id`, `post_date`, `post_content`) VALUES ('$user_id','$username','$product_id','$post_date','$post_content');";
+                            
+                                    if ($conn->query($sql) === TRUE) {
+                                      echo "";
+                                    } else {
+                                      echo "Error: " . $sql . "<br>" . $conn->error;
+                                    }
+                                }
+                            }
+
+                          
+                        ?>
+
+                        <div class="user-comments" style="height: fit-content;">
+                            <?php
+                            $product_id = $value['id'];
+
+                            $sql = "SELECT * FROM product_review WHERE `product_id`='$product_id'";
+                            $result = mysqli_query($conn, $sql);
+                
+                            if ($result->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result->fetch_assoc()) {
+                            ?>
                             <div class="user-account-infor">
 
                                 <img style="width:50px; height:50px" src="./images/Jerry.png" alt="">
 
                                 <div class="user-comments-detail">
-                                    <p class="user-account"> CreppyJerry101</p>
-                                    <span class="date-post"> 23/10/2022</span>
+                                    <p class="user-account"><?php echo $row['username']; ?></p>
+                                    <span class="date-post"><?php echo $row['post_date']; ?></span>
                                 </div>
 
                             </div>
                             <div class="comment-content">
-                                <h4> I love beating up as much as beating up children</h4>
+                                <h4><?php echo $row['post_content']; ?></h4>
                             </div>
 
                             <h3 class="underline-3"></h3>
@@ -379,20 +426,24 @@ if (!isset($_SESSION['username'])) {
                             <div class="people-review text-white">
                                 <p> 16 people found this review helpful</p>
                             </div>
+                            <?php } } ?>
                         </div>
 
 
                     </div>
 
-                    <div class="write-feedback">
-                        <h3> Write a review for Doom 3</h3>
-                        <textarea style="width:100%" name="" id="" cols="80" rows="10" style="font-size:15pt;">
-                            </textarea>
-
-                        <div class="w-50">
-                            <a href="#"> <button class="btn-review">Post review</button></a>
+                    <form action="" method="post">
+                        <div class="write-feedback" action="" method="post">
+                            <h3> Write a review for Doom 3</h3>
+                            <textarea style="width:100%" name="review" id="" cols="80" rows="10"
+                                style="font-size:15pt;">
+                                    </textarea>
+                            <div class="w-50">
+                                <a href=""> <button type="submit" name="review_post" class="btn-review">Post
+                                        review</button></a>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -460,5 +511,7 @@ if (!isset($_SESSION['username'])) {
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="./javascript/main2.js"></script>
 </body>
+
+</html>
 
 </html>
