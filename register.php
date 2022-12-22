@@ -89,7 +89,7 @@
             
             // CHECK USERNAME AND EMAIL IF EXISTS
             
-            $checkUser = 'SELECT email,username FROM users WHERE email="'.$email.'" or username= "'.$username.'"';
+            $checkUser = 'SELECT `email`,`username` FROM `users` WHERE email="'.$email.'" or username= "'.$username.'"';
             
             $result = mysqli_query($con, $checkUser);
             $row    = mysqli_fetch_assoc($result);
