@@ -387,8 +387,7 @@ if (!isset($_SESSION['username'])) {
                           
                         ?>
 
-                        <div class="user-comments" style="height: fit-content;">
-                            <?php
+                        <?php
                             $product_id = $value['id'];
 
                             $sql = "SELECT * FROM product_review WHERE `product_id`='$product_id'";
@@ -398,7 +397,8 @@ if (!isset($_SESSION['username'])) {
                               // output data of each row
                               while($row = $result->fetch_assoc()) {
                             ?>
-                            <div class="user-account-infor">
+                        <div class="user-comments" style="margin-bottom: 20px;">
+                            <div class=" user-account-infor">
 
                                 <img style="width:50px; height:50px" src="./images/Jerry.png" alt="">
 
@@ -423,11 +423,9 @@ if (!isset($_SESSION['username'])) {
                                         No</span></button>
                             </div>
 
-                            <div class="people-review text-white">
-                                <p> 16 people found this review helpful</p>
-                            </div>
-                            <?php } } ?>
+
                         </div>
+                        <?php } } ?>
 
 
                     </div>

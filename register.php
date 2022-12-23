@@ -152,10 +152,11 @@
         <div class="tab-content w-100">
 
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form onSubmit="return validate();" class="form" action="" method="post" ">
+                <form onSubmit="return validate();" class="form" action="" method="post" enctype="multipart/form-data ">
                     <p class=" text-center text-white fs-3">Register Form </p>
 
                     <!-- Name input -->
+
                     <div class="form-outline mb-4">
                         <input type="text" id="registerName" name="name" class="form-control text-white" />
                         <label class="form-label text-white" for="registerName">Name</label>
@@ -198,7 +199,8 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-3">Create Account</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-3">Create
+                        Account</button>
                 </form>
             </div>
 
