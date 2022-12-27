@@ -45,6 +45,9 @@
 
 + HTML, CSS, Javascript, JQuery, PHP, SASS, Boostrap5 (MDB5 Library), Figma, Mysql (PhpAdmin), Web-host (000Webhost). 
 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 - CONTRIBUTION :
  + Pham Ngoc Huy (35%)
  + Nguyen Trong Khang (30%)
