@@ -16,7 +16,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/gamestore-hkt2/css/huyHelp.css">
+    <link rel="stylesheet" href="/css/huyHelp.css">
     <link rel="icon" href="/images/Logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT | ADMIN HELP 🛒️📦📱</title>
@@ -29,8 +29,8 @@ session_start();
             <div class="nav">
                 <ul>
                     <li class="logo">
-                        <a class="logo__a" href="/gamestore-hkt2/admin/VendorPage.php">
-                            <img src="/gamestore-hkt2/images/Logo (1).png" alt="">
+                        <a class="logo__a" href="/admin/VendorPage.php">
+                            <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
@@ -50,7 +50,7 @@ session_start();
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/gamestore-hkt2/admin.php">
+                    <li class="logout"><a href="/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>
@@ -77,7 +77,7 @@ session_start();
                 <div class="boxes-details">
 
                     <div class="icon-boxes"><i class="fa-solid fa-users-rectangle"></i></div>
-                    <p class="boxes-content">Join the <u>Facebook community</u> now to find out more.</p>
+                    <p class="boxes-content">Join the <a href="https://www.facebook.com/dejavu354321/"; style="text-decoration:underline">Facebook community</a> now to find out more.</p>
                 </div>
             </div>
             <div class="boxes">
@@ -86,7 +86,7 @@ session_start();
                     <div class="icon-boxes"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <p class="boxes-content">To resolve the issue of accurate and suitable, look up the location,
                         order,
-                        and error system <u>Here</u>.</p>
+                        and error system <a href="../admin/refund_policy2.php"; style="text-decoration:underline">Here</a>.</p>
                 </div>
             </div>
             <div class="boxes">
@@ -124,7 +124,7 @@ session_start();
     <div class="chat-popup" id="myForm">
         <form class="form-container">
             <h1>Chat</h1>
-            <span class="admin-chatbox"><img width="80px" height="70px" src="./assets/img/admin.png" alt=""></span>
+            <span class="admin-chatbox"><img width="80px" height="70px" src="/images/Logo (1).png" alt=""></span>
             <label for="msg"><b>Message</b></label>
             <textarea placeholder="Type message.." name="msg" required></textarea>
 
@@ -134,7 +134,7 @@ session_start();
     </div>
 
 
-    <script src="./scripts/chatBox.js"></script>
+    <script src="/javascript/chatBox.js"></script>
 </body>
 
 </html>

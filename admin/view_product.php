@@ -7,7 +7,7 @@ session_start();
         header('Location: unqualified.php');
     }
     
-$con = mysqli_connect('localhost','root','','2hkt');
+$con = mysqli_connect('localhost','id20044445_root','dzTV2I\v{PAko\R<','id20044445_huysanti');
 
 
 // Check connection
@@ -28,7 +28,7 @@ if (mysqli_connect_errno()) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/productVendor.css">
-    <link rel="icon" href="/gamestore-hkt2/images/Logo.svg">
+    <link rel="icon" href="/images/Logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT| VIEW PRODUCT 🛒️📦📱</title>
 </head>
@@ -41,8 +41,8 @@ if (mysqli_connect_errno()) {
             <div class="nav">
                 <ul>
                     <li class="logo">
-                        <a class="logo__a" href="/gamestore-hkt2/admin/VendorPage.php">
-                            <img src="/gamestore-hkt2/images/Logo (1).png" alt="">
+                        <a class="logo__a" href="/admin/VendorPage.php">
+                            <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item1">2HKT</span>
                         </a>
                     </li>
@@ -62,7 +62,7 @@ if (mysqli_connect_errno()) {
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/gamestore-hkt2/admin.php">
+                    <li class="logout"><a href="/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>

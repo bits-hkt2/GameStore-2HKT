@@ -15,8 +15,8 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/gamestore-hkt2//css/vendorPage.css">
-    <link rel="icon" href="/gamestore-hkt2/images/Logo.svg">
+    <link rel="stylesheet" href="/css/vendorPage.css">
+    <link rel="icon" href="/images/Logo.svg">
     <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>2HKT | ADMIN PAGE ️🛒️📦📱</title>
 </head>
@@ -30,7 +30,7 @@ session_start();
                 <ul>
                     <li class="logo">
                         <a class="logo__a" href="./VendorPage.php">
-                            <img src="/gamestore-hkt2/images/Logo (1).png" alt="">
+                            <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
@@ -50,13 +50,13 @@ session_start();
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/gamestore-hkt2/admin.php">
+                    <li class="logout"><a href="/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>
 
                 </ul>
-                <p class="copyright">&copy; Copyright 2022 - Huyzada.com</p>
+                <p class="copyright">&copy; Copyright 2022 - 2HKT.com</p>
             </div>
 
         </nav>
@@ -64,10 +64,7 @@ session_start();
         <!-- MAIN SECTION -->
         <section class="main">
             <div class="header">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                
 
                 <h4> Hi, Welcome <span class='user_namephp'><?php echo $_SESSION["username"]; ?></span> to Admin page !
                 </h4>
@@ -137,11 +134,8 @@ session_start();
 
         <!-- DETAILS SECTION -->
         <div class="details">
-            <div class="recentOrders">
-                <div class="cardHeader">
-                    <h2>Recent Orders</h2>
-                    <button href="" class="btn" id="action">Show List</button>
-                </div>
+            <div class="recentOrders" style="display:none">
+               
 
                 <table class="item-list">
                     <thead>
@@ -219,35 +213,35 @@ session_start();
                     <ul>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/gamestore-hkt2/images/Bayonetta3.png" alt="">
+                                <img src="/images/Bayonetta3.png" alt="">
                                 <p>Bayonetta</p>
                             </div>
                             <span>$75</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/gamestore-hkt2/images/Casual.png"" alt="">
+                                <img src="/images/Casual.png" alt="">
                                 <p>Casual </p>
                             </div>
                             <span>$105</span>
                         </li>
                         <li class=" product-items">
                                 <div class="info">
-                                    <img src="/gamestore-hkt2/images/football.png" alt="">
+                                    <img src="/images/football.png" alt="">
                                     <p> Football</p>
                                 </div>
                                 <span>$15</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/gamestore-hkt2/images/doom3.jpg" alt="">
+                                <img src="/images/doom3.jpg" alt="">
                                 <p>Chant</p>
                             </div>
                             <span>$67</span>
                         </li>
                         <li class="product-items">
                             <div class="info">
-                                <img src="/gamestore-hkt2/images/god-of-war.png" alt="">
+                                <img src="/images/god-of-war.png" alt="">
                                 <p>God of War</p>
                             </div>
                             <span>$88</span>
@@ -291,14 +285,14 @@ session_start();
                             </div>
                         </div>
 
-                        <div class="column">
+                        <div class="column" style="">
                             <div class="footer-widget categories-widget">
                                 <h2 class="widget-title categories-title">Categories</h2>
                                 <ul>
-                                    <li><a href="#">Advanture</a></li>
-                                    <li><a href="#">Rough-like</a></li>
-                                    <li><a href="#">Casual</a></li>
-                                    <li><a href="#">Role-playing</a></li>
+                                    <li>Advanture</li>
+                                    <li>Rough-like</li>
+                                    <li>Casual</li>
+                                    <li>Role-playing</li>
 
                                 </ul>
                             </div>
@@ -308,9 +302,9 @@ session_start();
                             <div class="footer-widget information-widget">
                                 <h2 class="widget-title information-title">Information</h2>
                                 <ul>
-                                    <li><a href="/about_us.php">About Us</a></li>
-                                    <li><a href="/refund_policy.php">Private Policy</a></li>
-                                    <li><a href="/term.php">Term Of Use</a></li>
+                                    <li><a href="./about_us2.php">About Us</a></li>
+                                    <li><a href="./refund_policy2.php">Private Policy</a></li>
+                                    <li><a href="./term2.php">Term Of Use</a></li>
                                 </ul>
                             </div>
                         </div>

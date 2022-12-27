@@ -36,8 +36,8 @@ if (!isset($_SESSION['username'])) {
             <div class="nav">
                 <ul>
                     <li class="logo">
-                        <a class="logo__a" href="/gamestore-hkt2/admin/VendorPage.php">
-                            <img src=" /gamestore-hkt2/images/Logo (1).png" alt="">
+                        <a class="logo__a" href="/admin/VendorPage.php">
+                            <img src="/images/Logo (1).png" alt="">
                             <span class="nav-item">2HKT</span>
                         </a>
                     </li>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['username'])) {
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="nav-item">Help</span>
                         </a></li>
-                    <li class="logout"><a href="/gamestore-hkt2/admin.php">
+                    <li class="logout"><a href="/admin.php">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span class="nav-item">Log Out</span>
                         </a></li>

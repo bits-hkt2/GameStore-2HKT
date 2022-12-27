@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +44,7 @@
               rgb(49, 49, 49, 0.8) 100%
             );
             max-height: 550px;
-            height: 50%;
+            height: 60%;
           ">
                 <h1 class="fw-bold d-flex align-items-start"
                     style="color: rgb(204, 204, 204); margin-top: 50px;margin-bottom:30px;">
@@ -51,19 +55,9 @@
                     <form method="post" enctype="multipart/form-data" action="edit_profile.php"
                         class="d-flex flex-column flex-fill">
                         <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "";
-                        $database = "2hkt";
+                      
+                       require('./db/db.php');
 
-                        $conn = mysqli_connect($servername, $username, $password, $database);
-
-                        if (!$conn) {
-                            echo "Connection failed!";
-                        }
-                        ;
-
-                        session_start();
 
                         if (isset($_POST['submit'])) {
                             if (isset($_POST['cur_username']) && isset($_POST['new_username']) && isset($_POST['cur_pass']) && isset($_POST['new_pass'])) {
@@ -82,24 +76,37 @@
 
                                 $sql = "SELECT `username`, `password` FROM `users` WHERE `username`='$cur_username' AND `password`='$cur_pass';";
 
-                                $result = mysqli_query($conn, $sql);
+                                $result = mysqli_query($con, $sql);
 
                                 if (mysqli_num_rows($result) === 1) {
                                     $row = mysqli_fetch_assoc($result);
                                     if ($row['username'] === $cur_username && $row['password'] === $cur_pass) {
                                         $update_sql = "UPDATE `users` SET `username`='$new_username',`password`='$new_pass' WHERE `username`='$cur_username' AND `password`='$cur_pass'";
-                                        $con = mysqli_query($conn, $update_sql);
-                                        header("Location: login.php");
-                                        echo "<script>
-                                            alert('Change Username and Password Successfully,
-                                            Please Login again!!!');
-                                             </script>";
-                                    } else {
-                                        header("Location: Main.php?error=Incorect User name or password");
-                                        exit();
-                                    }
-                                } else {
-                                    header("Location: Main.php?error=Incorect User name or password");
+                                        $conn = mysqli_query($con, $update_sql);
+                                        // header("Location: index.php");
+                                        // echo "<script>
+                                        //     alert('Change Username and Password Successfully,
+                                        //     Please Login again!!! ');
+                                        //      </script>";
+                                         echo '<script>';
+                                        echo 'alert("CHANGE USERNAME AND PASSWORD SUCCESSFULLY !!!");';
+                                        echo 'window.location = "index.php"';
+                                        echo '</script>';
+                                    } 
+                                    // else {
+                                    //     // header("Location: Main.php?error=Incorect User name or password");
+                                    //     echo '<script>';
+                                    //     echo 'alert("CHANGE USERNAME AND PASSWORD NOTSUCCESSFULLY, TRY AGAIN !!!");';
+                                    //     echo 'window.location = "edit_profile.php"';
+                                    //     echo '</script>';
+                                    // }
+                                }
+                                else {
+                                    header("Location: edit_profile.php?error=Incorect User name or password");
+                                    echo '<script>';
+                                        echo 'alert("CHANGE USERNAME AND PASSWORD NOT SUCCESSFULLY, TRY AGAIN !!!");';
+                                        echo 'window.location = "edit_profile.php"';
+                                        echo '</script>';
                                     exit();
                                 }
 
@@ -208,17 +215,3 @@
 </html>
 
 </html>
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

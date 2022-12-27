@@ -12,14 +12,14 @@ if (!isset($_SESSION['username'])) {
 if (isset($_POST["order"])) {
     if (empty($_POST["customer"]) || empty($_POST["address"]) || empty($_POST["phone"]) || empty($_POST["email"]) || empty($_POST["total"]) || empty($_POST["name_product"])) {
         echo "<div class='container' style='position: absolute;
-        top: 62%;
-        left: 55%;  
-        padding: 8px 26px;
-        width: 22%;
-        height: 50px;
-        background:red;
-        color:white;
-        border-radius: 20px;'>
+    top: 45%;
+    left: 50%;
+    padding: 6px 26px;
+    width: 25%;
+    height: 50px;
+    background: red;
+    color: white;
+    border-radius: 20px;'>
                     <h3> Nothing items to order !!!</h3>
         
         </div>";
@@ -60,7 +60,7 @@ if (isset($_POST["order"])) {
         top: 62%;
         left: 55%;  
         padding: 8px 26px;
-        width: 20%;
+        width: 22%;
         height: 50px;
         background: #3ae53a;
         border-radius: 20px;'>
@@ -190,22 +190,86 @@ if (isset($_POST["order"])) {
                 </div>
 
 
-                <div class="profile ">
+                <?php
+
+
+                if ($con->connect_error) {
+                    die("Connection failed: " . $con->connect_error);
+                }
+
+                $username = $_SESSION['username'];
+
+                $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
+                $get_name_result = mysqli_query($con, $get_name_sql);
+
+                if (mysqli_num_rows($get_name_result) == 1) {
+                    $get_name_row = mysqli_fetch_assoc($get_name_result);
+                    $user_id = $get_name_row['id'];
+
+
+                    $sql = "SELECT * FROM `file` WHERE `id` = (SELECT MAX(id) FROM `file` WHERE `user_id`='$user_id')";
+                    $res = mysqli_query($con, $sql);
+
+
+
+                    if (mysqli_num_rows($res) == 1) {
+                        while ($images = mysqli_fetch_assoc($res)) {
+
+                ?>
+
+                <div class="profile">
+
                     <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="./images/icon 1.png" alt="">
+                        <img style="width: 110px;height: 90px; border-radius:10px"
+                            src="uploadedFile/<?= $images['image_url'] ?>" alt="">
+
                     </a>
 
-                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
                         <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
                     </ul>
 
 
-                    <div class="name-user ">
-                        <h3> <?php echo $_SESSION['username'];  ?></h3>
+                    <div class=" name-user">
+                        <h3>
+                            <?php echo $_SESSION['username']; ?>
+                        </h3>
                     </div>
                 </div>
+
+                <?php }
+                    } else {
+                        echo '
+    <div class="profile">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+    aria-expanded="false">
+    <img style="width: 110px;height: 90px; border-radius:10px" src="./images/Logo.svg" alt="">
+
+</a>
+<ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+    <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
+    <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
+</ul>
+
+ <div class="name-user">
+        <h3>
+             ' . $_SESSION["username"] . '
+</h3>
+</div>
+</div>';
+
+
+
+
+                    }
+                }
+
+                ?>
+
 
 
 
@@ -329,33 +393,33 @@ if (isset($_POST["order"])) {
                             </div>
                             <div class="split">
                                 <label for="" class="subtotal"> Your name </label>
-                                <input type="text" style="height:30px;border-radius:10px" name=" customer"
+                                <input type="text" style="height:30px;border-radius:10px" name=" customer" required
                                     placeholder="Enter your name...">
                             </div>
 
                             <div class="split">
                                 <label for="" class="subtotal"> Address </label>
-                                <input type="text" style="height:30px;border-radius:10px" name="address"
+                                <input type="text" style="height:30px;border-radius:10px" name="address" required
                                     placeholder="Enter your address...">
                             </div>
 
                             <div class="split">
                                 <label for="" class="subtotal"> Phone </label>
-                                <input type="numbe" style="height:30px;border-radius:10px" name="phone"
+                                <input type="numbe" style="height:30px;border-radius:10px" name="phone" required
                                     placeholder="Enter your phone...">
                                 <input type="hidden" name="total" value="<?php echo $total; ?>">
                             </div>
 
                             <div class="split">
                                 <label for="" class="subtotal"> Email </label>
-                                <input type="email" style="height:30px;border-radius:10px" name="email"
+                                <input type="email" style="height:30px;border-radius:10px" name="email" required
                                     placeholder="Enter your email...">
 
                             </div>
 
                             <div class="split">
                                 <label for="" class="subtotal"> Game Name</label>
-                                <input type="text" style="height:30px;border-radius:10px" name="name_product"
+                                <input type="text" style="height:30px;border-radius:10px" name="name_product" required
                                     placeholder="Enter your game...">
 
                             </div>
@@ -401,9 +465,9 @@ if (isset($_POST["order"])) {
             <div class="social-media">
                 <ul class="social-platform">
 
-                    <a href="https://www.facebook.com/dejavu354321/">
-                        <li><i class="fa-brands fa-square-facebook"></i> </li>
-                    </a>
+                    <!--<a href="https://www.facebook.com/dejavu354321/">-->
+                    <!--    <li><i class="fa-brands fa-square-facebook"></i> </li>-->
+                    <!--</a>-->
                     <a href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
                         <li><i class="fa-brands fa-twitter"></i> </li>
                     </a>

@@ -1,5 +1,4 @@
 <?php
-
 require_once 'db/db.php';
 include("./auth/auth_session.php");
 
@@ -9,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 
-$sql = "SELECT * FROM products WHERE id in(1,2,3,7,8)";
+$sql = "SELECT * FROM products WHERE id in(1,2,3,4,5)";
 $result = mysqli_query($con, $sql);
 
 ?>
@@ -25,7 +24,7 @@ $result = mysqli_query($con, $sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/Logo.svg">
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/Main.css" />
     <!-- FONTAWESOME ICONS  -->
     <link rel="stylesheet" href="./icons/fontawesome-free-6.2.1-web/css/all.min.css" />
 
@@ -145,19 +144,17 @@ $result = mysqli_query($con, $sql);
                         <i class="fa fa-bars"></i>
                     </a>
                 </div>
+            
+                <?php
 
-                <?php 
-
-                $conn = new mysqli("localhost", "root", "", "2hkt");
-
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                if ($con->connect_error) {
+                    die("Connection failed: " . $con->connect_error);
                 }
 
                 $username = $_SESSION['username'];
 
                 $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
-                $get_name_result = mysqli_query($conn, $get_name_sql);
+                $get_name_result = mysqli_query($con, $get_name_sql);
 
                 if (mysqli_num_rows($get_name_result) == 1) {
                     $get_name_row = mysqli_fetch_assoc($get_name_result);
@@ -165,7 +162,7 @@ $result = mysqli_query($con, $sql);
 
 
                     $sql = "SELECT * FROM `file` WHERE `id` = (SELECT MAX(id) FROM `file` WHERE `user_id`='$user_id')";
-                    $res = mysqli_query($conn, $sql);
+                    $res = mysqli_query($con, $sql);
 
 
 
@@ -174,16 +171,14 @@ $result = mysqli_query($con, $sql);
 
                 ?>
 
-                <div class="profile">
-
+                <div class="profile ">
                     <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
                         aria-expanded="false">
                         <img style="width: 110px;height: 90px; border-radius:10px"
                             src="uploadedFile/<?= $images['image_url'] ?>" alt="">
-
                     </a>
 
-                    <ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
                         <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
@@ -196,8 +191,8 @@ $result = mysqli_query($con, $sql);
                         </h3>
                     </div>
                 </div>
-
-                <?php }
+                
+             <?php }
                     } else {
                         echo '
                     <div class="profile">
@@ -226,6 +221,8 @@ $result = mysqli_query($con, $sql);
                 }
 
             ?>
+
+
             </div>
             </div>
 
@@ -726,7 +723,7 @@ $result = mysqli_query($con, $sql);
                     <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                         <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
                             <?php
-                            $sql = "SELECT * FROM products WHERE id in(13,14,15,16)";
+                            $sql = "SELECT * FROM products WHERE id in(6,7,8,9)";
                             $result = mysqli_query($con, $sql);
 
                             foreach ($result as $value) { ?>
@@ -780,7 +777,7 @@ $result = mysqli_query($con, $sql);
                 <div class="tab-pane fade fs-" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
                     <div div class="d-flex flex-column mb-3" style="padding-left:8%; padding-top:2%">
                         <?php
-                        $sql = "SELECT * FROM products WHERE id in(9,10,11,12)";
+                        $sql = "SELECT * FROM products WHERE id in(10,11,12,13)";
                         $result = mysqli_query($con, $sql);
 
                         foreach ($result as $value) { ?>
@@ -863,7 +860,7 @@ $result = mysqli_query($con, $sql);
                 <!-- CARD GAME 3 -->
                 <div class="ms-lg-4">
                     <?php
-                    $sql = "SELECT * FROM products WHERE id in(18,19)";
+                    $sql = "SELECT * FROM products WHERE id in(14,15)";
                     $result = mysqli_query($con, $sql);
 
                     foreach ($result as $value) { ?>
@@ -932,7 +929,7 @@ $result = mysqli_query($con, $sql);
             <div class="social-media">
                 <ul class="social-platform">
 
-                    <a href="https://www.facebook.com/dejavu354321/">
+                     <a href="https://www.facebook.com/dejavu354321/">
                         <li><i class="fa-brands fa-square-facebook"></i> </li>
                     </a>
                     <a href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'db/db.php';
 // AUTHENTICATION VERIFYCATION  
 if (!isset($_SESSION['username'])) {
   
@@ -333,24 +334,85 @@ if (!isset($_SESSION['username'])) {
                 </div>
 
 
-                <div class="profile ">
+                  <?php
+
+
+                if ($con->connect_error) {
+                    die("Connection failed: " . $con->connect_error);
+                }
+
+                $username = $_SESSION['username'];
+
+                $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
+                $get_name_result = mysqli_query($con, $get_name_sql);
+
+                if (mysqli_num_rows($get_name_result) == 1) {
+                    $get_name_row = mysqli_fetch_assoc($get_name_result);
+                    $user_id = $get_name_row['id'];
+
+
+                    $sql = "SELECT * FROM `file` WHERE `id` = (SELECT MAX(id) FROM `file` WHERE `user_id`='$user_id')";
+                    $res = mysqli_query($con, $sql);
+
+
+
+                    if (mysqli_num_rows($res) == 1) {
+                        while ($images = mysqli_fetch_assoc($res)) {
+
+                ?>
+
+                <div class="profile">
+
                     <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="./images/icon 1.png" alt="">
+                        <img style="width: 110px;height: 90px; border-radius:10px"
+                            src="uploadedFile/<?= $images['image_url'] ?>" alt="">
+
                     </a>
 
-                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="./loginForm.php">Log out</a></li>
+                        <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
+                        <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
                     </ul>
 
 
-                    <div class="name-user ">
+                    <div class=" name-user">
                         <h3>
-                            <?php
-                            echo $_SESSION["username"];     ?> </h3>
+                            <?php echo $_SESSION['username']; ?>
+                        </h3>
                     </div>
                 </div>
+
+                <?php }
+                    } else {
+                        echo '
+    <div class="profile">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+    aria-expanded="false">
+    <img style="width: 110px;height: 90px; border-radius:10px" src="./images/Logo.svg" alt="">
+
+</a>
+<ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+    <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
+    <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
+</ul>
+
+ <div class="name-user">
+        <h3>
+             ' . $_SESSION["username"] . '
+</h3>
+</div>
+</div>';
+
+
+
+
+                    }
+                }
+
+                ?>
 
 
 

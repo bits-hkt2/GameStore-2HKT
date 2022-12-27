@@ -139,7 +139,7 @@
 
                         <div class="col-md-6 d-flex justify-content-center">
                             <!-- Simple link -->
-                            <a class="text-white text-decoration-underline fs-5" href="login.php">Back to Login Page</a>
+                            <a class="text-white text-decoration-underline fs-5" href="index.php">Back to Login Page</a>
                         </div>
                     </div>
 

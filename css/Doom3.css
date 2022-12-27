@@ -23,6 +23,7 @@ form {
     justify-content:space-between;
     align-items: center;
     width: 94.5%;
+    height:10%;
 }
 
 /*  HEADER SECTION   ---------------->  */
@@ -111,7 +112,7 @@ form {
 
 .content {
     background: #b680c9;
-    height:230vh
+    height:350vh
 
 }
 
@@ -537,7 +538,7 @@ form {
 
 .user-reviews {
    padding-left: 10%;
-   height: auto;
+   height: 50%;
   
  
 }
@@ -548,6 +549,7 @@ form {
     background: #555555;
     opacity: 1;
     border-radius: 10px;
+   
 }
 
 .user-account-infor {
@@ -624,6 +626,7 @@ form {
     display: flex;
     justify-content: space-around;
     padding-right: 10%;
+    
 }
 
 
@@ -673,6 +676,7 @@ textarea {
 
 footer {
     background-color: #2C2C2C;
+    margin-top:auto;
 }
 
 
