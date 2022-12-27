@@ -12,20 +12,21 @@
  + Nguyen Tan Thinh (S3927186)
 
 
-
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - RUNNING ON LOCALHOST:
 
 + You should start from file index.php 
 
 
-
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - WEBSITE RUN ON SERVER:
  https://2hkt.000webhostapp.com/ 
 
 
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - CONTRIBUTION :
  + Pham Ngoc Huy (35%)
@@ -36,7 +37,7 @@
 
 
 
-
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Account for Admin Login  ***
 
