@@ -1,5 +1,5 @@
 
-  -----------------  GAME STORE 2HKT - ONLINE WEBSITE   ------------------
+  ----------------------------  @ GAME STORE 2HKT - ONLINE WEBSITE @  ---------------------------------
  
  - GROUP : 2HKT
  
