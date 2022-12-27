@@ -2,7 +2,7 @@
 
 session_start();
 
-$con = mysqli_connect('localhost','root','','2hkt');
+$con = mysqli_connect('localhost','id20044445_root','dzTV2I\v{PAko\R<','id20044445_huysanti');
 
 
 // Check connection

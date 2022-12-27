@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require_once 'db/db.php';
-$user_name = $_SESSION['user_name'];
+$user_name = $_SESSION['username'];
 
 if (!isset($_SESSION['username'])) {
   
@@ -20,7 +20,7 @@ $product_cart[$value["id"]] = $value;
 
 
 if (isset($_POST['add-to-cart'])) {
-    if (!isset($_SESSION["Cart1"]) || $_SESSION["Cart"] == null) {
+    if (!isset($_SESSION["Cart1"]) || $_SESSION["Cart1"] == null) {
         $product_cart[$id]["Quantity"] = 1;
         $_SESSION["Cart1"][$id] = $product_cart[$id];
 

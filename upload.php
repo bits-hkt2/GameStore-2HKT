@@ -14,9 +14,9 @@ if (mysqli_num_rows($get_name_result) == 1) {
 	if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 		
 
-		echo "<pre>";
-		print_r($_FILES['my_image']);
-		echo "</pre>";
+// 		echo "<pre>";
+// 		print_r($_FILES['my_image']);
+// 		echo "</pre>";
 
 		$img_name = $_FILES['my_image']['name'];
 		$img_size = $_FILES['my_image']['size'];
@@ -27,8 +27,8 @@ if (mysqli_num_rows($get_name_result) == 1) {
 		
 		
 		if ($error === 0) {
-			if ($img_size > 125000) {
-				$em = "Sorry, your file is too large.";
+			if ($img_size > 400000) {
+				$em = "<p style='color:red';>Sorry, your file is too large.</p>";
 				header("Location: edit_avatar.php?error=$em");
 			} else {
 				$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
@@ -47,12 +47,12 @@ if (mysqli_num_rows($get_name_result) == 1) {
 					mysqli_query($con, $sql);
 					header("Location: Main.php");
 				} else {
-					$em = "You can't upload files of this type";
+					$em = "<p style='color:red';>You can't upload files of this type</p>";
 					header("Location: edit_avatar.php?error=$em");
 				}
 			}
 		} else {
-			$em = "unknown error occurred!";
+			$em = "<p style='color:red';>unknown error occurred!</p>";
 			header("Location: edit_avatar.php?error=$em");
 		}
 

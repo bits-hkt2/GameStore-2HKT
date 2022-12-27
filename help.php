@@ -44,7 +44,7 @@ session_start();
                 <div class="boxes-details">
 
                     <div class="icon-boxes"><i class="fa-solid fa-users-rectangle"></i></div>
-                    <p class="boxes-content">Join the <u>Facebook community</u> now to find out more.</p>
+                    <p class="boxes-content">Join the <a href="https://www.facebook.com/dejavu354321/"; style="text-decoration:underline">Facebook community</a> now to find out more.</p>
                 </div>
             </div>
             <div class="boxes" id="box-2">
@@ -52,29 +52,26 @@ session_start();
 
                     <div class="icon-boxes"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <p class="boxes-content">To resolve the issue of accurate and suitable, look up the location, order,
-                        and error system <u>Here</u>.</p>
+                        and error system <a href="/account_website.php"; style="text-decoration:underline">Here</a>.</p>
                 </div>
             </div>
-            <div class="boxes" id="box-3">
-                <div class="boxes-details">
-
-                    <div class="icon-boxes"><i id="chat-box" onclick="openForm()" class="fa-solid fa-comment-dots"></i>
-                    </div>
-                    <p class="boxes-content">Other questions or futher information... Chat with us now !</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="support-social">
-            <p class="support-guide">We always here to support our beloved sellers. Working time from 6.00 am to 18.00
+            
+            <div class="support-social">
+            <p class="support-guide">We always here to support our beloved sellers. Working time from 6.00 am to
+                18.00
                 pm. Following us at.</p>
 
             <ul class="social-media">
-                <li class="social-media-items"><i class="fa-brands fa-facebook"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-linkedin"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-tiktok"></i></li>
-                <li class="social-media-items"><i class="fa-brands fa-google"></i></li>
-                <li class="social-media-items"><i class="fa-solid fa-phone"></i></li>
+                <li class="social-media-items"><a href="https://www.facebook.com/dejavu354321/"><i
+                            class="fa-brands fa-facebook"></i></a></li>
+                <li class="social-media-items"><a href="https://www.youtube.com/channel/UCnDCn1E4DZBZxl6vASyg4aw"><i
+                            class="fa-brands fa-youtube"></i></a></li>
+                <li class="social-media-items"><a href="https://www.linkedin.com/in/robert-pahm/"><i
+                            class="fa-brands fa-linkedin"></i></a></li>
+                <li class="social-media-items"><a
+                        href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                            class="fa-brands fa-twitter"></i></a></li>
+
 
             </ul>
         </div>

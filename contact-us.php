@@ -35,10 +35,11 @@ if (!isset($_SESSION['username'])) {
             if(isset($_GET['error'])) {
                 $Msg = '<p style="color: #e82222;
                 position: absolute;
-                top: 16%;
+                top: 18%;
                 left: 30%;
                 width: 200px;
                 height: 35px;
+                font-weight:bold;
                 background-color: #c659c6;
                 text-align: center;
                 padding: 5px;
@@ -48,15 +49,15 @@ if (!isset($_SESSION['username'])) {
             if(isset($_GET['success'])) {
                 $Msg = '<p style="color: #18ef0b;
                 position: absolute;
-                top: 16%;
+                top: 18%;
                 left: 30%;
-                width: 200px;
-                height: 35px;
+                width: 240px;
+                height: 40px;
                 background-color: #c659c6;
                 text-align: center;
                 padding: 5px;
-                border-radius: 10px;>Your Feedback has been sent !</p>';
-                echo  $Msg ;
+                border-radius: 10px;">Your Feedback has been sent !</p>';
+                echo  $Msg;
             }
             
 

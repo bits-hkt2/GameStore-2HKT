@@ -93,23 +93,26 @@
             
             $result = mysqli_query($con, $checkUser);
             $row    = mysqli_fetch_assoc($result);
+           
             
             if(!empty($row)){
                 if($row['email']==$email){
                     echo " <p style='font-size: 25px;
                     font-weight: 500;
-                    color: #003680;'>That email already exists. Please try again ! </p>";
+                    color: #003680;'>That email already exists or empty. Please try again ! </p>";
                 }
                 else if($row['username']==$username){
                     echo " <p style='font-size: 25px;
                     font-weight: 500;
-                    color: #003680;'>That username already exists. Please try again ! </p>";
-                }
+                    color: #003680;'>That username already exists or empty. Please try again ! </p>";
+                } 
+                    
                 echo "
                     <h3 style='color:#d62f15; font-size:30px;font-weight:900'>Register not successfully !!!.</h3><br/>
                     <p style='color:pink' class='link'>Click here to <a style='font-size:20px;
                     text-decoration:underline;font-weight:900;color:blue;'href='register.php'>Register</a> again.</p>
              ";
+                 
             } else { 
                 
                 $query = "INSERT INTO `users` (email,username,password,name)
@@ -118,7 +121,7 @@
                 $result = mysqli_query($con, $query);
                 if ($_POST["password"] != $_POST["confirm_password"]) {
                     echo "<script> alert(' Please enter same passwords ') </script>";
-                }
+                } 
                 else if ($result) {
                     echo "
                       <h3 style='color:#0ecf0ef0;
@@ -126,13 +129,14 @@
                       <p style='font-size:18px' class='link'>Click here to <a style='    font-size: 24px;
                       text-decoration: underline;
                       font-weight: 900;
-                      color: #2e2edcd6;' href='login.php'>Login.</a></p>
+                      color: #2e2edcd6;' href='index.php'>Login.</a></p>
                    ";
-                } else {
+                
+                } else if (empty($result)) {
                     echo "
                       <h3>Required fields are missing.</h3><br/>
                       ";
-                }
+                } 
             }           
         } else {
         ?>
@@ -152,11 +156,10 @@
         <div class="tab-content w-100">
 
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form onSubmit="return validate();" class="form" action="" method="post" enctype="multipart/form-data ">
+                <form onSubmit="return validate();" class="form" action="" method="post" ">
                     <p class=" text-center text-white fs-3">Register Form </p>
 
                     <!-- Name input -->
-
                     <div class="form-outline mb-4">
                         <input type="text" id="registerName" name="name" class="form-control text-white" />
                         <label class="form-label text-white" for="registerName">Name</label>
@@ -171,36 +174,27 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="registerEmail" name="email" class="form-control" style="color:white" />
+                        <input type="email" id="registerEmail" name="email" class="form-control" style="color:white" required />
                         <label class="form-label text-white" for="registerEmail">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="password" name="password" class="form-control text-white" />
+                        <input type="password" id="password" name="password" class="form-control text-white" required />
                         <label class="form-label text-white" for="registerPassword">Password</label>
                     </div>
 
                     <!-- Repeat Password input -->
                     <div class="form-outline mb-4">
                         <input type="password" id="confirm_password" name="confirm_password"
-                            class="form-control text-white" />
+                            class="form-control text-white" required />
                         <label class="form-label text-white" for="registerRepeatPassword">Repeat
                             password</label>
                     </div>
 
-                    <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-center mb-4">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
-                            aria-describedby="registerCheckHelpText" />
-                        <label class="form-check-label text-white" for="registerCheck">
-                            I have read and agree to the terms
-                        </label>
-                    </div>
 
                     <!-- Submit button -->
-                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-3">Create
-                        Account</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-3">Create Account</button>
                 </form>
             </div>
 

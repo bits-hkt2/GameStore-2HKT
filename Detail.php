@@ -30,13 +30,15 @@ if (!isset($_SESSION['username'])) {
     <!-- INTER FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet" />
     <link rel="icon" href="./images/Logo.svg">
     <link rel="stylesheet" href="./css/Doom3.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -62,7 +64,8 @@ if (!isset($_SESSION['username'])) {
                     <a href="./Main.php" class="active"></a>
 
                     <div class="dropdown btn-group">
-                        <a class="dropdown-toggle text-white rounded " role="button" style="background-color:#2C2C2C " data-mdb-toggle="dropdown" aria-expanded="false">
+                        <a class="dropdown-toggle text-white rounded " role="button" style="background-color:#2C2C2C "
+                            data-mdb-toggle="dropdown" aria-expanded="false">
                             STORE
                         </a>
 
@@ -79,7 +82,8 @@ if (!isset($_SESSION['username'])) {
                     </div>
 
                     <div class="dropdown btn-group">
-                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C " data-mdb-toggle="dropdown" aria-expanded="false">
+                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C "
+                            data-mdb-toggle="dropdown" aria-expanded="false">
                             ABOUT
                         </a>
                         <ul class="dropdown-menu text-center" style="background: #D9D9D9">
@@ -93,7 +97,8 @@ if (!isset($_SESSION['username'])) {
                     </div>
 
                     <div class=" dropdown btn-group">
-                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C " data-mdb-toggle="dropdown" aria-expanded="false">
+                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C "
+                            data-mdb-toggle="dropdown" aria-expanded="false">
                             SUPPORT
                         </a>
                         <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
@@ -107,7 +112,8 @@ if (!isset($_SESSION['username'])) {
                     </div>
 
                     <div class=" dropdown btn-group">
-                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C " data-mdb-toggle="dropdown" aria-expanded="false">
+                        <a class="dropdown-toggle text-white rounded " role='button' style="background-color:#2C2C2C "
+                            data-mdb-toggle="dropdown" aria-expanded="false">
                             COMMUNITY
                         </a>
                         <ul class="dropdown-menu text-center" style="background:#D9D9D9;">
@@ -117,10 +123,13 @@ if (!isset($_SESSION['username'])) {
                             <li>
                                 <hr class="dropdown-divider bg-black" />
                             </li>
-                            <li><a class="dropdown-item text-black" href="https://www.facebook.com/dejavu354321/">Facebook</a></li>
-                            <li><a class="dropdown-item text-black" href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a>
+                            <li><a class="dropdown-item text-black"
+                                    href="https://www.facebook.com/dejavu354321/">Facebook</a></li>
+                            <li><a class="dropdown-item text-black"
+                                    href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a>
                             </li>
-                            <li><a class="dropdown-item text-black" href="https://www.youtube.com/@HuyPhamChannel  ">Youtube</a></li>
+                            <li><a class="dropdown-item text-black"
+                                    href="https://www.youtube.com/@HuyPhamChannel  ">Youtube</a></li>
                         </ul>
                     </div>
 
@@ -130,23 +139,85 @@ if (!isset($_SESSION['username'])) {
                     </a>
                 </div>
 
+                   <?php
 
-                <div class="profile ">
-                    <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="./images/icon 1.png" alt="">
+
+                if ($con->connect_error) {
+                    die("Connection failed: " . $con->connect_error);
+                }
+
+                $username = $_SESSION['username'];
+
+                $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
+                $get_name_result = mysqli_query($con, $get_name_sql);
+
+                if (mysqli_num_rows($get_name_result) == 1) {
+                    $get_name_row = mysqli_fetch_assoc($get_name_result);
+                    $user_id = $get_name_row['id'];
+
+
+                    $sql = "SELECT * FROM `file` WHERE `id` = (SELECT MAX(id) FROM `file` WHERE `user_id`='$user_id')";
+                    $res = mysqli_query($con, $sql);
+
+
+
+                    if (mysqli_num_rows($res) == 1) {
+                        while ($images = mysqli_fetch_assoc($res)) {
+
+                ?>
+
+                <div class="profile">
+
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+                        aria-expanded="false">
+                        <img style="width: 110px;height: 90px; border-radius:10px"
+                            src="uploadedFile/<?= $images['image_url'] ?>" alt="">
+
                     </a>
 
-                    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                    <ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
                         <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
                     </ul>
 
 
-                    <div class="name-user ">
-                        <h3> <?php echo $_SESSION['username']; ?></h3>
+                    <div class=" name-user">
+                        <h3>
+                            <?php echo $_SESSION['username']; ?>
+                        </h3>
                     </div>
                 </div>
 
+                <?php }
+                    } else {
+                        echo '
+    <div class="profile">
+    <a class="" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown"
+    aria-expanded="false">
+    <img style="width: 110px;height: 90px; border-radius:10px" src="./images/Logo.svg" alt="">
+
+</a>
+<ul class=" dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="./edit_profile.php">Edit Profile</a></li>
+    <li><a class="dropdown-item" href="./edit_avatar.php">Edit Avatar</a></li>
+    <li><a class="dropdown-item" href="./logout.php">Log out</a></li>
+</ul>
+
+ <div class="name-user">
+        <h3>
+             ' . $_SESSION["username"] . '
+</h3>
+</div>
+</div>';
+
+
+
+
+                    }
+                }
+
+                ?>
 
 
             </div>
@@ -170,155 +241,163 @@ if (!isset($_SESSION['username'])) {
             <div class="game">
                 <?php
                 foreach ($result as $value) { ?>
-                    <span class="cart-items" style="font-size:15px;"> <a href="./Cart.php"> <i class="fa-solid fa-cart-shopping fa-3x"></i> </a>
-                    </span>
-                    <div class="game-title">
-                        <h2><?php echo $value['name_product']; ?></h2>
+                <span class="cart-items" style="font-size:15px;"> <a href="./Cart.php"> <i
+                            class="fa-solid fa-cart-shopping fa-3x"></i> </a>
+                </span>
+                <div class="game-title">
+                    <h2><?php echo $value['name_product']; ?></h2>
 
-                        <div class="return">
+                    <div class="return">
 
 
 
-                            <a href="./Main.php" class="button-back">
-                                Back
-                            </a>
-
-                        </div>
-
+                        <a href="./Main.php" class="button-back">
+                            Back
+                        </a>
 
                     </div>
 
-                    <div class="game-content-container">
+
+                </div>
+
+                <div class="game-content-container">
 
 
-                        <div class="game-content">
+                    <div class="game-content">
 
-                            <!-- GAME TRAILER -->
-                            <!-- Container for the image gallery -->
-                            <div class="container">
+                        <!-- GAME TRAILER -->
+                        <!-- Container for the image gallery -->
+                        <div class="container">
 
-                                <!-- Full-width images with number text -->
-                                <div class="mySlides">
-                                    <div class="numbertext">1 / 4</div>
-                                    <img src="<?php echo $value['image2'];  ?>" style="width:92.5%">
+                            <!-- Full-width images with number text -->
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 4</div>
+                                <img src="<?php echo $value['image2'];  ?>" style="width:92.5%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 4</div>
+                                <img src="<?php echo $value['image3'];  ?>" style="width:92.5%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 4</div>
+                                <img src="<?php echo $value['image4'];  ?>" style="width:92.5%">
+                            </div>
+
+                            <div class="mySlides">
+                                <div class="numbertext">4 / 4</div>
+                                <img src="<?php echo $value['image5'];  ?>" style="width:92.5%">
+                            </div>
+
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+                            <!-- Thumbnail images -->
+                            <div class="row1">
+                                <div class="column">
+                                    <img class="demo cursor" src="<?php echo $value['image2'];  ?>" style="width:95%"
+                                        onclick="currentSlide(1)" alt="The Woods">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="<?php echo $value['image3'];  ?>" style="width:95%"
+                                        onclick="currentSlide(2)" alt="Cinque Terre">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor" src="<?php echo $value['image4'];  ?>" style="width:95%"
+                                        onclick="currentSlide(3)" alt="Mountains and fjords">
                                 </div>
 
-                                <div class="mySlides">
-                                    <div class="numbertext">2 / 4</div>
-                                    <img src="<?php echo $value['image3'];  ?>" style="width:92.5%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">3 / 4</div>
-                                    <img src="<?php echo $value['image4'];  ?>" style="width:92.5%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">4 / 4</div>
-                                    <img src="<?php echo $value['image5'];  ?>" style="width:92.5%">
-                                </div>
-
-                                <!-- Next and previous buttons -->
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-
-                                <!-- Thumbnail images -->
-                                <div class="row1">
-                                    <div class="column">
-                                        <img class="demo cursor" src="<?php echo $value['image2'];  ?>" style="width:95%" onclick="currentSlide(1)" alt="The Woods">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" src="<?php echo $value['image3'];  ?>" style="width:95%" onclick="currentSlide(2)" alt="Cinque Terre">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" src="<?php echo $value['image4'];  ?>" style="width:95%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                                    </div>
-
-                                    <div class="column">
-                                        <img class="demo cursor" src="<?php echo $value['image5'];  ?>" style="width:95%" onclick="currentSlide(4)" alt="Mountains and fjords">
-                                    </div>
-
-
-                                </div>
-
-                                <div class="game-infor">
-
-                                    <p class="game-script">
-                                        <?php echo $value['description']; ?>
-                                    </p>
-
+                                <div class="column">
+                                    <img class="demo cursor" src="<?php echo $value['image5'];  ?>" style="width:95%"
+                                        onclick="currentSlide(4)" alt="Mountains and fjords">
                                 </div>
 
 
                             </div>
 
-                            <!-- BIIL GAME & CONFIGURE  -->
-                            <div class="game-price">
-                                <div class="game-invoice">
-                                    <div class="game-invoice-infor">
+                            <div class="game-infor">
 
-                                        <div class="sales-off-tag">
-                                            <span class="number-sales-off">
-                                                - <?php echo $value['discount'] . "%"; ?>
-                                            </span>
-                                        </div>
+                                <p class="game-script">
+                                    <?php echo $value['description']; ?>
+                                </p>
 
-                                        <div class="game-sales">
-                                            <h4 class="sale-infor"> Sales ends 9/6/2024 at 10:00 PM</h4>
-                                            <p class="old-price">
-                                                <span>đ
-                                                </span> <?php echo number_format($value['old price']);   ?>
-                                            </p>
-                                            <h2 class="new-price"> <span>đ</span> <?php echo $value['price']; ?></h2>
+                            </div>
 
-                                        </div>
+
+                        </div>
+
+                        <!-- BIIL GAME & CONFIGURE  -->
+                        <div class="game-price">
+                            <div class="game-invoice">
+                                <div class="game-invoice-infor">
+
+                                    <div class="sales-off-tag">
+                                        <span class="number-sales-off">
+                                            - <?php echo $value['discount'] . "%"; ?>
+                                        </span>
                                     </div>
 
-                                    <div class="check-out">
-                                        <a href="#">
-                                            <button class="btn-buy">Buy Now</button>
-                                        </a>
-
-                                        <form action="Cart_function.php?id=<?php echo $value["id"];  ?>" method="POST">
-                                            <button type="submit" class="btn-add" name="add-to-cart">Add to cart</button>
-                                        </form>
+                                    <div class="game-sales">
+                                        <h4 class="sale-infor"> Sales ends 9/6/2024 at 10:00 PM</h4>
+                                        <p class="old-price">
+                                            <span>đ
+                                            </span> <?php echo number_format($value['old price']);   ?>
+                                        </p>
+                                        <h2 class="new-price"> <span>đ</span> <?php echo $value['price']; ?></h2>
 
                                     </div>
-
                                 </div>
 
-                                <!-- GAME TAGS SECTION -->
-                                <div class="game-tags">
-                                    <div class="tag"> <?php echo $value['platform']; ?></div>
+                                <div class="check-out">
+                                    <form action="Cart_function.php?id=<?php echo $value["id"];  ?>" method="POST">
+                                        <button type="submit" style="background-color:green" class="btn-add" name="add-to-cart">Buy now</button>
+                                    </form>
 
-
-
-                                </div>
-
-                                <div class="game-configuration">
-                                    <ul class="game-detail">
-                                        <li>Initial Release: <span class="game-detail-infor"><?php echo $value['initial_date'];   ?></span>
-                                        </li>
-                                        <h3 class="underline"></h3>
-
-                                        <li>Developer: <span class="game-detail-infor"><?php echo $value['developer'];   ?></span>
-                                        </li>
-                                        <h3 class="underline"></h3>
-
-                                        <li>Publisher: <span class="game-detail-infor">Bethesda Softworks</span></li>
-                                        <h3 class="underline"></h3>
-
-                                        <li>Platform: <span class="game-detail-infor"><i class="fa-brands fa-windows"></i></span></li>
-
-
-                                    </ul>
+                                    <form action="Cart_function.php?id=<?php echo $value["id"];  ?>" method="POST">
+                                        <button type="submit" class="btn-add" name="add-to-cart">Add to cart</button>
+                                    </form>
 
                                 </div>
 
                             </div>
+
+                            <!-- GAME TAGS SECTION -->
+                            <div class="game-tags">
+                                <div class="tag"> <?php echo $value['platform']; ?></div>
+
+
+
+                            </div>
+
+                            <div class="game-configuration">
+                                <ul class="game-detail">
+                                    <li>Initial Release: <span
+                                            class="game-detail-infor"><?php echo $value['initial_date'];   ?></span>
+                                    </li>
+                                    <h3 class="underline"></h3>
+
+                                    <li>Developer: <span
+                                            class="game-detail-infor"><?php echo $value['developer'];   ?></span>
+                                    </li>
+                                    <h3 class="underline"></h3>
+
+                                    <li>Publisher: <span class="game-detail-infor">Bethesda Softworks</span></li>
+                                    <h3 class="underline"></h3>
+
+                                    <li>Platform: <span class="game-detail-infor"><i
+                                                class="fa-brands fa-windows"></i></span></li>
+
+
+                                </ul>
+
+                            </div>
+
                         </div>
                     </div>
+                </div>
 
                 <?php
                 }
@@ -334,19 +413,17 @@ if (!isset($_SESSION['username'])) {
 
                 <div class="feedback">
                     <div class="user-feedback">
-
                         <?php
 
-                        $conn = new mysqli("localhost", "root", "", "2hkt");
-
-                        if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
+                        if ($con->connect_error) {
+                            die("Connection failed: " . $con->connect_error);
                         }
+
 
                         $username = $_SESSION['username'];
 
-                        $get_name_sql = "SELECT * FROM users WHERE `username`='$username'";
-                        $get_name_result = mysqli_query($conn, $get_name_sql);
+                        $get_name_sql = "SELECT * FROM `users` WHERE `username`='$username'";
+                        $get_name_result = mysqli_query($con, $get_name_sql);
 
                         if (mysqli_num_rows($get_name_result) == 1) {
                             $get_name_row = mysqli_fetch_assoc($get_name_result);
@@ -358,13 +435,14 @@ if (!isset($_SESSION['username'])) {
                                 $product_id = $value['id'];
                                 $post_date = date("d/m/Y");
                                 $post_content = $_POST['review'];
+                               
 
                                 $sql = "INSERT INTO `product_review`(`user_id`, `username`, `product_id`, `post_date`, `post_content`) VALUES ('$user_id','$username','$product_id','$post_date','$post_content');";
 
-                                if ($conn->query($sql) === TRUE) {
+                                if ($con->query($sql) === TRUE) {
                                     echo "";
                                 } else {
-                                    echo "Error: " . $sql . "<br>" . $conn->error;
+                                    echo "Error: " . $sql . "<br>" . $con->error;
                                 }
                             }
                         }
@@ -372,192 +450,48 @@ if (!isset($_SESSION['username'])) {
 
                         ?>
 
-                        <div class="user-comments" style="height: fit-content;">
-                            <?php
+                        <?php
                             $product_id = $value['id'];
 
-                            $sql = "SELECT * FROM product_review WHERE `product_id`='$product_id'";
-                            $result = mysqli_query($conn, $sql);
+                            $sql = "SELECT * FROM `product_review` WHERE `product_id`='$product_id'";
+                            $result = mysqli_query($con, $sql);
 
                             if ($result->num_rows > 0) {
                                 // output data of each row
                                 while ($row = $result->fetch_assoc()) {
                             ?>
-                                    <div class="user-account-infor">
+                        <div class="user-comments" style="margin-bottom:20px;">
+                            <div class="user-account-infor">
 
-                                        <img style="width:50px; height:50px" src="./images/Jerry.png" alt="">
+                                <img style="width:50px; height:50px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR1KG_2PKG1t7gqsham74SpC7CLbmjGTDYnA&usqp=CAU" alt="">
+                              
 
-                                        <div class="user-comments-detail">
-                                            <p class="user-account"><?php echo $row['username']; ?></p>
-                                            <span class="date-post"><?php echo $row['post_date']; ?></span>
-                                        </div>
+                                <div class="user-comments-detail">
+                                    <p class="user-account"><?php echo $row['username']; ?></p>
+                                    <span class="date-post"><?php echo $row['post_date']; ?></span>
+                                </div>
 
-                                    </div>
-                                    <div class="comment-content">
-                                        <h4><?php echo $row['post_content']; ?></h4>
-                                    </div>
+                            </div>
+                            <div class="comment-content">
+                                <h4><?php echo $row['post_content']; ?></h4>
+                            </div>
 
-                                    <h3 class="underline-3"></h3>
+                            <h3 class="underline-3"></h3>
 
-                                    <div class="post-info">
-                                        <!-- if user likes post, style button differently -->
-                                        <i <?php if (userLiked($row['id'])) : ?>
-                                            type="button" onClick="window.location.reload()" class="fa fa-thumbs-up like-btn" style="cursor: pointer;" 
-                                        <?php else : ?> 
-                                            type="button" onClick="window.location.reload()" class="fa fa-thumbs-o-up like-btn" style="cursor: pointer;" 
-                                        <?php endif ?> 
-                                            data-id="<?php echo $row['id'] ?>"></i>
-                                        <span class="likes">Helpful</span>
-
-                                        &nbsp;
-
-                                        <!-- if user dislikes post, style button differently -->
-                                        <i <?php if (userDisliked($row['id'])) : ?> 
-                                            type="button" onClick="window.location.reload()" class="fa fa-thumbs-down dislike-btn" style="cursor: pointer;" 
-                                        <?php else : ?> 
-                                            type="button" onClick="window.location.reload()" class="fa fa-thumbs-o-down dislike-btn" style="cursor: pointer;"
-                                        <?php endif ?> 
-                                            data-id="<?php echo $row['id'] ?>"></i>
-                                        <span class="dislikes"><?php echo getDislikes($row['id']); ?></span>
-
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                                        <span class="likes"><?php echo getLikes($row['id']), " people found this helpful";  ?></span>
-                                    </div>
-                            <?php }
-                            } ?>
                         </div>
-                        <?php
+                        <?php }
+                            } ?>
 
-                        $user_id = $get_name_row['id'];
-
-                        // if user clicks like or dislike button
-                        if (isset($_POST['action'])) {
-                            $post_id = $_POST['post_id'];
-                            $action = $_POST['action'];
-                            switch ($action) {
-                                case 'like':
-                                    $sql = "INSERT INTO rating_info (user_id, post_id, rating_action) 
-                                            VALUES ($user_id, $post_id, 'like') 
-                                            ON DUPLICATE KEY UPDATE rating_action='like'";
-                                    header("Refresh:1");
-                                    break;
-                                case 'dislike':
-                                    $sql = "INSERT INTO rating_info (user_id, post_id, rating_action) 
-                                           VALUES ($user_id, $post_id, 'dislike') 
-                                            ON DUPLICATE KEY UPDATE rating_action='dislike'";
-                                    header("Refresh:1");
-                                    break;
-                                case 'unlike':
-                                    $sql = "DELETE FROM rating_info WHERE user_id=$user_id AND post_id=$post_id";
-                                    header("Refresh:1");
-                                    break;
-                                case 'undislike':
-                                    $sql = "DELETE FROM rating_info WHERE user_id=$user_id AND post_id=$post_id";
-                                    header("Refresh:1");
-                                    break;
-                                default:
-                                    break;
-                            }
-
-                            // execute query to effect changes in the database ...
-                            mysqli_query($conn, $sql);
-                            echo getRating($post_id);
-                            header("Refresh:0");
-                            exit(0);
-                        }
-
-                        // Get total number of likes for a particular post
-                        function getLikes($id)
-                        {
-                            global $conn;
-                            $sql = "SELECT COUNT(*) FROM rating_info 
-                                        WHERE post_id = $id AND rating_action='like'";
-                            $rs = mysqli_query($conn, $sql);
-                            $result = mysqli_fetch_array($rs);
-                            return $result[0];
-                        }
-
-                        // Get total number of dislikes for a particular post
-                        function getDislikes($id)
-                        {
-                            global $conn;
-                            $sql = "SELECT COUNT(*) FROM rating_info 
-                                        WHERE post_id = $id AND rating_action='dislike'";
-                            $rs = mysqli_query($conn, $sql);
-                            $result = mysqli_fetch_array($rs);
-                            return $result[0];
-                        }
-
-                        // Get total number of likes and dislikes for a particular post
-                        function getRating($id)
-                        {
-                            global $conn;
-                            $rating = array();
-                            $likes_query = "SELECT COUNT(*) FROM rating_info WHERE post_id = $id AND rating_action='like'";
-                            $dislikes_query = "SELECT COUNT(*) FROM rating_info 
-                                                  WHERE post_id = $id AND rating_action='dislike'";
-                            $likes_rs = mysqli_query($conn, $likes_query);
-                            $dislikes_rs = mysqli_query($conn, $dislikes_query);
-                            $likes = mysqli_fetch_array($likes_rs);
-                            $dislikes = mysqli_fetch_array($dislikes_rs);
-                            $rating = [
-                                'likes' => $likes[0],
-                                'dislikes' => $dislikes[0]
-                            ];
-                            return json_encode($rating);
-                        }
-
-                        // Check if user already likes post or not
-                        function userLiked($post_id)
-                        {
-                            global $conn;
-                            global $user_id;
-                            $sql = "SELECT * FROM rating_info WHERE user_id=$user_id 
-                                        AND post_id=$post_id AND rating_action='like'";
-                            $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
-
-                        // Check if user already dislikes post or not
-                        function userDisliked($post_id)
-                        {
-                            global $conn;
-                            global $user_id;
-                            $sql = "SELECT * FROM rating_info WHERE user_id=$user_id 
-                                        AND post_id=$post_id AND rating_action='dislike'";
-                            $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
-
-                        $sql = "SELECT * FROM product_review";
-                        $result = mysqli_query($conn, $sql);
-                        // fetch all posts from database
-                        // return them as an associative array called $posts
-                        if ($result) {
-                            $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        } else {
-                            echo "error in query data";
-                        }
-
-                        ?>
-
+                       
                     </div>
 
                     <form action="" method="post">
-                        <div class="write-feedback" action="" method="post">
-                            <h3> Write a review for Doom 3</h3>
-                            <textarea style="width:100%" name="review" id="" cols="80" rows="10" style="font-size:15pt;">
+                        <div class="write-feedback" >
+                            <h3> Write a review for</h3>
+                            <textarea style="width:100%" name="review" id="" cols="80" rows="10"
+                                style="font-size:15pt;">
                                     </textarea>
-                            <div class="w-50">
+                            <div class="w-50" style="margin-bottom:20px;">
                                 <a href=""> <button type="submit" name="review_post" class="btn-review">Post
                                         review</button></a>
                             </div>
@@ -629,7 +563,7 @@ if (!isset($_SESSION['username'])) {
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="./javascript/main2.js"></script>
-    <script src="scripts.js"></script>
+    <script src="./javascript/scripts.js"></script>
 </body>
 
 </html>
