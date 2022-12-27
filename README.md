@@ -12,13 +12,19 @@
  + Nguyen Tan Thinh (S3927186)
 
 
+
+
 - RUNNING ON LOCALHOST:
 
 + You should start from file index.php 
 
 
+
+
 - WEBSITE RUN ON SERVER:
  https://2hkt.000webhostapp.com/ 
+
+
 
 
 - CONTRIBUTION :
@@ -27,6 +33,8 @@
  + Ngo Minh Hoang (5%)
  + Vu Bac Son (10%)
  + Nguyen Tan Thinh (20%)
+
+
 
 
 
