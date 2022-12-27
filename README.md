@@ -28,6 +28,23 @@
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+- SCOPE & FUNCTION :
+
+ . Register, Login ( Customer, Admin) function
+ . Searching Items 
+ . Edit Avatar, Profile function
+ . Add To Cart, View Cart,  Check Out Orders function
+ . Post Feedback, Review game
+ . Contact us via email
+ . Send email from Admin
+ . View Orders from Admin
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- TECHNOLOGIES :
+
++ HTML, CSS, Javascript, JQuery, PHP, SASS, Boostrap5 (MDB5 Library), Figma, Mysql (PhpAdmin), Web-host (000Webhost). 
+
 - CONTRIBUTION :
  + Pham Ngoc Huy (35%)
  + Nguyen Trong Khang (30%)
