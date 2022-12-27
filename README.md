@@ -30,14 +30,14 @@
 
 - SCOPE & FUNCTION :
 
- . Register, Login ( Customer, Admin) function
- . Searching Items 
- . Edit Avatar, Profile function
- . Add To Cart, View Cart,  Check Out Orders function
- . Post Feedback, Review game
- . Contact us via email
- . Send email from Admin
- . View Orders from Admin
+ + Register, Login ( Customer, Admin) function
+ + Searching Items 
+ + Edit Avatar, Profile function
+ + Add To Cart, View Cart,  Check Out Orders function
+ + Post Feedback, Review game
+ + Contact us via email
+ + Send email from Admin
+ + View Orders from Admin
  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
