@@ -97,12 +97,12 @@ if (!isset($_SESSION['username'])) {
                             $mail->isSMTP();
                             $mail->Host = 'smtp.gmail.com';
                             $mail->SMTPAuth = true;
-                            $mail->Username = 'khangtgr@gmail.com';
-                            $mail->Password = 'tlfyuusdqikibxxc';
+                            $mail->Username = 'huysanti654321@gmail.com';
+                            $mail->Password = 'klwfpvdvcxegekoj';
                             $mail->SMTPSecure = 'ssl';
                             $mail->Port = 465;
                             
-                            $mail->setFrom('khangtgr@gmail.com');
+                            $mail->setFrom('huysanti654321@gmail.com');
 
                             $mail->addAddress($_POST["email"]);
                             

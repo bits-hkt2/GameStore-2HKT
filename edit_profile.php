@@ -81,17 +81,19 @@ session_start();
                                 if (mysqli_num_rows($result) === 1) {
                                     $row = mysqli_fetch_assoc($result);
                                     if ($row['username'] === $cur_username && $row['password'] === $cur_pass) {
+                                        if ($new_pass === $cur_pass ) {
+                                            echo " <p style='color:red; font-size:16px;position:absolute;top:22%;right:39%;'> Password do not same with current password !!! </p>";
+                                        } else {
+                                            
                                         $update_sql = "UPDATE `users` SET `username`='$new_username',`password`='$new_pass' WHERE `username`='$cur_username' AND `password`='$cur_pass'";
                                         $conn = mysqli_query($con, $update_sql);
-                                        // header("Location: index.php");
-                                        // echo "<script>
-                                        //     alert('Change Username and Password Successfully,
-                                        //     Please Login again!!! ');
-                                        //      </script>";
-                                         echo '<script>';
+                                       
+                                        
+                                        echo '<script>';
                                         echo 'alert("CHANGE USERNAME AND PASSWORD SUCCESSFULLY !!!");';
                                         echo 'window.location = "index.php"';
                                         echo '</script>';
+                                        }
                                     } 
                                     // else {
                                     //     // header("Location: Main.php?error=Incorect User name or password");
