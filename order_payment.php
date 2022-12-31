@@ -122,7 +122,7 @@ require_once 'db/db.php';
                         <i class="fa fa-bars"></i>
                     </a>
                 </div>
-                
+
                 <?php
 
       
@@ -248,13 +248,13 @@ require_once 'db/db.php';
                     <h3> Didn't find the answer you are looking for? </h3>
                     <p> If you were unable to find the answers you were looking for, please reach out and someone from
                         our friendly and knowledgeable support team will be happy to help with their top-notch
-                        assistance! <a href="#">Contact us</a> </p>
+                        assistance! </p>
 
                 </div>
                 <div class="child">
                     <h3> Want to get help and maybe make some new friends? </h3>
                     <p> We've got a great community here on 2HKT, which is always eager to help out. Please make sure
-                        not to share private data on public forums, though! <a href="#">Join the community</a> </p>
+                        not to share private data on public forums, though! </p>
 
                 </div>
             </div>

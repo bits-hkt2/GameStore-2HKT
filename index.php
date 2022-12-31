@@ -120,26 +120,9 @@
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
 
                 <form action="" role="form" method="POST">
-                    <div class="text-center mb-3 text-white">
-                        <p>Sign in with:</p>
-                        <button type="button" class="btn btn-primary btn-floating mx-1">
-                            <i class="fab fa-facebook-f"></i>
-                        </button>
 
-                        <button type="button" class="btn btn-primary btn-floating mx-1">
-                            <i class="fab fa-google"></i>
-                        </button>
 
-                        <button type="button" class="btn btn-primary btn-floating mx-1">
-                            <i class="fab fa-twitter"></i>
-                        </button>
-
-                        <button type="button" class="btn-github btn btn-primary btn-floating mx-1">
-                            <i class="fab fa-github"></i>
-                        </button>
-                    </div>
-
-                    <p class="text-center text-white">or:</p>
+                    <h3 class="text-center text-white" style="margin-bottom:10px"> LOGIN PAGE</h3>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">

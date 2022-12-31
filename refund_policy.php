@@ -122,7 +122,7 @@ if (!isset($_SESSION['username'])) {
                     </a>
                 </div>
 
-                 <?php
+                <?php
 
 
                 if ($con->connect_error) {
@@ -230,37 +230,37 @@ if (!isset($_SESSION['username'])) {
                 <h3> Order's support </h3>
                 <table class="child">
                     <tr>
-                        <td><a href="support_article.html">How do I buy a game?</a></td>
+                        <td>How do I buy a game?</td>
                     </tr>
                     <tr>
-                        <td><a href="#">How do I buy a gift?</a></td>
+                        <td>How do I buy a gift?</td>
                     </tr>
                     <tr>
-                        <td><a href="#">How do I redeem a code?</a></td>
+                        <td>How do I redeem a code?</td>
                     </tr>
                 </table>
-                <button class="all_btn"> See all articles </a></button>
+
             </div>
             <div id="article">
                 <h3> Payment-related issues </h3>
                 <table class="child">
                     <tr>
-                        <td><a href="#">I got charged and didn't get the game</a></td>
+                        <td>I got charged and didn't get the game</td>
                     </tr>
                     <tr>
-                        <td><a href="#">I tried to make a payment but it didn't work</a></td>
+                        <td>I tried to make a payment but it didn't work</td>
                     </tr>
                     <tr>
-                        <td><a href="#">MoMo is not available as a payment option</a></td>
+                        <td>MoMo is not available as a payment option</td>
                     </tr>
                 </table>
-                <button class="all_btn"> See all articles </a></button>
+
             </div>
             <div id="article">
                 <h3> Our refund policy </h3>
                 <table class="child">
                     <tr>
-                        <td><a href="#">How do I refund a game?</a></td>
+                        <td>How do I refund a game?</td>
                     </tr>
                 </table>
             </div>
@@ -276,14 +276,14 @@ if (!isset($_SESSION['username'])) {
                     <p> If you were unable to find the answers you were looking for, please reach out and someone
                         from
                         our friendly and knowledgeable support team will be happy to help with their top-notch
-                        assistance! <a href="#">Contact us</a> </p>
+                        assistance! </p>
 
                 </div>
                 <div class="child">
                     <h3> Want to get help and maybe make some new friends? </h3>
                     <p> We've got a great community here on 2HKT, which is always eager to help out. Please make
                         sure
-                        not to share private data on public forums, though! <a href="#">Join the community</a> </p>
+                        not to share private data on public forums, though! </p>
 
                 </div>
             </div>
