@@ -57,7 +57,7 @@ $result = mysqli_query($con, $sql);
 
             <div class="list-items">
                 <a href="/Main.php">
-                    <img class="web_icon" src="./images/Logo (1).png" alt="">
+                    <img class="web_icon" src="/images/Logo (1).png" alt="">
 
                 </a>
 
@@ -144,7 +144,7 @@ $result = mysqli_query($con, $sql);
                         <i class="fa fa-bars"></i>
                     </a>
                 </div>
-            
+
                 <?php
 
                 if ($con->connect_error) {
@@ -191,8 +191,8 @@ $result = mysqli_query($con, $sql);
                         </h3>
                     </div>
                 </div>
-                
-             <?php }
+
+                <?php }
                     } else {
                         echo '
                     <div class="profile">
@@ -929,7 +929,7 @@ $result = mysqli_query($con, $sql);
             <div class="social-media">
                 <ul class="social-platform">
 
-                     <a href="https://www.facebook.com/dejavu354321/">
+                    <a href="https://www.facebook.com/dejavu354321/">
                         <li><i class="fa-brands fa-square-facebook"></i> </li>
                     </a>
                     <a href="https://twitter.com/Steam?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">

@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect('localhost','id20044445_root','dzTV2I\v{PAko\R<','id20044445_huysanti');
+$con = mysqli_connect('localhost','root','','id20044445_huysanti');
 
 
 // Check connection
