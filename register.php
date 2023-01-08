@@ -174,7 +174,8 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="registerEmail" name="email" class="form-control" style="color:white" required />
+                        <input type="email" id="registerEmail" name="email" class="form-control" style="color:white"
+                            required />
                         <label class="form-label text-white" for="registerEmail">Email</label>
                     </div>
 
@@ -194,8 +195,11 @@
 
 
                     <!-- Submit button -->
-                    <button type="submit" name="submit" class="btn btn-primary btn-block mb-3">Create Account</button>
-                </form>
+                    <button type="submit" name="submit" class="b tn btn-primary btn-block mb-3 w-75"
+                        style="margin-left:70px">Create
+                        Account</button>
+                </form <button type="submit" class="btn btn-primary btn-block mb-3 w-75" style="margin-left:70px"> <a
+                    href="./index.php" style="color:white; padding: 20px 100px">Back</a></button>
             </div>
 
             <?php
